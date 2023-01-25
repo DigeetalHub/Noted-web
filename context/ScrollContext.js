@@ -28,7 +28,6 @@ const ScrollProvider = ({ children }) => {
 
 	useEffect(() => {
         window.addEventListener("scroll", scrollNav);
-        console.log(changeColor)
 	}, []);
 
 	useEffect(() => {
