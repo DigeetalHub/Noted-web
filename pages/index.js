@@ -24,11 +24,11 @@ export default function Home() {
 			</Head>
 
 			<main className="">
-				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-[80vh] relative">
+				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-[70vh] relative">
 					<div className="h-full bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-4">
 						<div className="flex flex-col gap-4 text-center mb-8">
-							<h1 className="font-bold text-white text-[2rem] "><span className="">Connect</span> with <span className="text-brandPrimary500">creators</span> from everywhere across the globe</h1>
-							<p className="text-neutrals200">Lorem ipsum dolor sit amet consectetur. Rhoncus pretium in sed blandit habitant nulla viverra. Sed et fermentum mattis volutpat viverra augue faucibus integer.</p>
+							<h1 className="font-bold text-white text-[2rem] leading-[1.2]"><span className="">Connect</span> with <span className="text-brandPrimary500">creators</span> from everywhere across the globe</h1>
+							<p className="text-neutrals200 leading-[25.5px]">Lorem ipsum dolor sit amet consectetur. Rhoncus pretium in sed blandit habitant nulla viverra. Sed et fermentum mattis volutpat viverra augue faucibus integer.</p>
 						</div>
 						<Button label="Download Now" className="text-white py-3 w-full border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out]" />
 					</div>
