@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Socials = () => {
 	return (
-		<nav className="flex gap-3 mx-auto">
+		<nav className="flex gap-3 mx-auto md:m-0">
 			<Link href="" className="bg-brandPrimary500 border-[0.4px] border-brandPrimary200 p-[0.635rem] rounded ">
 				<Image src={Instagram} alt="Instagram icon" />
 			</Link>
