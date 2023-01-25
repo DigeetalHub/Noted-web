@@ -15,13 +15,10 @@ import People from "../public/assets/icons/people.svg";
 import Plus from "../public/assets/icons/plus-circle.svg";
 import Repeat from "../public/assets/icons/repeat.svg";
 import Snapshot from "../public/assets/images/snapshot.svg";
-import Email from "../public/assets/icons/email.svg";
-import Instagram from "../public/assets/icons/instagram.svg";
-import Facebook from "../public/assets/icons/facebook.svg";
-import Twitter from "../public/assets/icons/twitter.svg";
+import DownloadNow from "../components/DownloadNow";
 
 export default function Home() {
-	const { whiteNav, scroll, scrollNav } = useContext(ScrollContext);
+	const { scroll, scrollNav } = useContext(ScrollContext);
 
 	return (
 		<div className="">
@@ -178,6 +175,7 @@ export default function Home() {
 						/>
 					</div>
 				</article>
+				<DownloadNow classes="" content="" />
 			</main>
 		</div>
 	);
