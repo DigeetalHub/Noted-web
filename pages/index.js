@@ -1,15 +1,16 @@
 import Head from "next/head";
+import { useState, useContext } from "react";
 import Image from "next/image";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
 import Subheading from "../components/Subheading";
 import Mouse from "../public/assets/icons/mouse.svg";
+import { ScrollContext } from "../context/ScrollContext";
+import IconText from "../components/IconText";
 
 export default function Home() {
 
-	const scroll = () => {
-		scrollTo(0, 80);
-	}
+	const { whiteNav, scroll, scrollNav } = useContext(ScrollContext);
 
 	return (
 		<div className="">
@@ -31,7 +32,7 @@ export default function Home() {
 				<link rel="manifest" href="/site.webmanifest" />
 			</Head>
 
-			<main className="">
+			<main className="snap-y scroll-pt-[2rem]" onscroll={scrollNav}>
 				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-[70vh] md:h-screen relative">
 					<div className="h-full bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-4 md:justify-center">
 						<div className="flex flex-col gap-4 text-center mb-8 md:mb-10 md:w-[60%] lg:w-[70%] xl:w-[55%]">
@@ -62,10 +63,15 @@ export default function Home() {
 						/>
 					</div>
 					<div className="w-full hidden md:flex flex-col justify-center gap-3 absolute bottom-[1rem] z-10">
-						<button className="mx-auto">
+						<button className="mx-auto" onClick={scroll}>
 							<Image src={Mouse} alt="Clickable icon to scroll down to see main content" className="animate-bounce-slow motion-safe:animate-bounce-slower" />
 						</button>
 						<p className="text-center text-white/[0.4] font-bold text-xl">Scroll for more info</p>
+					</div>
+				</section>
+				<section className="">
+					<div className="">
+						<IconText className="" src={} imgClassName="" />
 					</div>
 				</section>
 			</main>

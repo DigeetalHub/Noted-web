@@ -26,8 +26,8 @@ module.exports = {
 				header: "20px",
 			},
 			animation: {
-				"bounce-slow": "bounce 1.6s infinite",
-				"bounce-slower": "bounce 2.2s infinite",
+				"bounce-slow": "bounce 1.8s infinite",
+				"bounce-slower": "bounce 2.5s infinite",
 			},
 		},
 		plugins: [],

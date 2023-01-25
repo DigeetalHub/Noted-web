@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -7,11 +7,14 @@ import Menu from "../public/assets/icons/menu.svg";
 import MenuBlack from "../public/assets/icons/menu-black.svg";
 import Close from "../public/assets/icons/close-icon.svg";
 import Button from "./Button";
+import { ScrollContext } from "../context/ScrollContext";
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = React.useState(false);
 	const { asPath } = useRouter();
 	const cleanPath = asPath.split("#")[0].split("?")[0];
+	const { whiteNav, setWhiteNav, scroll, changeColor } = React.useContext(ScrollContext);
+
 
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);
@@ -22,7 +25,11 @@ const Header = () => {
 	};
 
 	return (
-		<header className="md:bg-header fixed top-0 left-0 right-0 z-10">
+		<header
+			className={`${
+				whiteNav ? "md:bg-white" : "md:bg-header"
+			} fixed top-0 left-0 right-0 z-10 transition duration-[450ms]`}
+		>
 			<div className="mobile-nav relative md:hidden">
 				<div className="flex justify-between items-center py-[0.875rem] px-[1rem]">
 					<Image src={Logo} alt="Website Logo" />
@@ -75,7 +82,11 @@ const Header = () => {
 					/>
 				</nav>
 			</div>
-			<div className="desktop-nav hidden md:flex items-center justify-between gap-10 backdrop-blur-header md:py-[0.875rem] md:px-[2rem] lg:px-[3rem] xl:px-[4rem]">
+			<div
+				className={`desktop-nav hidden md:flex items-center justify-between gap-10 ${
+					!whiteNav ? "backdrop-blur-header" : ""
+				} md:py-[0.75rem] md:px-[2rem] lg:px-[3rem] xl:px-[4rem]`}
+			>
 				<div className="">
 					<Image src={Logo} alt="Website Logo" />
 				</div>
@@ -89,7 +100,7 @@ const Header = () => {
 								href="/"
 								className={`font-medium h-full flex items-center ${
 									cleanPath === "/" ? "text-neutrals50" : "text-neutrals400"
-								}`}
+								} `}
 								onClick={closeMenu}
 							>
 								Home
