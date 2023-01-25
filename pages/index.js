@@ -7,6 +7,17 @@ import Subheading from "../components/Subheading";
 import Mouse from "../public/assets/icons/mouse.svg";
 import { ScrollContext } from "../context/ScrollContext";
 import IconText from "../components/IconText";
+import DocumentIcon from  "../public/assets/icons/document-download.svg";
+import User from  "../public/assets/icons/user-icon.svg";
+import Stats from  "../public/assets/icons/stats.svg";
+import UserSearch from  "../public/assets/icons/user-search.svg";
+import People from  "../public/assets/icons/people.svg";
+import Plus from "../public/assets/icons/plus-circle.svg";
+import Repeat from "../public/assets/icons/repeat.svg";
+import Email from "../public/assets/icons/email.svg";
+import Instagram from "../public/assets/icons/instagram.svg";
+import Facebook from "../public/assets/icons/facebook.svg";
+import Twitter from "../public/assets/icons/twitter.svg";
 
 export default function Home() {
 
@@ -69,9 +80,11 @@ export default function Home() {
 						<p className="text-center text-white/[0.4] font-bold text-xl">Scroll for more info</p>
 					</div>
 				</section>
-				<section className="">
-					<div className="">
-						<IconText className="" src={} imgClassName="" />
+				<section className="bg-brandPrimary400 p-4 md:p-[2.5rem] lg:p-[3rem] xl:p-[5rem]">
+					<div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6">
+						<IconText className="lg:flex-row lg:items-center gap-4" src={DocumentIcon} imgClassName="bg-white" textClassName="font-bold text-[1.25rem] text-white xl:text-[2rem]" alt="An icon representing downloads" text="500+ Downloads" />
+						<IconText className="lg:flex-row lg:items-center gap-4" src={User} imgClassName="bg-white" textClassName="font-bold text-[1.25rem] text-white xl:text-[2rem]" alt="An icon representing downloads" text="403+ Active Users" />
+						<IconText className="lg:flex-row lg:items-center gap-4" src={Stats} imgClassName="bg-white" textClassName="font-bold text-[1.25rem] text-white xl:text-[2rem]" alt="An icon representing downloads" text="8590+ Usage Statistics" />
 					</div>
 				</section>
 			</main>
