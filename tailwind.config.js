@@ -10,6 +10,7 @@ module.exports = {
 				brandPrimary900: "#59370A",
 				neutrals50: "#E8E8E8",
 				neutrals200: "#979797",
+				neutrals300: "#676767",
 				neutrals500: "#1C1C1C",
 				header: "rgba(255, 255, 255, 0.01)",
 				overlay: "rgba(15, 15, 15, 0.88);",
