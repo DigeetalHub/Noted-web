@@ -12,11 +12,11 @@ const Footer = () => {
 	return (
 		<footer className="py-6 px-4 bg-brandPrimary900 mt-[5.5rem] md:pt-[5.5rem]">
 			<div className="flex flex-col flex-wrap gap-[2.5rem] text-center text-white md:flex-row md:justify-between md:text-left md:w-[80%] md:mx-auto md:gap-y-[4rem]">
-				<div className="flex flex-col w-[28%] gap-4">
+				<div className="flex flex-col w-[28%] gap-[1.625rem]">
 					<Image src={Logo} alt="Website logo in the Footer" className="mx-auto md:m-0" />
 					<p className="font-semibold px-4 md:p-0 md:font-normal">Discover hidden talents around the world using Noted</p>
 				</div>
-				<nav className="flex flex-col gap-3">
+				<nav className="flex flex-col gap-3 lg:w-[18%]">
 					<h3 className="font-bold text-neutrals50 text-xl">Explore</h3>
 					<Link href="/privacy" className="font-semibold text-neutrals50 text-xs md:text-base md:font-normal">
 						Privacy Policy

@@ -3,6 +3,9 @@ module.exports = {
 	content: ["./app/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
+			screens: {
+				"bigScreen": "1900px",
+			},
 			colors: {
 				brandPrimary50: "#FBF3E8",
 				brandPrimary200: "#EBC694",
