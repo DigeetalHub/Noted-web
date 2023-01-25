@@ -22,9 +22,9 @@ const Header = () => {
 	};
 
 	return (
-		<header className="bg-header md:py-[0.875rem] md:px-[2rem] lg:px-[3rem] xl:px-[4rem]">
+		<header className="md:bg-header fixed top-0 left-0 right-0 md:py-[0.875rem] md:px-[2rem] lg:px-[3rem] xl:px-[4rem] z-10">
 			<div className="mobile-nav relative md:hidden">
-				<div className="flex justify-between items-center py-[0.875rem] px-[1rem] backdrop-blur-header">
+				<div className="flex justify-between items-center py-[0.875rem] px-[1rem]">
 					<Image src={Logo} alt="Website Logo" />
 					<Image
 						src={cleanPath === "/" ? Menu : MenuBlack}
@@ -37,7 +37,7 @@ const Header = () => {
 						menuOpen ? "translate-y-0" : "-translate-y-[150%]"
 					}`}
 				>
-					<div className="flex justify-end w-full pr-[2rem]">
+					<div className="flex justify-end w-full pr-[1rem]">
 						<Image src={Close} alt="Icon to close navigation menu" className="" onClick={toggleMenu} />
 					</div>
 					<ul className="flex flex-col items-center gap-6">

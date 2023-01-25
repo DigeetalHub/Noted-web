@@ -18,6 +18,7 @@ module.exports = {
 			backgroundImage: {
 				download:
 					"linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #DC9B45 0%, #1E1E1E 100%)",
+				heroImg: "url('/assets/images/hero-img.png')",
 			},
 			backdropBlur: {
 				header: "20px",
