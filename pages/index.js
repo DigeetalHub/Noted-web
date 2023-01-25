@@ -1,8 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
 import Button from "../components/Button";
+import Heading from "../components/Heading";
+import Subheading from "../components/Subheading";
+import Mouse from "../public/assets/icons/mouse.svg";
 
 export default function Home() {
+
+	const scroll = () => {
+		scrollTo(0, 80);
+	}
+
 	return (
 		<div className="">
 			<Head>
@@ -24,13 +32,40 @@ export default function Home() {
 			</Head>
 
 			<main className="">
-				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-[70vh] relative">
-					<div className="h-full bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-4">
-						<div className="flex flex-col gap-4 text-center mb-8">
-							<h1 className="font-bold text-white text-[2rem] leading-[1.2]"><span className="">Connect</span> with <span className="text-brandPrimary500">creators</span> from everywhere across the globe</h1>
-							<p className="text-neutrals200 leading-[25.5px]">Lorem ipsum dolor sit amet consectetur. Rhoncus pretium in sed blandit habitant nulla viverra. Sed et fermentum mattis volutpat viverra augue faucibus integer.</p>
+				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-[70vh] md:h-screen relative">
+					<div className="h-full bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-4 md:justify-center">
+						<div className="flex flex-col gap-4 text-center mb-8 md:mb-10 md:w-[60%] lg:w-[70%] xl:w-[55%]">
+							<Heading
+								firstContent={"Connect"}
+								endContent={"from everywhere across the globe"}
+								coloredContent={"creators"}
+								classes="font-bold text-white text-[2rem] leading-[1.2] md:hidden"
+							/>
+							<Heading
+								firstColoredContent={"Discover"}
+								endContent={"hidden creatives around the world using Noted"}
+								classes="font-bold text-white text-[2.5rem] leading-[1.2] hidden md:block"
+							/>
+							<Subheading
+								classes="text-neutrals200 leading-[25.5px] md:hidden"
+								content="Lorem ipsum dolor sit amet consectetur. Rhoncus pretium in sed blandit habitant nulla viverra. Sed et
+								fermentum mattis volutpat viverra augue faucibus integer."
+							/>
+							<Subheading
+								classes="text-neutrals100 leading-[25.5px] hidden md:block"
+								content="Have unrestricted access to as many talents as you want, with never-ending conversations."
+							/>
 						</div>
-						<Button label="Download Now" className="text-white py-3 w-full border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out]" />
+						<Button
+							label="Download Now"
+							className="text-white py-3 w-full border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded md:w-1/2 lg:w-[35%] xl:w-[25%] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out]"
+						/>
+					</div>
+					<div className="w-full hidden md:flex flex-col justify-center gap-3 absolute bottom-[1rem] z-10">
+						<button className="mx-auto">
+							<Image src={Mouse} alt="Clickable icon to scroll down to see main content" className="animate-bounce-slow motion-safe:animate-bounce-slower" />
+						</button>
+						<p className="text-center text-white/[0.4] font-bold text-xl">Scroll for more info</p>
 					</div>
 				</section>
 			</main>

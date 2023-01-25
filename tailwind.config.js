@@ -9,8 +9,10 @@ module.exports = {
 				brandPrimary500: "#D38217",
 				brandPrimary900: "#59370A",
 				neutrals50: "#E8E8E8",
+				neutrals100: "#B9B9B9",
 				neutrals200: "#979797",
 				neutrals300: "#676767",
+				neutrals400: "#494949",
 				neutrals500: "#1C1C1C",
 				header: "rgba(255, 255, 255, 0.01)",
 				overlay: "rgba(15, 15, 15, 0.88);",
@@ -22,6 +24,10 @@ module.exports = {
 			},
 			backdropBlur: {
 				header: "20px",
+			},
+			animation: {
+				"bounce-slow": "bounce 1.6s infinite",
+				"bounce-slower": "bounce 2.2s infinite",
 			},
 		},
 		plugins: [],

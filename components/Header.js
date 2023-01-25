@@ -22,7 +22,7 @@ const Header = () => {
 	};
 
 	return (
-		<header className="md:bg-header fixed top-0 left-0 right-0 md:py-[0.875rem] md:px-[2rem] lg:px-[3rem] xl:px-[4rem] z-10">
+		<header className="md:bg-header fixed top-0 left-0 right-0 z-10">
 			<div className="mobile-nav relative md:hidden">
 				<div className="flex justify-between items-center py-[0.875rem] px-[1rem]">
 					<Image src={Logo} alt="Website Logo" />
@@ -75,7 +75,7 @@ const Header = () => {
 					/>
 				</nav>
 			</div>
-			<div className="desktop-nav hidden md:flex items-center justify-between gap-10 backdrop-blur-header">
+			<div className="desktop-nav hidden md:flex items-center justify-between gap-10 backdrop-blur-header md:py-[0.875rem] md:px-[2rem] lg:px-[3rem] xl:px-[4rem]">
 				<div className="">
 					<Image src={Logo} alt="Website Logo" />
 				</div>
@@ -88,7 +88,7 @@ const Header = () => {
 							<Link
 								href="/"
 								className={`font-medium h-full flex items-center ${
-									cleanPath === "/" ? "text-neutrals500" : "text-neutrals300"
+									cleanPath === "/" ? "text-neutrals50" : "text-neutrals400"
 								}`}
 								onClick={closeMenu}
 							>
@@ -99,7 +99,7 @@ const Header = () => {
 							<Link
 								href="/about"
 								className={`font-medium h-full flex items-center  ${
-									cleanPath === "/about" ? "text-neutrals500" : "text-neutrals300"
+									cleanPath === "/about" ? "text-neutrals50" : "text-neutrals400"
 								}`}
 								onClick={closeMenu}
 							>
@@ -110,7 +110,7 @@ const Header = () => {
 							<Link
 								href="/contact"
 								className={`font-medium h-full flex items-center  ${
-									cleanPath === "/contact" ? "text-neutrals500" : "text-neutrals300"
+									cleanPath === "/contact" ? "text-neutrals50" : "text-neutrals400"
 								}`}
 								onClick={closeMenu}
 							>
