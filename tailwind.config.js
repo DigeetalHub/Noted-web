@@ -4,13 +4,13 @@ module.exports = {
 	theme: {
 		extend: {
 			screens: {
-				iWatch: "162px",
 				fold: "280px",
 				s22: "360px",
 				i11: "375px",
 				i13: "390px",
 				XR: "414px",
 				i14Max: "428px",
+				iPadAir: "820px",
 				fold2Full: "884px",
 				laptops: "1440px",
 				MacBookPro: "1728px",
