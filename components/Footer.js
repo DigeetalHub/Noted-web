@@ -30,7 +30,7 @@ const Footer = () => {
 				</nav>
 				<div className="flex flex-col gap-3">
 					<h3 className="font-bold text-neutrals50 text-xl">Contact</h3>
-					<Link href="/contact" className="font-semibold text-neutrals50 text-xs md:text-base md:font-normal">
+					<Link href="mailto:info@noted.com" className="font-semibold text-neutrals50 text-xs md:text-base md:font-normal">
 						<Image src={Email} alt="Email icon" className="inline-block" />{" "}
 						<span className="ml-[0.63rem]">info@noted.com</span>
 					</Link>

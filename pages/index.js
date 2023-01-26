@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { motion, useScroll } from "framer-motion";
 import { useState, useContext } from "react";
 import Image from "next/image";
 import Button from "../components/Button";
@@ -70,7 +71,7 @@ export default function Home() {
 							className="text-white py-3 w-full border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded md:w-1/2 lg:w-[35%] xl:w-[25%] bigScreen:w-[15%] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
 						/>
 					</div>
-					<div className="w-full hidden md:flex flex-col justify-center gap-3 absolute bottom-[1rem] z-10">
+					<div className="scroll-btn w-full hidden md:flex flex-col justify-center gap-3 absolute bottom-[1rem] z-10">
 						<button className="mx-auto" onClick={scroll}>
 							<Image
 								src={Mouse}
@@ -126,7 +127,7 @@ export default function Home() {
 							alt="Icon explaining how users can search for other users"
 							text="Find any artists that your project could be missing"
 							textClassName="font-semibold md:font-bold xl:px-4 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
-							className="p-6 gap-6 bg-white shadow-card rounded"
+							className="p-6 gap-6 bg-white shadow-card rounded transition duration-500 hover:scale-105"
 							imgClassName="bg-brandPrimary50"
 						/>
 						<IconText
@@ -134,23 +135,25 @@ export default function Home() {
 							alt="Icon explaining users can collaborate with other users"
 							text="Collaborate and discuss potential ideas and workings"
 							textClassName="font-semibold md:font-bold xl:px-2 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
-							className="p-6 gap-6 bg-white shadow-card rounded"
+							className="p-6 gap-6 bg-white shadow-card rounded transition duration-500 hover:scale-105"
 							imgClassName="bg-brandPrimary50"
 						/>
+
 						<IconText
 							src={Plus}
 							alt="Icon explaining users can immediately start working with other users"
 							text="Create your next body of work with your newly found artists"
 							textClassName="font-semibold md:font-bold md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
-							className="p-6 gap-6 bg-white shadow-card rounded"
+							className="p-6 gap-6 bg-white shadow-card rounded transition duration-500 hover:scale-105"
 							imgClassName="bg-brandPrimary50"
 						/>
+
 						<IconText
 							src={Repeat}
 							alt="Icon explaining users can repeat the process whenever there's a project"
 							text="Repeat the process whenever there's a project"
 							textClassName="font-semibold md:font-bold xl:px-4 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
-							className="p-6 gap-6 bg-white shadow-card rounded lg:col-start-2 xl:col-auto"
+							className="p-6 gap-6 bg-white shadow-card rounded lg:col-start-2 xl:col-auto transition duration-500 hover:scale-105"
 							imgClassName="bg-brandPrimary50"
 						/>
 					</div>
