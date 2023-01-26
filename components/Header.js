@@ -22,7 +22,7 @@ const Header = () => {
   const [isWhite, setIsWhite] = React.useState(whiteNav);
   const router = useRouter();
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (router.pathname === "/contact") {
       setIsWhite(true);
     } else {
