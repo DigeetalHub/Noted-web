@@ -38,10 +38,10 @@ export default function Home() {
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-				<link rel="manifest" href="/site.webmanifest" />
+				{/* <link rel="manifest" href="/site.webmanifest" /> */}
 			</Head>
 
-			<main className="snap-y scroll-pt-[2rem]" onscroll={scrollNav}>
+			<main className="snap-y snap-mandatory scroll-pt-[2rem] main-element" onScroll={scrollNav} >
 				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-[70vh] md:h-screen relative">
 					<div className="h-full bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-4 md:justify-center">
 						<div className="flex flex-col gap-4 text-center mb-8 md:mb-10 md:w-[60%] lg:w-[70%] xl:w-[55%]">
@@ -84,7 +84,7 @@ export default function Home() {
 						</p>
 					</div>
 				</section>
-				<section className="bg-brandPrimary400 p-4 md:p-[2.5rem] lg:p-[3rem] xl:p-[5rem]">
+				<section className="snap-start bg-brandPrimary400 p-4 md:p-[2.5rem] lg:p-[3rem] xl:p-[5rem]">
 					<div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6  bigScreen:w-[90%] bigScreen:mx-auto">
 						<IconText
 							className="lg:flex-row lg:items-center gap-4"
@@ -112,7 +112,7 @@ export default function Home() {
 						/>
 					</div>
 				</section>
-				<section className="p-[2.5rem] pb-4 text-center md:py-[5rem] lg:px-[3.5rem] xl:px-[4rem] bigScreen:px-[6rem]">
+				<section className="snap-start p-[2.5rem] pb-4 text-center md:py-[5rem] lg:px-[3.5rem] xl:px-[4rem] bigScreen:px-[6rem]">
 					<Subheading
 						classes="text-neutrals500 font-bold text-[1.25rem] mb-[1.5rem] md:hidden"
 						content="Discover Hidden Talent Around the World Using Noted"
@@ -158,7 +158,7 @@ export default function Home() {
 						/>
 					</div>
 				</section>
-				<article className=" bg-wavyBgMobile md:bg-wavyBgDesktop bg-no-repeat bg-center bg-cover px-[1.875rem] py-[5.5rem] md:py-[7rem] md:px-[3rem]">
+				<article className="snap-start bg-wavyBgMobile md:bg-wavyBgDesktop bg-no-repeat bg-center bg-cover px-[1.875rem] py-[5.5rem] md:py-[7rem] md:px-[3rem]">
 					<Heading
 						classes="text-neutrals500 text-center font-bold md:text-[2rem] lg:text-[2.5rem] bigScreen:text-[3.5rem]"
 						coloredContent="Noted"
@@ -180,7 +180,7 @@ export default function Home() {
 						/>
 					</div>
 				</article>
-				<DownloadNow classes="" content="" />
+				<DownloadNow />
 			</main>
 		</div>
 	);

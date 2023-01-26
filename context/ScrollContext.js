@@ -5,10 +5,8 @@ export const ScrollContext = createContext();
 
 const ScrollProvider = ({ children }) => {
 	const [whiteNav, setWhiteNav] = useState(false);
-	const [changeColor, setChangeColor] = useState({
-		defaultNav: false,
-		coloredNav: false,
-	});
+
+	const [coloredNav, setColoredNav] = useState(false);
 
 	const { asPath } = useRouter();
 	const cleanPath = asPath.split("#")[0].split("?")[0];
@@ -17,30 +15,22 @@ const ScrollProvider = ({ children }) => {
 		scrollBy(0, 80);
 		setWhiteNav(!whiteNav);
 	};
-
 	const scrollNav = () => {
-		if (document.documentElement.scrollTop > 20) {
+		if (document.documentElement.scrollTop > 20 && cleanPath === "/" && whiteNav) {
 			setWhiteNav(true);
+			console.log(cleanPath);
+			console.log(whiteNav);
+			setColoredNav(true);
 			document.querySelector(".scroll-btn").style = "visibility:hidden";
 		} else {
 			document.querySelector(".scroll-btn").style = "visibility:visible";
+			setColoredNav(false);
 			setWhiteNav(false);
 		}
 	};
 
 	useEffect(() => {
-		window.scrollTo(0, 0);
 		window.addEventListener("scroll", scrollNav);
-	}, []);
-
-	useEffect(() => {
-		if (cleanPath === "/" && whiteNav) {
-			setChangeColor({ coloredNav: true, ...changeColor });
-		} else if (cleanPath === "/about" && whiteNav) {
-			setChangeColor({ coloredNav: true, ...changeColor });
-		} else if (cleanPath === "/contact" && whiteNav) {
-			setChangeColor({ coloredNav: true, ...changeColor });
-		}
 	}, []);
 
 	const values = {
@@ -48,7 +38,7 @@ const ScrollProvider = ({ children }) => {
 		setWhiteNav,
 		scroll,
 		scrollNav,
-		changeColor,
+		coloredNav,
 	};
 
 	return <ScrollContext.Provider value={values}>{children}</ScrollContext.Provider>;

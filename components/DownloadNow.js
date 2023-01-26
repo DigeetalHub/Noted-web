@@ -10,7 +10,7 @@ const DownloadNow = ({ classes }) => {
 				<h2 className="font-bold text-[1.5rem] md:text-[2.5rem] lg:text-[3rem]">Download our app now</h2>
 				<Button
 					label="Download"
-					className="font-semibold bg-brandPrimary500 py-3 rounded md:w-[50%] md:mx-auto md:rounded-2xl lg:w-[45%] xl:w-[30%] lg:hover:bg-transparent lg:hover:text-white border-[1px] border-brandPrimary400"
+					className="font-semibold bg-brandPrimary500 py-3 rounded md:w-[50%] md:mx-auto md:rounded-2xl lg:w-[45%] xl:w-[30%] lg:hover:bg-transparent lg:hover:text-white border-[1px] border-brandPrimary400 transition duration-500"
 				/>
 			</div>
 		</section>

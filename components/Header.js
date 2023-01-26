@@ -13,8 +13,7 @@ const Header = () => {
 	const [menuOpen, setMenuOpen] = React.useState(false);
 	const { asPath } = useRouter();
 	const cleanPath = asPath.split("#")[0].split("?")[0];
-	const { whiteNav, setWhiteNav, scroll, changeColor } = React.useContext(ScrollContext);
-
+	const { whiteNav, coloredNav } = React.useContext(ScrollContext);
 
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);
@@ -99,7 +98,7 @@ const Header = () => {
 							<Link
 								href="/"
 								className={`font-medium h-full flex items-center ${
-									cleanPath === "/" ? "text-neutrals50" : "text-neutrals400"
+									cleanPath === "/" ? `text-neutrals${coloredNav ? "500" : "50"}` : "text-neutrals400"
 								} `}
 								onClick={closeMenu}
 							>

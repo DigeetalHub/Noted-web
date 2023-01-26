@@ -11,11 +11,11 @@ function MyApp({ Component, pageProps }) {
 	return (
 		<Fragment>
 			<ScrollProvider>
+				<main className={`${jost.className}` }>
 				<Header />
-				<main className={`${jost.className} ` }>
 					<Component {...pageProps} />
-				</main>
 				<Footer />
+				</main>
 			</ScrollProvider>
 		</Fragment>
 	);
