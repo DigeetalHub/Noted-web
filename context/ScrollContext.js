@@ -1,47 +1,49 @@
-import { createContext, useState, useEffect } from "react";
-import { useRouter } from "next/router";
-
-export const ScrollContext = createContext();
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
+const ScrollContext = createContext();
 
 const ScrollProvider = ({ children }) => {
-	const [whiteNav, setWhiteNav] = useState(false);
+  const [whiteNav, setWhiteNav] = useState(false);
+  const [scrollToAbout, setScrollToAbout] = useState(false);
 
-	const [coloredNav, setColoredNav] = useState(false);
+  const scroll = () => {
+    scrollBy(0, 80);
+    setWhiteNav(!whiteNav);
+  };
 
-	const { asPath } = useRouter();
-	const cleanPath = asPath.split("#")[0].split("?")[0];
+  const scrollNav = useCallback(() => {
+    if (document.documentElement.scrollTop > 20) {
+      setWhiteNav(true);
+    } else {
+      setWhiteNav(false);
+    }
+  }, []);
 
-	const scroll = () => {
-		scrollBy(0, 80);
-		setWhiteNav(!whiteNav);
-	};
-	const scrollNav = () => {
-		if (document.documentElement.scrollTop > 20 && cleanPath === "/" && whiteNav) {
-			setWhiteNav(true);
-			console.log(cleanPath);
-			console.log(whiteNav);
-			setColoredNav(true);
-			document.querySelector(".scroll-btn").style = "visibility:hidden";
-		} else {
-			document.querySelector(".scroll-btn").style = "visibility:visible";
-			setColoredNav(false);
-			setWhiteNav(false);
-		}
-	};
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    window.addEventListener("scroll", scrollNav);
+    //eslint-disable-next-line
+  }, []);
 
-	useEffect(() => {
-		window.addEventListener("scroll", scrollNav);
-	}, []);
+  const values = {
+    whiteNav,
+    setWhiteNav,
+    scroll,
+    scrollNav,
+    scrollToAbout,
+    setScrollToAbout,
+  };
 
-	const values = {
-		whiteNav,
-		setWhiteNav,
-		scroll,
-		scrollNav,
-		coloredNav,
-	};
-
-	return <ScrollContext.Provider value={values}>{children}</ScrollContext.Provider>;
+  return (
+    <ScrollContext.Provider value={values}>{children}</ScrollContext.Provider>
+  );
 };
 
-export default ScrollProvider;
+const useScroll = () => useContext(ScrollContext);
+
+export { ScrollProvider, useScroll };
