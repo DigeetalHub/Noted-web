@@ -47,7 +47,7 @@ const Header = () => {
 			className={`${isWhite ? "bg-white" : "md:bg-header"} fixed top-0 left-0 right-0 z-10 transition duration-50`}
 		>
 			<div className="mobile-nav relative md:hidden">
-				<div className="flex justify-between items-center py-[0.5rem]px-[0.8rem] fold:p-[1rem]">
+				<div className="flex justify-between items-center py-[0.5rem] px-[0.8rem] fold:p-[1rem]">
 					<Link href="/">
 						<Image src={Logo} alt="Website Logo" className="w-[42px] fold:w-[76px]" />
 					</Link>
@@ -59,7 +59,7 @@ const Header = () => {
 					/>
 				</div>
 				<nav
-					className={`flex flex-col gap-4 fold:gap-6 items-center absolute top-0 left-[50%] -translate-x-[50%] w-full py-[0.7rem] fold:py-[1.4rem] transition duration-700 bg-white ${
+					className={`flex flex-col gap-2 fold:gap-6 items-center absolute top-0 left-[50%] -translate-x-[50%] w-full py-[0.7rem]  fold:py-[1.4rem] transition duration-700 bg-white ${
 						menuOpen ? "translate-y-0" : "-translate-y-[150%]"
 					}`}
 				>

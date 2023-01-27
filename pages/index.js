@@ -50,7 +50,7 @@ export default function Home() {
 			</Head>
 			<main className="snap-y scroll-pt-[2rem]" onScroll={scrollNav}>
 				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[84.5vh] s22:h-[82.5vh] i11Pro:h-[82vh] i13:h-[82.5vh] XR:h-[75vh] i14Max:h-[76vh] md:h-screen relative">
-					<div className="h-full pt-[4.2rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-2 fold:px-4 md:justify-center">
+					<div className="h-full pt-[2.9rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-2 fold:px-4 md:justify-center">
 						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 md:w-[79%] lg:w-[70%] xl:w-[55%]">
 							<Heading
 								firstContent={"Connect with"}
@@ -61,7 +61,7 @@ export default function Home() {
 							<Heading
 								firstColoredContent={"Discover"}
 								endContent={"hidden creatives around the world using Noted"}
-								classes="font-bold text-white text-[2rem] bigScreen:text-[3.5rem] leading-[1.2] hidden md:block"
+								classes="font-bold text-white text-[2rem] bigScreen:text-[3.5rem] leading-[1.27] hidden md:block"
 							/>
 							<Subheading
 								classes="text-neutrals200 s22:leading-[23.5px] i11Pro:leading-[25px] XR:leading-[25.5px] fold:text-[0.7rem] s22:text-[0.9rem] i11Pro:text-[0.9rem] i13:text-[1rem] i14Max:text-[1.1rem] hidden fold:block md:hidden"
@@ -69,14 +69,14 @@ export default function Home() {
 								fermentum mattis volutpat viverra augue faucibus integer."
 							/>
 							<Subheading
-								classes="text-neutrals100 leading-[25.5px] bigScreen:text-[2rem] bigScreen:leading-[1.3] bigScreen:px-[12rem] hidden md:block"
+								classes="text-neutrals100 leading-[28.5px] md:text-[1.25rem] md:w-[85%] iPadAir:w-[70%] md:mx-auto bigScreen:text-[2rem] bigScreen:leading-[1.3] bigScreen:px-[12rem] hidden md:block"
 								content="Have unrestricted access to as many talents as you want, with never-ending conversations."
 							/>
 						</div>
 						<div className="flex flex-col md:flex-row justify-center md:gap-6 md:w-full">
 							<Button
 								label="Download Now"
-								className="text-white py-1 fold:py-2 s22:py-3 w-[72%] fold:w-full border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] md:w-[22.5%] lg:w-[35%] xl:w-[25%] bigScreen:w-[15%] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
+								className="text-white py-1 fold:py-2 s22:py-3 w-[72%] fold:w-full border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] md:w-[22.5%] lg:w-[25%] xl:w-[25%] bigScreen:w-[15%] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
 							/>
 							<Button
 								label="Learn more"
