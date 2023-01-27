@@ -49,14 +49,14 @@ export default function Home() {
 				/>
 			</Head>
 			<main className="snap-y scroll-pt-[2rem]" onScroll={scrollNav}>
-				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[82.5vh] s22:h-[71.5vh] i11Pro:h-[72vh] i13:h-[65.5vh] XR:h-[67.5vh] i14Max:h-[64vh] md:h-screen relative">
+				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[84.5vh] s22:h-[82.5vh] i11Pro:h-[82vh] i13:h-[82.5vh] XR:h-[75vh] i14Max:h-[76vh] md:h-screen relative">
 					<div className="h-full pt-[4.2rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-2 fold:px-4 md:justify-center">
 						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 md:w-[60%] lg:w-[70%] xl:w-[55%]">
 							<Heading
 								firstContent={"Connect with"}
 								endContent={"from everywhere across the globe"}
 								coloredContent={"creators"}
-								classes="font-bold text-white text-[0.875rem] fold:text-[1.4rem] s22:text-[1.8rem] i11Pro:text-[2rem] XR:text-[2.2rem] i14Max:text-[2.3rem] leading-[1.2] md:hidden"
+								classes="font-bold text-white text-[0.875rem] fold:text-[1.4rem] s22:text-[2rem] XR:text-[2.2rem] i14Max:text-[2.3rem] leading-[1.2] md:hidden"
 							/>
 							<Heading
 								firstColoredContent={"Discover"}
@@ -75,7 +75,7 @@ export default function Home() {
 						</div>
 						<Button
 							label="Download Now"
-							className="text-white py-1 fold:py-2 s22:py-3 w-[72%] fold:w-full border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[0.9rem] i11Pro:text-base md:w-1/2 lg:w-[35%] xl:w-[25%] bigScreen:w-[15%] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
+							className="text-white py-1 fold:py-2 s22:py-3 w-[72%] fold:w-full border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] md:w-1/2 lg:w-[35%] xl:w-[25%] bigScreen:w-[15%] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
 						/>
 					</div>
 					{!whiteNav && (
@@ -99,7 +99,7 @@ export default function Home() {
 							className="lg:flex-row lg:items-center gap-2 fold:gap-4"
 							src={DocumentIcon}
 							imgClassName="bg-white"
-							textClassName="font-bold text-[0.75rem] i11Pro:text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
+							textClassName="font-bold text-[0.75rem] fold:text-xl i11Pro:text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
 							alt="An icon representing downloads"
 							text="500+ Downloads"
 						/>
@@ -107,7 +107,7 @@ export default function Home() {
 							className="lg:flex-row lg:items-center gap-2 fold:gap-4"
 							src={User}
 							imgClassName="bg-white"
-							textClassName="font-bold text-[0.75rem] i11Pro:text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
+							textClassName="font-bold text-[0.75rem] fold:text-xl i11Pro:text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
 							alt="An icon representing downloads"
 							text="403+ Active Users"
 						/>
@@ -115,13 +115,13 @@ export default function Home() {
 							className="lg:flex-row lg:items-center gap-2 fold:gap-4"
 							src={Stats}
 							imgClassName="bg-white"
-							textClassName="font-bold  text-[0.75rem] i11Pro:text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
+							textClassName="font-bold  text-[0.75rem] fold:text-xl i11Pro:text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
 							alt="An icon representing downloads"
 							text="8590+ Usage Statistics"
 						/>
 					</div>
 				</section>
-				<section className="p-4 i13:p-[2.5rem] pb-4 text-center md:py-[5rem] lg:px-[3.5rem] xl:px-[4rem] bigScreen:px-[6rem]">
+				<section className="p-4 i13:p-[2.5rem] i13:pb-4 text-center md:py-[5rem] lg:px-[3.5rem] xl:px-[4rem] bigScreen:px-[6rem]">
 					<Subheading
 						classes="text-neutrals500 font-bold text-[0.75rem] s22:text-[1.25rem] mb-[1.5rem] md:hidden"
 						content="Discover Hidden Talent Around the World Using Noted"

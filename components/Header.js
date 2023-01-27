@@ -34,7 +34,11 @@ const Header = () => {
 		setMenuOpen(!menuOpen);
 	};
 
-	const closeMenu = () => {
+	const closeMenu = (e) => {
+		if (e.target.innerText === "About") {
+			router.push("/", "/#about");
+			setScrollToAbout(true);
+		}
 		setMenuOpen(false);
 	};
 
@@ -43,48 +47,58 @@ const Header = () => {
 			className={`${isWhite ? "bg-white" : "md:bg-header"} fixed top-0 left-0 right-0 z-10 transition duration-50`}
 		>
 			<div className="mobile-nav relative md:hidden">
-				<div className="flex justify-between items-center py-[0.5rem] fold:py-[0.875rem] px-[0.8rem]  fold:px-[1rem]">
+				<div className="flex justify-between items-center py-[0.5rem]px-[0.8rem] fold:p-[1rem]">
 					<Link href="/">
-						<Image src={Logo} alt="Website Logo" className="w-[42px] fold:w-auto" />
+						<Image src={Logo} alt="Website Logo" className="w-[42px] fold:w-[76px]" />
 					</Link>
 					<Image
-						src={router.pathname === "/" ? whiteNav ? MenuBlack : Menu : MenuBlack}
+						src={router.pathname === "/" ? (whiteNav ? MenuBlack : Menu) : MenuBlack}
 						alt="Menu icon to toggle navigation menu"
 						onClick={toggleMenu}
 						className="w-[20px] fold:w-auto"
 					/>
 				</div>
 				<nav
-					className={`flex flex-col gap-4 fold:gap-6 items-center absolute top-0 left-[50%] -translate-x-[50%] w-full py-[0.7rem] fold:py-[2rem] transition duration-700 bg-white ${
+					className={`flex flex-col gap-4 fold:gap-6 items-center absolute top-0 left-[50%] -translate-x-[50%] w-full py-[0.7rem] fold:py-[1.4rem] transition duration-700 bg-white ${
 						menuOpen ? "translate-y-0" : "-translate-y-[150%]"
 					}`}
 				>
 					<div className="flex justify-end w-full pr-[1rem]">
-						<Image src={Close} alt="Icon to close navigation menu" className="w-[20px] fold:w-auto" onClick={toggleMenu} />
+						<Image
+							src={Close}
+							alt="Icon to close navigation menu"
+							className="w-[20px] fold:w-[24px]"
+							onClick={toggleMenu}
+						/>
 					</div>
 					<ul className="flex flex-col items-center gap-[10px] fold:gap-6">
 						<li className="">
 							<Link
 								href="/"
-								className={`font-medium text-[0.875rem] ${router.pathname === "/" ? "text-neutrals500" : "text-neutrals300"}`}
+								className={`font-medium text-[0.875rem] fold:text-base ${
+									router.pathname === "/" ? "text-neutrals500" : "text-neutrals300"
+								}`}
 								onClick={closeMenu}
 							>
 								Home
 							</Link>
 						</li>
 						<li className="">
-							<Link
-								href="/#about"
-								className={`font-medium text-[0.875rem] ${router.pathname === "/#about" ? "text-neutrals500" : "text-neutrals300"}`}
+							<p
+								className={`font-medium text-[0.875rem] fold:text-base ${
+									router.pathname === "/#about" ? "text-neutrals500" : "text-neutrals300"
+								}`}
 								onClick={closeMenu}
 							>
 								About
-							</Link>
+							</p>
 						</li>
 						<li className="">
 							<Link
 								href="/contact"
-								className={`font-medium text-[0.875rem] ${router.pathname === "/contact" ? "text-neutrals500" : "text-neutrals300"}`}
+								className={`font-medium text-[0.875rem] fold:text-base ${
+									router.pathname === "/contact" ? "text-neutrals500" : "text-neutrals300"
+								}`}
 								onClick={closeMenu}
 							>
 								Contact
@@ -93,7 +107,7 @@ const Header = () => {
 					</ul>
 					<Button
 						label="Learn more"
-						className="text-brandPrimary500 border-[1px] border-brandPrimary400 py-[0.3rem] fold:py-[0.6875rem] text-[0.875rem] px-6 rounded font-medium"
+						className="text-brandPrimary500 border-[1px] border-brandPrimary400 py-[0.3rem] fold:py-[0.6875rem] text-[0.875rem] fold:text-base px-6 rounded font-medium"
 					/>
 				</nav>
 			</div>
@@ -110,6 +124,8 @@ const Header = () => {
 						{Navlinks.map((link) => {
 							return (
 								<li
+									role="link"
+									aria-label={link.name}
 									onClick={() => {
 										if (link.path === "/contact" || link.path === "/") {
 											link.path === "/contact" && setIsWhite(true);

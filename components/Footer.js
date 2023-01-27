@@ -13,7 +13,7 @@ const Footer = () => {
 		<footer className="py-6 px-4 bg-brandPrimary900 mt-[3rem] fold:mt-[5.5rem] md:pt-[5.5rem]">
 			<div className="flex flex-col flex-wrap gap-[1.7rem] fold:gap-[2.5rem] text-center text-white md:flex-row md:justify-between md:text-left md:w-[80%] md:mx-auto md:gap-y-[4rem]">
 				<div className="flex flex-col md:w-[28%] gap-[0.625rem] fold:gap-4">
-					<Image src={Logo} alt="Website logo in the Footer" className="mx-auto md:m-0 w-[57px] fold:w-auto" />
+					<Image src={Logo} alt="Website logo in the Footer" className="mx-auto md:m-0 w-[57px] fold:w-[76px]" />
 					<p className="font-semibold text-[0.65rem] fold:text-[0.875rem] s22:text-base px-2 fold:px-4 md:p-0 md:font-normal">
 						Discover hidden talents around the world using Noted
 					</p>
