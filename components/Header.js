@@ -105,10 +105,10 @@ const Header = () => {
 							</Link>
 						</li>
 					</ul>
-					<Button
+					{/* <Button
 						label="Learn more"
 						className="text-brandPrimary500 border-[1px] border-brandPrimary400 py-[0.3rem] fold:py-[0.6875rem] text-[0.875rem] fold:text-base px-6 rounded font-medium"
-					/>
+					/> */}
 				</nav>
 			</div>
 			<div
@@ -144,7 +144,7 @@ const Header = () => {
 												: "text-neutrals50"
 											: isWhite
 											? "text-neutrals200"
-											: "text-neutrals400"
+											: "text-neutrals300"
 									}   transition duration-300 ease-in-out`}
 								>
 									{link.name}
@@ -153,10 +153,10 @@ const Header = () => {
 						})}
 					</ul>
 				</nav>
-				<Button
+				{/* <Button
 					label="Learn more"
 					className="text-brandPrimary500 border-[1px] border-brandPrimary400 py-[0.6875rem] px-6 rounded font-medium hover:bg-brandPrimary400 hover:text-white transition duration-300 ease-in-out]"
-				/>
+				/> */}
 			</div>
 		</header>
 	);
