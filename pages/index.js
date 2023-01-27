@@ -49,14 +49,14 @@ export default function Home() {
 				/>
 			</Head>
 			<main className="snap-y scroll-pt-[2rem]" onScroll={scrollNav}>
-				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-[70vh] md:h-screen relative">
-					<div className="h-full bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-4 md:justify-center">
-						<div className="flex flex-col gap-4 text-center mb-8 md:mb-10 md:w-[60%] lg:w-[70%] xl:w-[55%]">
+				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[82.5vh] s22:h-[71.5vh] i11Pro:h-[72vh] i13:h-[65.5vh] XR:h-[67.5vh] i14Max:h-[64vh] md:h-screen relative">
+					<div className="h-full pt-[4.8rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-2 fold:px-4 md:justify-center">
+						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 md:w-[60%] lg:w-[70%] xl:w-[55%]">
 							<Heading
 								firstContent={"Connect with"}
 								endContent={"from everywhere across the globe"}
 								coloredContent={"creators"}
-								classes="font-bold text-white text-[2rem] leading-[1.2] md:hidden"
+								classes="font-bold text-white text-[0.875rem] fold:text-[1.4rem] s22:text-[1.8rem] i11Pro:text-[2rem] XR:text-[2.2rem] i14Max:text-[2.3rem] leading-[1.2] md:hidden"
 							/>
 							<Heading
 								firstColoredContent={"Discover"}
@@ -64,7 +64,7 @@ export default function Home() {
 								classes="font-bold text-white text-[2.5rem] bigScreen:text-[3.5rem] leading-[1.2] hidden md:block"
 							/>
 							<Subheading
-								classes="text-neutrals200 leading-[25.5px] md:hidden"
+								classes="text-neutrals200 s22:leading-[23.5px] i11Pro:leading-[25px] XR:leading-[25.5px] fold:text-[0.7rem] s22:text-[0.9rem] i11Pro:text-[0.9rem] i13:text-[1rem] i14Max:text-[1.1rem] hidden fold:block md:hidden"
 								content="Lorem ipsum dolor sit amet consectetur. Rhoncus pretium in sed blandit habitant nulla viverra. Sed et
 								fermentum mattis volutpat viverra augue faucibus integer."
 							/>
@@ -75,7 +75,7 @@ export default function Home() {
 						</div>
 						<Button
 							label="Download Now"
-							className="text-white py-3 w-full border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded md:w-1/2 lg:w-[35%] xl:w-[25%] bigScreen:w-[15%] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
+							className="text-white py-1 fold:py-2 s22:py-3 w-[72%] fold:w-full border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[0.9rem] i11Pro:text-base md:w-1/2 lg:w-[35%] xl:w-[25%] bigScreen:w-[15%] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
 						/>
 					</div>
 					{!whiteNav && (
@@ -94,36 +94,36 @@ export default function Home() {
 					)}
 				</section>
 				<section className="bg-brandPrimary400 p-4 md:p-[2.5rem] lg:p-[3rem] xl:p-[5rem]">
-					<div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6  bigScreen:w-[90%] bigScreen:mx-auto">
+					<div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 fold:gap-6  bigScreen:w-[90%] bigScreen:mx-auto">
 						<IconText
-							className="lg:flex-row lg:items-center gap-4"
+							className="lg:flex-row lg:items-center gap-2 fold:gap-4"
 							src={DocumentIcon}
 							imgClassName="bg-white"
-							textClassName="font-bold text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
+							textClassName="font-bold text-[0.75rem] i11Pro:text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
 							alt="An icon representing downloads"
 							text="500+ Downloads"
 						/>
 						<IconText
-							className="lg:flex-row lg:items-center gap-4"
+							className="lg:flex-row lg:items-center gap-2 fold:gap-4"
 							src={User}
 							imgClassName="bg-white"
-							textClassName="font-bold text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
+							textClassName="font-bold text-[0.75rem] i11Pro:text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
 							alt="An icon representing downloads"
 							text="403+ Active Users"
 						/>
 						<IconText
-							className="lg:flex-row lg:items-center gap-4"
+							className="lg:flex-row lg:items-center gap-2 fold:gap-4"
 							src={Stats}
 							imgClassName="bg-white"
-							textClassName="font-bold text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
+							textClassName="font-bold  text-[0.75rem] i11Pro:text-[1.25rem] text-white xl:text-[2rem] bigScreen:text-[2.2rem]"
 							alt="An icon representing downloads"
 							text="8590+ Usage Statistics"
 						/>
 					</div>
 				</section>
-				<section className="p-[2.5rem] pb-4 text-center md:py-[5rem] lg:px-[3.5rem] xl:px-[4rem] bigScreen:px-[6rem]">
+				<section className="p-4 i13:p-[2.5rem] pb-4 text-center md:py-[5rem] lg:px-[3.5rem] xl:px-[4rem] bigScreen:px-[6rem]">
 					<Subheading
-						classes="text-neutrals500 font-bold text-[1.25rem] mb-[1.5rem] md:hidden"
+						classes="text-neutrals500 font-bold text-[0.75rem] s22:text-[1.25rem] mb-[1.5rem] md:hidden"
 						content="Discover Hidden Talent Around the World Using Noted"
 					/>
 					<Subheading
@@ -135,16 +135,16 @@ export default function Home() {
 							src={UserSearch}
 							alt="Icon explaining how users can search for other users"
 							text="Find any artists that your project could be missing"
-							textClassName="font-semibold md:font-bold xl:px-4 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
-							className="p-6 gap-6 bg-white shadow-card rounded transition duration-500 hover:scale-105"
+							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 xl:px-4 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
+							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 bg-white shadow-card rounded transition duration-500 hover:scale-105"
 							imgClassName="bg-brandPrimary50"
 						/>
 						<IconText
 							src={People}
 							alt="Icon explaining users can collaborate with other users"
 							text="Collaborate and discuss potential ideas and workings"
-							textClassName="font-semibold md:font-bold xl:px-2 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
-							className="p-6 gap-6 bg-white shadow-card rounded transition duration-500 hover:scale-105"
+							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 i13:px-0 i14Max:px-3 xl:px-2 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
+							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 bg-white shadow-card rounded transition duration-500 hover:scale-105"
 							imgClassName="bg-brandPrimary50"
 						/>
 
@@ -152,8 +152,8 @@ export default function Home() {
 							src={Plus}
 							alt="Icon explaining users can immediately start working with other users"
 							text="Create your next body of work with your newly found artists"
-							textClassName="font-semibold md:font-bold md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
-							className="p-6 gap-6 bg-white shadow-card rounded transition duration-500 hover:scale-105"
+							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
+							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 bg-white shadow-card rounded transition duration-500 hover:scale-105"
 							imgClassName="bg-brandPrimary50"
 						/>
 
@@ -161,28 +161,28 @@ export default function Home() {
 							src={Repeat}
 							alt="Icon explaining users can repeat the process whenever there's a project"
 							text="Repeat the process whenever there's a project"
-							textClassName="font-semibold md:font-bold xl:px-4 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
-							className="p-6 gap-6 bg-white shadow-card rounded lg:col-start-2 xl:col-auto transition duration-500 hover:scale-105"
+							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 i14Max:px-5 xl:px-4 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.5rem] bigScreen:text-[2rem]"
+							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 bg-white shadow-card rounded lg:col-start-2 xl:col-auto transition duration-500 hover:scale-105"
 							imgClassName="bg-brandPrimary50"
 						/>
 					</div>
 				</section>
 				<article
 					ref={aboutRef}
-					className=" bg-wavyBgMobile md:bg-wavyBgDesktop bg-no-repeat bg-center bg-cover px-[1.875rem] py-[5.5rem] md:py-[7rem] md:px-[3rem]"
+					className="mt-4 fold:mt-0 bg-brandPrimary50 fold:bg-transparent fold:bg-wavyBgMobile md:bg-wavyBgDesktop bg-no-repeat bg-center bg-cover px-[1rem] fold:px-[1.875rem] py-[3rem] fold:py-[5.5rem] md:py-[7rem] md:px-[3rem]"
 				>
 					<Heading
-						classes="text-neutrals500 text-center font-bold md:text-[2rem] lg:text-[2.5rem] bigScreen:text-[3.5rem]"
+						classes="text-neutrals500 text-center font-bold fold:text-[1.25rem] md:text-[2rem] lg:text-[2.5rem] bigScreen:text-[3.5rem]"
 						coloredContent="Noted"
 						firstContent="About"
 					/>
 					<div className="md:flex flex-row justify-between gap-[4rem] mt-4 lg:w-[87%] lg:flex-row lg:mx-auto lg:mt-[2.4rem] lg:mr-[5rem] bigScreen:w-[70%] bigScreen:mx-auto">
 						<Subheading
-							classes="text-neutrals200 font-semibold md:hidden"
+							classes="text-neutrals200 text-[0.6rem] fold:text-base text-center font-semibold md:hidden"
 							content={`Noted is a tool designed for connecting creators on both a local and global scale. Whether you are looking for a videographer to shoot your next video, a vocalist for your next album or new producer for a different sound, Noted will help you find the talent your project may be missing. To simply put it, Noted is a place for creators everywhere to search, collaborate, and create.`}
 						/>
 						<Subheading
-							classes="text-neutrals200 font-semibold md:pt-[2rem] md:text-[1rem] md:text-neutrals500 md:text-justify md:w-[58%] lg:text-[1.25rem] lg:w-[57%] lg:pt-[3rem] lg:text-left xl:w-[60%] xl:text-[1.5rem] bigScreen:text-[1.5rem] bigScreen:w-[65%]"
+							classes="hidden md:block text-neutrals200 font-semibold md:pt-[2rem] md:text-[1rem] md:text-neutrals500 md:text-justify md:w-[58%] lg:text-[1.25rem] lg:w-[57%] lg:pt-[3rem] lg:text-left xl:w-[60%] xl:text-[1.5rem] bigScreen:text-[1.5rem] bigScreen:w-[65%]"
 							content={`Are you looking for an easy way to discover, listen to, and share music? Look no further than our music application! Our app allows you to stream the latest hits, explore new genres, and create personalized playlists. With over 50 million tracks to choose from, you’ll never run out of music to enjoy. Plus, our app is simple and intuitive to use, so you can find your favorite songs quickly and without hassle. Download now and start listening to music that you love!`}
 						/>
 						<Image
