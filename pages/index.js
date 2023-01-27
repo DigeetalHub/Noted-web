@@ -50,7 +50,7 @@ export default function Home() {
 			</Head>
 			<main className="snap-y scroll-pt-[2rem]" onScroll={scrollNav}>
 				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[82.5vh] s22:h-[71.5vh] i11Pro:h-[72vh] i13:h-[65.5vh] XR:h-[67.5vh] i14Max:h-[64vh] md:h-screen relative">
-					<div className="h-full pt-[4.8rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-2 fold:px-4 md:justify-center">
+					<div className="h-full pt-[4.2rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-2 fold:px-4 md:justify-center">
 						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 md:w-[60%] lg:w-[70%] xl:w-[55%]">
 							<Heading
 								firstContent={"Connect with"}
@@ -169,7 +169,7 @@ export default function Home() {
 				</section>
 				<article
 					ref={aboutRef}
-					className="mt-4 fold:mt-0 bg-brandPrimary50 fold:bg-transparent fold:bg-wavyBgMobile md:bg-wavyBgDesktop bg-no-repeat bg-center bg-cover px-[1rem] fold:px-[1.875rem] py-[3rem] fold:py-[5.5rem] md:py-[7rem] md:px-[3rem]"
+					className="mt-4 fold:mt-0 bg-brandPrimary50 fold:bg-transparent fold:bg-wavyBgMobile md:bg-wavyBgDesktop bg-no-repeat bg-center bg-cover px-[1rem] fold:px-[1.875rem] py-[2.5rem] fold:py-[5.5rem] md:py-[7rem] md:px-[3rem]"
 				>
 					<Heading
 						classes="text-neutrals500 text-center font-bold fold:text-[1.25rem] md:text-[2rem] lg:text-[2.5rem] bigScreen:text-[3.5rem]"
