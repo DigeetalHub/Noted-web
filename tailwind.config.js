@@ -10,6 +10,7 @@ module.exports = {
 				i13: "390px",
 				XR: "414px",
 				i14Max: "428px",
+				dualFold: "717px",
 				iPadAir: "820px",
 				fold2Full: "884px",
 				laptops: "1440px",
@@ -47,7 +48,7 @@ module.exports = {
 			},
 			boxShadow: {
 				card: "0px 24px 32px rgba(0, 0, 0, 0.12)",
-        cardHover: "0px 32px 48px rgba(0, 0, 0, 0.15)"
+				cardHover: "0px 32px 48px rgba(0, 0, 0, 0.15)",
 			},
 		},
 		plugins: [],

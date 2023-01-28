@@ -49,9 +49,9 @@ export default function Home() {
 				/>
 			</Head>
 			<main className="snap-y scroll-pt-[2rem]" onScroll={scrollNav}>
-				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[84.5vh] s22:h-[82.5vh] i11Pro:h-[82vh] i13:h-[82.5vh] XR:h-[75vh] i14Max:h-[76vh] md:h-screen relative">
+				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[84.5vh] s22:h-[82.5vh] i11Pro:h-[82vh] i13:h-[82.5vh] XR:h-[75vh] i14Max:h-[76vh] dualFold:h-[100vh] md:h-screen relative">
 					<div className="h-full pt-[2.9rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-2 fold:px-4 md:justify-center">
-						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 md:w-[79%] lg:w-[70%] xl:w-[55%]">
+						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 dualFold:w-[60%] md:w-[79%] lg:w-[70%] xl:w-[55%]">
 							<Heading
 								firstContent={"Connect with"}
 								endContent={"from everywhere across the globe"}
@@ -73,14 +73,14 @@ export default function Home() {
 								content="Have unrestricted access to as many talents as you want, with never-ending conversations."
 							/>
 						</div>
-						<div className="flex flex-col md:flex-row justify-center md:gap-6 md:w-full">
+						<div className="flex flex-col md:flex-row justify-center gap-3 md:gap-6 fold:w-full md:w-full">
 							<Button
 								label="Download Now"
-								className="text-white py-1 fold:py-2 s22:py-3 w-[72%] fold:w-full border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] md:w-[22.5%] lg:w-[25%] xl:w-[25%] bigScreen:w-[15%] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
+								className="text-white py-[8px] fold:py-2 s22:py-3 mx-auto w-[92%] fold:w-[80%] border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] dualFold:w-[50%] md:w-[22.5%] lg:w-[25%] xl:w-[25%] bigScreen:w-[15%] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
 							/>
 							<Button
 								label="Learn more"
-								className="text-brandPrimary500 border-[1px] border-brandPrimary400 py-[0.6875rem] w-full md:w-[22%] px-6 rounded font-medium lg:hover:bg-brandPrimary400 lg:hover:text-white transition duration-300 ease-in-out]"
+								className="text-brandPrimary500 border-[1px] border-brandPrimary400 text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] py-2 fold:py-2 s22:py-[0.6875rem] w-full mx-auto fold:w-[80%] dualFold:w-[50%] md:w-[22%] px-6 rounded font-medium lg:hover:bg-brandPrimary400 lg:hover:text-white transition duration-300 ease-in-out]"
 							/>
 						</div>
 					</div>
@@ -99,8 +99,8 @@ export default function Home() {
 						</div>
 					)}
 				</section>
-				<section className="bg-brandPrimary400 p-4 md:p-[2.5rem] lg:p-[3rem] xl:p-[5rem]">
-					<div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 fold:gap-6  bigScreen:w-[90%] bigScreen:mx-auto">
+				<section className="bg-brandPrimary400 p-4 dualFold:p-[2.5rem] lg:p-[3rem] xl:p-[5rem]">
+					<div className="flex flex-col dualFold:flex-row justify-center dualFold:justify-between items-center gap-4 fold:gap-6  bigScreen:w-[90%] bigScreen:mx-auto">
 						<IconText
 							className="lg:flex-row lg:items-center gap-2 fold:gap-4"
 							src={DocumentIcon}
@@ -139,7 +139,7 @@ export default function Home() {
 						classes="text-neutrals500 font-bold text-[2rem] lg:text-[2.5rem] mb-[1.5rem] hidden md:block bigScreen:text-[3.5rem]"
 						content="How it works!"
 					/>
-					<div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 bigScreen:w-[92%] bigScreen:mx-auto">
+					<div className="grid dualFold:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 bigScreen:w-[92%] bigScreen:mx-auto">
 						<IconText
 							src={UserSearch}
 							alt="Icon explaining how users can search for other users"
@@ -185,17 +185,17 @@ export default function Home() {
 						coloredContent="Noted"
 						firstContent="About"
 					/>
-					<div className="md:flex flex-row justify-between gap-[4rem] mt-4 lg:w-[87%] lg:flex-row lg:mx-auto lg:mt-[2.4rem] lg:mr-[5rem] bigScreen:w-[70%] bigScreen:mx-auto">
+					<div className="dualFold:flex flex-row justify-between gap-[4rem] mt-4 lg:w-[87%] lg:flex-row lg:mx-auto lg:mt-[2.4rem] lg:mr-[5rem] bigScreen:w-[70%] bigScreen:mx-auto">
 						<Subheading
-							classes="text-neutrals200 text-[0.6rem] fold:text-base text-center font-semibold md:hidden"
+							classes="text-neutrals200 text-[0.6rem] fold:text-base text-center font-semibold dualFold:hidden"
 							content={`Noted is a tool designed for connecting creators on both a local and global scale. Whether you are looking for a videographer to shoot your next video, a vocalist for your next album or new producer for a different sound, Noted will help you find the talent your project may be missing. To simply put it, Noted is a place for creators everywhere to search, collaborate, and create.`}
 						/>
 						<Subheading
-							classes="hidden md:block text-neutrals200 font-semibold md:pt-[2rem] md:text-[1.25rem] md:leading-[1.25] md:text-neutrals500 md:w-[60%] lg:text-[1.25rem] lg:w-[57%] lg:pt-[3rem] lg:text-left xl:w-[60%] xl:text-[1.5rem] bigScreen:text-[1.5rem] bigScreen:w-[65%]"
+							classes="hidden dualFold:block text-neutrals200 font-semibold md:pt-[2rem] md:text-[1.25rem] md:leading-[1.25] md:text-neutrals500 md:w-[60%] lg:text-[1.25rem] lg:w-[57%] lg:pt-[3rem] lg:text-left xl:w-[60%] xl:text-[1.5rem] bigScreen:text-[1.5rem] bigScreen:w-[65%]"
 							content={`Are you looking for an easy way to discover, listen to, and share music? Look no further than our music application! Our app allows you to stream the latest hits, explore new genres, and create personalized playlists. With over 50 million tracks to choose from, you’ll never run out of music to enjoy. Plus, our app is simple and intuitive to use, so you can find your favorite songs quickly and without hassle. Download now and start listening to music that you love!`}
 						/>
 						<Image
-							className="hidden md:block md:w-[30%] xl:w-auto"
+							className="hidden dualFold:block dualFold:w-[30%] xl:w-auto"
 							src={Snapshot}
 							alt="snapshot of the interface of the app"
 						/>

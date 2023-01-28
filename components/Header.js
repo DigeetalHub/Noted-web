@@ -44,9 +44,9 @@ const Header = () => {
 
 	return (
 		<header
-			className={`${isWhite ? "bg-white" : "md:bg-header"} fixed top-0 left-0 right-0 z-10 transition duration-50`}
+			className={`${isWhite ? "bg-white" : "dualFold:bg-header"} fixed top-0 left-0 right-0 z-10 transition duration-50`}
 		>
-			<div className="mobile-nav relative md:hidden">
+			<div className="mobile-nav relative dualFold:hidden">
 				<div className="flex justify-between items-center py-[0.5rem] px-[0.8rem] fold:p-[1rem]">
 					<Link href="/">
 						<Image src={Logo} alt="Website Logo" className="w-[42px] fold:w-[76px]" />
@@ -112,9 +112,9 @@ const Header = () => {
 				</nav>
 			</div>
 			<div
-				className={`desktop-nav hidden md:flex items-center justify-between gap-10 ${
+				className={`desktop-nav hidden dualFold:flex items-center justify-between gap-10 ${
 					!isWhite ? "backdrop-blur-header" : ""
-				} md:py-[0.75rem] md:px-[2rem] lg:px-[3rem] xl:px-[4rem]`}
+				} dualFold:py-[0.75rem] dualFold:px-[2rem] lg:px-[3rem] xl:px-[4rem]`}
 			>
 				<Link href="/" className="">
 					<Image src={Logo} alt="Website Logo" />
