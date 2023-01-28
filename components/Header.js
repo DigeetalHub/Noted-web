@@ -44,7 +44,9 @@ const Header = () => {
 
 	return (
 		<header
-			className={`${isWhite ? "bg-white" : "dualFold:bg-header"} fixed top-0 left-0 right-0 z-10 transition duration-50`}
+			className={`${
+				isWhite ? "bg-white" : "dualFold:bg-header"
+			} fixed top-0 left-0 right-0 z-10 transition duration-50`}
 		>
 			<div className="mobile-nav relative dualFold:hidden">
 				<div className="flex justify-between items-center py-[0.5rem] px-[0.8rem] fold:p-[1rem]">
@@ -59,7 +61,7 @@ const Header = () => {
 					/>
 				</div>
 				<nav
-					className={`flex flex-col gap-2 fold:gap-6 items-center absolute top-0 left-[50%] -translate-x-[50%] w-full py-[0.7rem]  fold:py-[1.4rem] transition duration-700 bg-white ${
+					className={`flex flex-col gap-2 fold:gap-6 fold:h-[43vh] items-center absolute top-0 left-[50%] -translate-x-[50%] w-full py-[0.7rem] fold:py-[1.4rem] transition duration-700 bg-white ${
 						menuOpen ? "translate-y-0" : "-translate-y-[150%]"
 					}`}
 				>
@@ -75,7 +77,7 @@ const Header = () => {
 						<li className="">
 							<Link
 								href="/"
-								className={`font-medium text-[0.875rem] fold:text-base ${
+								className={`font-semibold text-[0.875rem] fold:text-base ${
 									router.pathname === "/" ? "text-neutrals500" : "text-neutrals300"
 								}`}
 								onClick={closeMenu}
@@ -85,7 +87,7 @@ const Header = () => {
 						</li>
 						<li className="">
 							<p
-								className={`font-medium text-[0.875rem] fold:text-base ${
+								className={`font-semibold text-[0.875rem] fold:text-base ${
 									router.pathname === "/#about" ? "text-neutrals500" : "text-neutrals300"
 								}`}
 								onClick={closeMenu}
@@ -96,7 +98,7 @@ const Header = () => {
 						<li className="">
 							<Link
 								href="/contact"
-								className={`font-medium text-[0.875rem] fold:text-base ${
+								className={`font-semibold text-[0.875rem] fold:text-base ${
 									router.pathname === "/contact" ? "text-neutrals500" : "text-neutrals300"
 								}`}
 								onClick={closeMenu}
@@ -105,19 +107,19 @@ const Header = () => {
 							</Link>
 						</li>
 					</ul>
-					{/* <Button
+					<Button
 						label="Learn more"
 						className="text-brandPrimary500 border-[1px] border-brandPrimary400 py-[0.3rem] fold:py-[0.6875rem] text-[0.875rem] fold:text-base px-6 rounded font-medium"
-					/> */}
+					/>
 				</nav>
 			</div>
 			<div
 				className={`desktop-nav hidden dualFold:flex items-center justify-between gap-10 ${
 					!isWhite ? "backdrop-blur-header" : ""
-				} dualFold:py-[0.75rem] dualFold:px-[2rem] lg:px-[3rem] xl:px-[4rem]`}
+				} dualFold:py-[0.75rem] dualFold:px-[2rem] lg:px-[3rem] xl:px-[4rem] bigScreen:py-[1rem]`}
 			>
 				<Link href="/" className="">
-					<Image src={Logo} alt="Website Logo" />
+					<Image src={Logo} alt="Website Logo" className="bigScreen:w-[90px]" />
 				</Link>
 				<nav className={`flex items-center`}>
 					<ul className="flex items-center gap-6 h-[50px]">
@@ -137,7 +139,7 @@ const Header = () => {
 										}
 									}}
 									key={link.name}
-									className={`cursor-pointer h-full font-medium flex items-center ${
+									className={`cursor-pointer h-full font-semibold flex items-center bigScreen:text-xl ${
 										router.asPath === link.path
 											? isWhite
 												? "text-neutrals500"
