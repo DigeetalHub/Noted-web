@@ -51,7 +51,7 @@ export default function Home() {
 			<main className="snap-y scroll-pt-[2rem]" onScroll={scrollNav}>
 				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[84.5vh] s22:h-[82.5vh] i11Pro:h-[82vh] i13:h-[82.5vh] XR:h-[75vh] i14Max:h-[76vh] dualFold:h-[100vh] md:h-screen relative">
 					<div className="h-full pt-[2.9rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-2 fold:px-4 md:justify-center">
-						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 dualFold:w-[60%] md:w-[79%] fold2Full:w-[82%] xl:w-[58%]">
+						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 dualFold:w-[60%] md:w-[79%] fold2Full:w-[82%] xl:w-[58%] laptops:w-[50%]">
 							<Heading
 								firstContent={"Connect with"}
 								endContent={"from everywhere across the globe"}
@@ -93,7 +93,7 @@ export default function Home() {
 									className="animate-bounce-slow motion-safe:animate-bounce-slower"
 								/>
 							</button>
-							<p className="text-center text-white/[0.4] font-bold text-base lg:text-xl bigScreen:text-[1.6rem]">
+							<p className="text-center text-white/[0.6] font-bold text-base lg:text-xl bigScreen:text-[1.6rem]">
 								Scroll for more info
 							</p>
 						</div>
@@ -105,7 +105,7 @@ export default function Home() {
 							className="lg:flex-row lg:items-center gap-2 fold:gap-4"
 							src={DocumentIcon}
 							imgClassName="bg-white"
-							textClassName="font-bold text-[0.75rem] fold:text-xl i11Pro:text-[1.25rem] text-white xl:text-[1.7rem] bigScreen:text-[2.2rem]"
+							textClassName="font-bold text-[0.75rem] fold:text-xl i11Pro:text-[1.25rem] text-white xl:text-[1.7rem] laptops:text-[2rem] bigScreen:text-[2.2rem]"
 							alt="An icon representing downloads"
 							text="500+ Downloads"
 							imgClass="md:w-[28px] lg:w-[32px]"
@@ -114,7 +114,7 @@ export default function Home() {
 							className="lg:flex-row lg:items-center gap-2 fold:gap-4"
 							src={User}
 							imgClassName="bg-white"
-							textClassName="font-bold text-[0.75rem] fold:text-xl i11Pro:text-[1.25rem] text-white xl:text-[1.7rem] bigScreen:text-[2.2rem]"
+							textClassName="font-bold text-[0.75rem] fold:text-xl i11Pro:text-[1.25rem] text-white xl:text-[1.7rem] laptops:text-[2rem] bigScreen:text-[2.2rem]"
 							alt="An icon representing downloads"
 							text="403+ Active Users"
 							imgClass="md:w-[28px] lg:w-[32px]"
@@ -123,7 +123,7 @@ export default function Home() {
 							className="lg:flex-row lg:items-center gap-2 fold:gap-4"
 							src={Stats}
 							imgClassName="bg-white"
-							textClassName="font-bold  text-[0.75rem] fold:text-xl i11Pro:text-[1.25rem] text-white xl:text-[1.7rem] bigScreen:text-[2.2rem]"
+							textClassName="font-bold  text-[0.75rem] fold:text-xl i11Pro:text-[1.25rem] text-white xl:text-[1.7rem] laptops:text-[2rem] bigScreen:text-[2.2rem]"
 							alt="An icon representing downloads"
 							text="8590+ Usage Statistics"
 							imgClass="md:w-[28px] lg:w-[32px]"
@@ -144,7 +144,7 @@ export default function Home() {
 							src={UserSearch}
 							alt="Icon explaining how users can search for other users"
 							text="Find any artists that your project could be missing"
-							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 xl:px-4 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] bigScreen:text-[2rem]"
+							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 xl:px-4 laptops:p-5 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem]"
 							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
 							imgClassName="bg-brandPrimary50"
 						/>
@@ -152,7 +152,7 @@ export default function Home() {
 							src={People}
 							alt="Icon explaining users can collaborate with other users"
 							text="Collaborate and discuss potential ideas and workings"
-							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 i13:px-0 i14Max:px-3 md:px-0 xl:px-2 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] bigScreen:text-[2rem]"
+							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 i13:px-0 i14Max:px-3 md:px-0 xl:px-2 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem]"
 							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
 							imgClassName="bg-brandPrimary50"
 						/>
@@ -161,7 +161,7 @@ export default function Home() {
 							src={Plus}
 							alt="Icon explaining users can immediately start working with other users"
 							text="Create your next body of work with your newly found artists"
-							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold md:text-[1.25rem] lg:text-[1.4rem] xl:px-1 xl:text-[1.25rem] bigScreen:text-[2rem]"
+							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold md:text-[1.25rem] lg:text-[1.4rem] xl:px-1 xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem]"
 							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
 							imgClassName="bg-brandPrimary50"
 						/>
@@ -170,7 +170,7 @@ export default function Home() {
 							src={Repeat}
 							alt="Icon explaining users can repeat the process whenever there's a project"
 							text="Repeat the process whenever there's a project"
-							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 i14Max:px-5 xl:px-0 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] bigScreen:text-[2rem]"
+							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 i14Max:px-5 xl:px-3 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem]"
 							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded lg:col-start-2 xl:col-auto transition duration-500 lg:hover:shadow-cardHover"
 							imgClassName="bg-brandPrimary50"
 						/>
@@ -185,13 +185,13 @@ export default function Home() {
 						coloredContent="Noted"
 						firstContent="About"
 					/>
-					<div className="dualFold:flex flex-row justify-between gap-[4rem] mt-4 lg:w-[87%] lg:flex-row lg:mx-auto lg:mt-[2.4rem] lg:mr-[5rem] bigScreen:w-[70%] bigScreen:mx-auto">
+					<div className="dualFold:flex flex-row justify-between gap-[4rem] mt-4 lg:flex-row lg:mx-auto lg:mt-[2.4rem] lg:mr-[5rem] lg:w-[87%] bigScreen:w-[70%] bigScreen:mx-auto">
 						<Subheading
 							classes="text-neutrals200 text-[0.6rem] fold:text-base text-center font-semibold dualFold:hidden"
 							content={`Noted is a tool designed for connecting creators on both a local and global scale. Whether you are looking for a videographer to shoot your next video, a vocalist for your next album or new producer for a different sound, Noted will help you find the talent your project may be missing. To simply put it, Noted is a place for creators everywhere to search, collaborate, and create.`}
 						/>
 						<Subheading
-							classes="hidden dualFold:block text-neutrals200 font-semibold md:pt-[2rem] md:text-[1.25rem] md:leading-[1.27] xl:leading-[1.36] md:text-neutrals500 md:w-[60%] lg:text-[1.25rem] lg:w-[57%] lg:pt-[3rem] lg:text-left xl:w-[56%] xl:text-[1.5rem] bigScreen:text-[1.5rem] bigScreen:w-[65%]"
+							classes="hidden dualFold:block text-neutrals200 font-semibold md:pt-[2rem] md:text-[1.25rem] md:leading-[1.27] xl:leading-[1.36] laptops:leading-[1.45] md:text-neutrals500 md:w-[60%] lg:text-[1.25rem] lg:w-[57%] lg:pt-[3rem] lg:text-left xl:w-[56%] laptops:w-[59%] xl:text-[1.5rem] bigScreen:text-[1.5rem] bigScreen:w-[65%]"
 							content={`Are you looking for an easy way to discover, listen to, and share music? Look no further than our music application! Our app allows you to stream the latest hits, explore new genres, and create personalized playlists. With over 50 million tracks to choose from, you’ll never run out of music to enjoy. Plus, our app is simple and intuitive to use, so you can find your favorite songs quickly and without hassle. Download now and start listening to music that you love!`}
 						/>
 						<Image
