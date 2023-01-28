@@ -8,14 +8,14 @@ import Link from "next/link";
 const Socials = () => {
 	return (
 		<nav className="flex gap-3 mx-auto md:m-0">
-			<Link href="" className="bg-brandPrimary500 border-[0.4px] border-brandPrimary200 p-[0.635rem] rounded ">
-				<Image src={Instagram} alt="Instagram icon" />
+			<Link href="" className="bg-brandPrimary500 border-[0.4px] border-brandPrimary200 flex items-center justify-center p-[0.635rem] rounded hover:bg-transparent transition duration-500">
+				<Image src={Instagram} alt="Instagram icon" className="w-[12px] fold:w-auto" />
 			</Link>
-			<Link href="" className="bg-brandPrimary500 border-[0.4px] border-brandPrimary200 p-[0.635rem] rounded ">
-				<Image src={Facebook} alt="Facebook icon" />
+			<Link href="" className="bg-brandPrimary500 border-[0.4px] border-brandPrimary200 flex items-center justify-center p-[0.635rem] fold:px-3 rounded hover:bg-transparent transition duration-500 ">
+				<Image src={Facebook} alt="Facebook icon" className="w-[8.5px] fold:w-auto" />
 			</Link>
-			<Link href="" className="bg-brandPrimary500 border-[0.4px] border-brandPrimary200 p-[0.635rem] rounded ">
-				<Image src={Twitter} alt="Twitter icon" />
+			<Link href="" className="bg-brandPrimary500 border-[0.4px] border-brandPrimary200 flex items-center justify-center p-[0.635rem] rounded hover:bg-transparent transition duration-500 ">
+				<Image src={Twitter} alt="Twitter icon" className="w-[12px] fold:w-auto" />
 			</Link>
 		</nav>
 	);

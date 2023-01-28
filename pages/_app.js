@@ -8,17 +8,17 @@ import { Fragment } from "react";
 const jost = Jost({ subsets: ["latin"] });
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <Fragment>
-      <ScrollProvider>
-        <Header />
-        <main className={`${jost.className}`}>
-          <Component {...pageProps} />
-        </main>
-        <Footer />
-      </ScrollProvider>
-    </Fragment>
-  );
+	return (
+		<Fragment>
+			<ScrollProvider>
+				<main className={`${jost.className}`}>
+					<Header />
+					<Component {...pageProps} />
+					<Footer />
+				</main>
+			</ScrollProvider>
+		</Fragment>
+	);
 }
 
 export default MyApp;
