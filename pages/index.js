@@ -145,7 +145,7 @@ export default function Home() {
 							alt="Icon explaining how users can search for other users"
 							text="Find any artists that your project could be missing"
 							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 xl:px-4 laptops:px-5 2xl:px-8 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem] bigScreen:px-0"
-							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
+							className="p-[0.8rem] fold:p-6 fold:py-[2.5rem] gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
 							imgClassName="bg-brandPrimary50"
 						/>
 						<IconText
@@ -153,7 +153,7 @@ export default function Home() {
 							alt="Icon explaining users can collaborate with other users"
 							text="Collaborate and discuss potential ideas and workings"
 							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 i13:px-0 i14Max:px-3 md:px-0 xl:px-2 2xl:px-8 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem] bigScreen:px-0"
-							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
+							className="p-[0.8rem] fold:p-6 fold:py-[2.5rem] gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
 							imgClassName="bg-brandPrimary50"
 						/>
 
@@ -162,7 +162,7 @@ export default function Home() {
 							alt="Icon explaining users can immediately start working with other users"
 							text="Create your next body of work with your newly found artists"
 							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold md:text-[1.25rem] lg:text-[1.4rem] xl:px-1 xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem] bigScreen:px-0"
-							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
+							className="p-[0.8rem] fold:p-6 fold:py-[2.5rem] gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
 							imgClassName="bg-brandPrimary50"
 						/>
 
@@ -171,7 +171,7 @@ export default function Home() {
 							alt="Icon explaining users can repeat the process whenever there's a project"
 							text="Repeat the process whenever there's a project"
 							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 i14Max:px-5 xl:px-3 2xl:px-8 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem] bigScreen:px-0"
-							className="p-[0.8rem] fold:p-6 gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded lg:col-start-2 xl:col-auto transition duration-500 lg:hover:shadow-cardHover"
+							className="p-[0.8rem] fold:p-6 fold:py-[2.5rem] gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded lg:col-start-2 xl:col-auto transition duration-500 lg:hover:shadow-cardHover"
 							imgClassName="bg-brandPrimary50"
 						/>
 					</div>
