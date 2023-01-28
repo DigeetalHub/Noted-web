@@ -11,8 +11,8 @@ const Footer = () => {
 
 	return (
 		<footer className="py-6 px-4 bg-brandPrimary900 mt-[3rem] fold:mt-[5.5rem] md:pt-[5.5rem]">
-			<div className="flex flex-col flex-wrap gap-[1.7rem] fold:gap-[2.5rem] text-center text-white dualFold:flex-row dualFold:justify-between dualFold:text-left dualFold:w-[90%] dualFold:mx-auto dualFold:gap-y-[4rem]">
-				<div className="flex flex-col dualFold:w-[33%] gap-[0.625rem] fold:gap-4">
+			<div className="flex flex-col flex-wrap gap-[1.7rem] fold:gap-[2.5rem] text-center text-white dualFold:flex-row dualFold:justify-between dualFold:text-left dualFold:w-[90%] dualFold:mx-auto dualFold:gap-y-[4rem] lg:w-[80%]">
+				<div className="flex flex-col dualFold:w-[33%] xl:w-[24%] gap-[0.625rem] fold:gap-4">
 					<Image src={Logo} alt="Website logo in the Footer" className="mx-auto dualFold:m-0 w-[57px] fold:w-[76px]" />
 					<p className="font-semibold text-[0.65rem] fold:text-[0.875rem] s22:text-base px-2 fold:px-4 dualFold:p-0 dualFold:font-normal">
 						Discover hidden talents around the world using Noted
