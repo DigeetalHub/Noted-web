@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Logo from "../public/assets/images/Noted-logo.png";
+import Logo from "../public/assets/images/logo.svg";
 import Menu from "../public/assets/icons/menu.svg";
 import MenuBlack from "../public/assets/icons/menu-black.svg";
 import Close from "../public/assets/icons/close-icon.svg";
@@ -29,6 +29,7 @@ const Header = () => {
 			setIsWhite(whiteNav);
 		}
 	}, [whiteNav, router]);
+
 
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);
