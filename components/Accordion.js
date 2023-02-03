@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useToggle } from "../context/AccordionContext";
 
-const Accordion = ({ id, title, subtitle, description, index }) => {
+const Accordion = ({ id, title, subtitle, description, index, paragraph, boldText, normalText, listItems }) => {
 	const { isActive, setIsActive } = useToggle();
 
 	const openAccordion = () => {
@@ -9,7 +9,7 @@ const Accordion = ({ id, title, subtitle, description, index }) => {
 	};
 
 	return (
-		<div key={index} className="w-full ">
+		<div key={id} className="w-full">
 			<div className="relative">
 				<h2 className="font-bold text-xl mt-6 mb-4  w-full" onClick={() => openAccordion(index)}>
 					{title}
@@ -22,7 +22,16 @@ const Accordion = ({ id, title, subtitle, description, index }) => {
 			{isActive === index && (
 				<div className="">
 					<h3 className="font-semibold">{subtitle}</h3>
+					<p className="text-sm mt-2">{paragraph}</p>
 					<p className="text-sm ">{description}</p>
+					<p className="font-bold mt-4">
+						{boldText} <span className="font-normal">{normalText}</span>
+					</p>
+					{listItems.map((item, index) => (
+						<ul key={index}>
+							<li>{item}</li>
+						</ul>
+					))}
 				</div>
 			)}
 		</div>
