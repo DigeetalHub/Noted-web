@@ -1,45 +1,45 @@
-{
-	"privacyPolicy": [
-		{
-			"id": "Purpose-of-processing",
-			"title": "Purpose of processing"
-		},
-		{
-			"id": "What-is-personal-data?",
-			"subtitle": "What is personal data?",
-			"description": "We collect information about you in a range of forms, including personal data. As used in this Policy, “personal data” is as defined in the General Data Protection Regulation, this includes any information which, either alone or in combination with other information we process about you, identifies you as an individual, including, for example, your name, postal address, email address and telephone number."
-		},
-		{
-			"id": "Why-do-we-need-your-personal-data?",
-			"subtitle": "Why do we need your personal data?",
-			"description": "We will only process your personal data in accordance with applicable data protection and privacy laws. We need certain personal data in order to provide you with access to the website. If you registered with us, you will have been asked to tick to agree to provide this information in order to access our services, purchase our products, or view our content. This consent provides us with the legal basis we require under applicable law to process your data. You maintain the right to withdraw such consent at any time. If you do not agree to our use of your personal data in line with this Policy, please do not use our website."
-		},
-		{
-			"id": "Collecting-Your-Personal-Data",
-			"subtitle": "Collecting Your Personal Data",
-			"paragraph": "We collect information about you in the following ways:",
-			"boldText": "Information You Give Us.",
-			"normalText": "This includes:",
-			"listItems": [
-				{
-					"item1": "The personal data you provide when you register to use our website, including your name, postal address, email address, telephone number, username, password and demographic information (such as your gender)",
-					"item2": "The personal data that may be contained in any video, comment or other submission you upload or post to the website",
-					"item3": "The personal data you provide in connection with our rewards program and other promotions we run on the website",
-					"item4": "The personal data you provide when you report a problem with our website or when we provide you with customer support",
-					"item5": "The personal data you provide when you make a purchase thorough our website.",
-					"item6": "The personal data you provide when you correspond with us by phone, email or otherwise."
-				}
-			]
-		},
-		{
-			"id": "Why-do-we-need-your-personal-data?",
-			"subtitle": "Why do we need your personal data?",
-			"description": "We will only process your personal data in accordance with applicable data protection and privacy laws. We need certain personal data in order to provide you with access to the website. If you registered with us, you will have been asked to tick to agree to provide this information in order to access our services, purchase our products, or view our content. This consent provides us with the legal basis we require under applicable law to process your data. You maintain the right to withdraw such consent at any time. If you do not agree to our use of your personal data in line with this Policy, please do not use our website."
-		},
-		{
-			"id": "Why-do-we-need-your-personal-data?",
-			"subtitle": "Why do we need your personal data?",
-			"description": "We will only process your personal data in accordance with applicable data protection and privacy laws. We need certain personal data in order to provide you with access to the website. If you registered with us, you will have been asked to tick to agree to provide this information in order to access our services, purchase our products, or view our content. This consent provides us with the legal basis we require under applicable law to process your data. You maintain the right to withdraw such consent at any time. If you do not agree to our use of your personal data in line with this Policy, please do not use our website."
-		}
-	]
-}
+[
+  {
+    "id": "Purpose-of-processing",
+    "title": "Purpose of processing",
+    "items": [
+      {
+        "id": "What-is-personal-data?",
+        "subtitle": "What is personal data?",
+        "description": "We collect information about you in a range of forms, including personal data. As used in this Policy, “personal data” is as defined in the General Data Protection Regulation, this includes any information which, either alone or in combination with other information we process about you, identifies you as an individual, including, for example, your name, postal address, email address and telephone number."
+      },
+      {
+        "id": "Why-do-we-need-your-personal-data?",
+        "subtitle": "Why do we need your personal data?",
+        "description": "We will only process your personal data in accordance with applicable data protection and privacy laws. We need certain personal data in order to provide you with access to the website. If you registered with us, you will have been asked to tick to agree to provide this information in order to access our services, purchase our products, or view our content. This consent provides us with the legal basis we require under applicable law to process your data. You maintain the right to withdraw such consent at any time. If you do not agree to our use of your personal data in line with this Policy, please do not use our website."
+      },
+      {
+        "id": "Collecting-Your-Personal-Data",
+        "subtitle": "Collecting Your Personal Data",
+        "paragraph": "We collect information about you in the following ways:",
+        "boldText": "Information You Give Us.",
+        "normalText": "This includes:",
+        "listItems": [
+          {
+            "item1": "The personal data you provide when you register to use our website, including your name, postal address, email address, telephone number, username, password and demographic information (such as your gender)",
+            "item2": "The personal data that may be contained in any video, comment or other submission you upload or post to the website",
+            "item3": "The personal data you provide in connection with our rewards program and other promotions we run on the website",
+            "item4": "The personal data you provide when you report a problem with our website or when we provide you with customer support",
+            "item5": "The personal data you provide when you make a purchase thorough our website.",
+            "item6": "The personal data you provide when you correspond with us by phone, email or otherwise."
+          }
+        ]
+      },
+      {
+        "id": "Why-do-we-need-your-personal-data?",
+        "subtitle": "Why do we need your personal data?",
+        "description": "We will only process your personal data in accordance with applicable data protection and privacy laws. We need certain personal data in order to provide you with access to the website. If you registered with us, you will have been asked to tick to agree to provide this information in order to access our services, purchase our products, or view our content. This consent provides us with the legal basis we require under applicable law to process your data. You maintain the right to withdraw such consent at any time. If you do not agree to our use of your personal data in line with this Policy, please do not use our website."
+      },
+      {
+        "id": "Why-do-we-need-your-personal-data?",
+        "subtitle": "Why do we need your personal data?",
+        "description": "We will only process your personal data in accordance with applicable data protection and privacy laws. We need certain personal data in order to provide you with access to the website. If you registered with us, you will have been asked to tick to agree to provide this information in order to access our services, purchase our products, or view our content. This consent provides us with the legal basis we require under applicable law to process your data. You maintain the right to withdraw such consent at any time. If you do not agree to our use of your personal data in line with this Policy, please do not use our website."
+      }
+    ]
+  }
+]
