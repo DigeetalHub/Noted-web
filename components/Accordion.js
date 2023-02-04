@@ -7,9 +7,7 @@ const Accordion = ({ items, index }) => {
 	const openAccordion = () => {
 		setIsActive(index === isActive ? null : index);
 	};
-	const { title, personalData, personalDataDescription, purposeContent } = items;
-
-	console.log(purposeContent)
+	const { title, personalData, personalDataDescription, informationList, purposeContent, otherInformation } = items;
 
 	return (
 		<div key={index} className="w-full ">
@@ -23,46 +21,39 @@ const Accordion = ({ items, index }) => {
 				</div>
 			</div>
 			{isActive === index && (
-				<div className="space-y-4">
-					<div className="space-y-2">
+				<div className="">
+					<div className="space-y-4">
 						<h3 className="font-semibold">{personalData}</h3>
 						<p className="text-sm ">{personalDataDescription}</p>
 					</div>
-					{purposeContent.map(
-						(
-							{
-								whyPersonalData,
-								whyPersonalDataDescription,
-								collectingPersonalData,
-								collectingPersonalDataIntro,
-								informationYouGiveUs,
-								informationList,
-							},
-							index
-						) => {
-							console.log(informationList);
-							return (
-								<div className="" key={index}>
-									<div className="space-y-2">
-										<h3 className="font-semibold">{whyPersonalData}</h3>
-										<p className="text-sm ">{whyPersonalDataDescription}</p>
-									</div>
-									<div className="space-y-2">
-										<h3 className="font-semibold">{collectingPersonalData}</h3>
-										<p className="text-sm">{collectingPersonalDataIntro}</p>
-										<h4 className="font-semibold">{informationYouGiveUs}</h4>
-									</div>
-									{informationList.map((item, index) => {
-										return (
-											<ul key={index}>
-												<li>{item}</li>
-											</ul>
-										);
-									})}
+					{purposeContent.map(({ title, description, informationYouGiveUs }, index) => {
+						return (
+							<div className="mt-4" key={index}>
+								<div className="space-y-2">
+									<h3 className="font-semibold">{title}</h3>
+									<p className="text-sm ">{description}</p>
+									<h4 className="font-semibold">{informationYouGiveUs}</h4>
 								</div>
+							</div>
+						);
+					})}
+					<div className="">
+						{informationList.map((item, index) => {
+							return (
+								<ul key={index} className="list-disc ml-4 text-sm ">
+									<li className="mt-1">{item}</li>
+								</ul>
 							);
-						}
-					)}
+						})}
+					</div>
+					{otherInformation.map(({ title, description }, index) => {
+						return (
+							<div key={index} className="mt-4 space-y-2">
+								<h3 className="font-semibold">{title}</h3>
+								<p className="text-sm">{description}</p>
+							</div>
+						);
+					})}
 				</div>
 			)}
 		</div>
