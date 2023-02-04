@@ -3,9 +3,12 @@ import Head from "next/head";
 import Accordion from "../components/Accordion";
 import Link from "next/link";
 import { useToggle } from "../context/AccordionContext";
+import data from "../data/data"
 
-const PrivacyPage = ({ data }) => {
+const PrivacyPage = () => {
 	const { isActive, setIsActive } = useToggle();
+
+	const { privacyPolicy } = data;
 
 	return (
 		<div className="">
@@ -46,7 +49,7 @@ const PrivacyPage = ({ data }) => {
 						</p>
 					)}
 				</div>
-				{data.map((item , index) => (
+				{privacyPolicy.map((item , index) => (
 					<Accordion items={item} key={index} />
 				))}
 			</main>
@@ -55,12 +58,3 @@ const PrivacyPage = ({ data }) => {
 };
 
 export default PrivacyPage;
-
-export async function getStaticProps() {
-	const { privacyPolicy } = await import("../data/data.json");
-	return {
-		props: {
-			data: privacyPolicy,
-		},
-	};
-}

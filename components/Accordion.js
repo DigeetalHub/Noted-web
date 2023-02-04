@@ -9,6 +9,8 @@ const Accordion = ({ items, index }) => {
 	};
 	const { title, personalData, personalDataDescription, purposeContent } = items;
 
+	console.log(purposeContent)
+
 	return (
 		<div key={index} className="w-full ">
 			<div className="relative">
@@ -21,19 +23,46 @@ const Accordion = ({ items, index }) => {
 				</div>
 			</div>
 			{isActive === index && (
-				<div className="">
-					<h3 className="font-semibold">{personalData}</h3>
-					<p className="text-sm ">{personalDataDescription}</p>
-					{/* <h3 className="font-semibold">hello</h3>
-					<p className="text-sm ">world</p> */}
-					{purposeContent.map(({ whyPersonalData, whyPersonalDataDescription }, index) => {
-						return (
-							<div className="" key={index}>
-								<h3 className="font-semibold">{whyPersonalData}</h3>
-								<p className="text-sm ">{whyPersonalDataDescription}</p>
-							</div>
-						);
-					})}
+				<div className="space-y-4">
+					<div className="space-y-2">
+						<h3 className="font-semibold">{personalData}</h3>
+						<p className="text-sm ">{personalDataDescription}</p>
+					</div>
+					{purposeContent.map(
+						(
+							{
+								whyPersonalData,
+								whyPersonalDataDescription,
+								collectingPersonalData,
+								collectingPersonalDataIntro,
+								informationYouGiveUs,
+								informationList,
+							},
+							index
+						) => {
+							console.log(informationList);
+							return (
+								<div className="" key={index}>
+									<div className="space-y-2">
+										<h3 className="font-semibold">{whyPersonalData}</h3>
+										<p className="text-sm ">{whyPersonalDataDescription}</p>
+									</div>
+									<div className="space-y-2">
+										<h3 className="font-semibold">{collectingPersonalData}</h3>
+										<p className="text-sm">{collectingPersonalDataIntro}</p>
+										<h4 className="font-semibold">{informationYouGiveUs}</h4>
+									</div>
+									{informationList.map((item, index) => {
+										return (
+											<ul key={index}>
+												<li>{item}</li>
+											</ul>
+										);
+									})}
+								</div>
+							);
+						}
+					)}
 				</div>
 			)}
 		</div>
