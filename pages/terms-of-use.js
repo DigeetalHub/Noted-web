@@ -23,8 +23,8 @@ const TermsOfUse = () => {
 			</Head>
 			<main className="mt-[7rem] px-4 mx-auto dualFold:w-[80%]">
 				<div className="text-center space-y-4 mb-[3.5rem]">
-					<h1 className="text-[2rem] font-bold uppercase">TERMS OF USE</h1>
-					<h2 className="font-semibold">Effective Date: 01-03-2023</h2>
+					<h1 className="text-[2rem] font-bold uppercase fold2Full:text-[4rem]">TERMS OF USE</h1>
+					<h2 className="font-semibold fold2Full:font-bold">Effective Date: 01-03-2023</h2>
 				</div>
 				{termsOfUse.map((item, index) => (
 					<Accordion2 items={item} key={index} index={index} />
