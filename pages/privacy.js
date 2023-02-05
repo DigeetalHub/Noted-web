@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 import Head from "next/head";
 import Accordion from "../components/Accordion";
 import Link from "next/link";
 import { useToggle } from "../context/AccordionContext";
-import data from "../data/data"
+import { privacyPolicy } from "../data/data2";
 
 const PrivacyPage = () => {
 	const { isActive, setIsActive } = useToggle();
 
-	const { privacyPolicy } = data;
+	
 
 	return (
 		<div className="">
@@ -49,8 +49,8 @@ const PrivacyPage = () => {
 						</p>
 					)}
 				</div>
-				{privacyPolicy.map((item , index) => (
-					<Accordion items={item} key={index} />
+				{privacyPolicy.map((item, index) => (
+					<Accordion items={item} key={index} index={index} />
 				))}
 			</main>
 		</div>

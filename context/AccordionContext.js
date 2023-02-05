@@ -4,17 +4,13 @@ import { useState, createContext, useContext } from "react";
 const AccordionContext = createContext();
 
 const AccordionProvider = ({ children }) => {
-  const [isActive, setIsActive] = useState(null);
+	const [isOpen, setIsOpen] = useState(false);
 
-  const values = {
-    isActive,
-    setIsActive,
-  };
-  return (
-    <AccordionContext.Provider value={values}>
-      {children}
-    </AccordionContext.Provider>
-  );
+	const values = {
+		isOpen,
+		setIsOpen,
+	};
+	return <AccordionContext.Provider value={values}>{children}</AccordionContext.Provider>;
 };
 
 const useToggle = () => useContext(AccordionContext);
