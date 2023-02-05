@@ -2,9 +2,9 @@ import React from 'react'
 import Head from "next/head";
 import Accordion2 from "../components/Accordion2";
 import Link from "next/link";
-import {termsOfService} from "../data/data";
+import {termsOfService, termsOfUse} from "../data/data";
 
-const TermsOfService = () => {
+const TermsOfUse = () => {
 
 
     return (
@@ -23,10 +23,10 @@ const TermsOfService = () => {
 			</Head>
 			<main className="mt-[7rem] px-4 mx-auto dualFold:w-[80%]">
 				<div className="text-center space-y-4 mb-[3.5rem]">
-					<h1 className="text-[2rem] font-bold uppercase">TERMS OF SERVICE</h1>
+					<h1 className="text-[2rem] font-bold uppercase">TERMS OF USE</h1>
 					<h2 className="font-semibold">Effective Date: 01-03-2023</h2>
 				</div>
-				{termsOfService.map((item, index) => (
+				{termsOfUse.map((item, index) => (
 					<Accordion2 items={item} key={index} index={index} />
 				))}
 			</main>
@@ -34,4 +34,4 @@ const TermsOfService = () => {
 	);
 }
 
-export default TermsOfService
+export default TermsOfUse

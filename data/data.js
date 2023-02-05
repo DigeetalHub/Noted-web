@@ -93,7 +93,7 @@ const termsOfService = [
 	{
 		mainTitle: "Complaints",
 		description1:
-			"We are committed to resolve any complaints about our collection or use of your personal data. If you would like to make a complaint regarding this Policy or our practices in relation to your personal data, please contact us through the information listed on our website. We will reply to your complaint as soon as we can and in any event, within 30 days. We hope to resolve any complaint brought to our attention, however if you feel that your complaint has not been adequately resolved, you reserve the right to contact your local data protection supervisory authority",
+			"We are committed to resolve any complaints about our collection or use of your personal data. If you would like to make a complaint regarding this Policy or our practices in relation to your personal data, please contact us through the information listed on our website. We will reply to your complaint as soon as we can and in any event, within 30 days. We hope to resolve any complaint brought to our attention, however if you feel that your complaint has not been adequately resolved, you reserve the right to contact your local data protection supervisory authority.",
 	},
 	{
 		mainTitle: "Contact Information",
@@ -102,4 +102,64 @@ const termsOfService = [
 	},
 ];
 
-export { termsOfService };
+const termsOfUse = [
+	{
+		mainTitle: "Introduction",
+		description1:
+			"Welcome to the Noted Media Group (the “Service”). The following Terms of Use apply when you view or use the Service located at: http://notedmediagroup.com. Please review the following terms carefully. By accessing or using the Service, you signify your agreement to these Terms of Use. If you do not agree to these Terms of Use, you may not access or use the Service.",
+		listItem: [],
+	},
+	{
+		mainTitle: "Privacy Policy",
+		description1:
+			"The company respects the privacy of its Service users. Please refer to the Company’s Privacy Policy which explains how we collect, use, and disclose information that pertains to your privacy. When you access or use the Service, you signify your agreement to this Privacy Policy.",
+		listItem: [],
+	},
+	{
+		mainTitle: "Registration: Rules For User Conduct And Use Of The Service",
+		description1: "You need to be at least 16 years old to register for and use the Service.",
+		description2:
+			"If you are a user who signs up for the Service, the company will create a personalized account, which includes a unique username and a password to access the Service and allow you to receive messages from the Company. You agree to notify us immediately of any unauthorized use of your password and/or account. The Company will not be responsible for any liabilities, losses, or damages arising out of the unauthorized use of your member name, password and/or account.",
+		listItem: [],
+	},
+	{
+		mainTitle: "Use Restrictions",
+		description1:
+			"Your permission to use the Site is conditioned upon the following Use Restrictions and Conduct Restrictions: You agree that you will not under any circumstances:",
+		listItem: [
+			"post any information that is abusive, threatening, obscene, defamatory, libelous, or racially, sexually, religiously, or otherwise objectionable and offensive",
+			"use the service for any unlawful purpose or for the promotion of illegal activities",
+			"attempt to, or harass, abuse or harm another person or group",
+
+			"use another user’s account without permission",
+
+			"provide false or inaccurate information when registering an account",
+
+			"interfere or attempt to interfere with the proper functioning of the Service",
+
+			"make any automated use of the system, or take any action that we deem to impose or to potentially impose an unreasonable or disproportionately large load on our servers or network infrastructure",
+
+			"bypass any robot exclusion headers or other measures we take to restrict access to the Service or use any software, technology, or device to scrape, spider, or crawl the Service or harvest or manipulate data; or",
+
+			"publish or link to malicious content intended to damage or disrupt another user’s browser or computer.",
+		],
+	},
+	{
+		mainTitle: "POSTING AND CONDUCT RESTRICTIONS",
+		description1:
+			"When you create your own personalized account, you may be able to provide (“User Content”). You are solely responsible for the User Content that you post, upload, link to or otherwise make available via the Service. You agree that we are only acting as a passive conduit for your online distribution and publication of your User Content. The Company, however, reserves the right to remove any User Content from the Service at its discretion.",
+		description2:
+			"The following rules pertain to User Content. By transmitting and submitting any User Content while using the Service, you agree as follows:",
+		description3:
+			"You hereby affirm we have the right to determine whether any of your User Content submissions are appropriate and comply with these Terms of Service, remove any and/or all of your submissions, and terminate your account with or without prior notice.",
+		listItem: [
+			"You are solely responsible for your account and the activity that occurs while signed in to or while using your account",
+			"You will not post information that is malicious, false or inaccurate",
+			"You will not submit content that is copyrighted or subject to third party proprietary rights, including privacy, publicity, trade secret, etc., unless you are the owner of such rights or have the appropriate permission from their rightful owner to specifically submit such content; and",
+
+			"You hereby affirm we have the right to determine whether any of your User Content submissions are appropriate and comply with these Terms of Service, remove any and/or all of your submissions, and terminate your account with or without prior notice.",
+		],
+	},
+];
+
+export { termsOfService, termsOfUse };
