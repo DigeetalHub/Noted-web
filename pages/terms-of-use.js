@@ -2,7 +2,8 @@ import React from 'react'
 import Head from "next/head";
 import Accordion2 from "../components/Accordion2";
 import Link from "next/link";
-import {termsOfService, termsOfUse} from "../data/data";
+import {  termsOfUse } from "../data/data";
+
 
 const TermsOfUse = () => {
 
