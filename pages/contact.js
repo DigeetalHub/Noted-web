@@ -1,11 +1,12 @@
 import React from "react";
 import Head from "next/head";
-import Accordion from "../components/Accordion";
 import Link from "next/link";
+import Form from "../components/Form";
 
 const Contact = () => {
-  return <main>
-    <Head>
+	return (
+		<div>
+			<Head>
 				<title>Noted | For Photographers, Content Creators, Musicians, Videographers and Creatives</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta
@@ -16,7 +17,15 @@ const Contact = () => {
 					name="keywords"
 					content="artists, photography, Photographers, Content Creators, Musicians, Videographers, Creatives"
 				/>
-			</Head>Contact</main>;
+			</Head>
+     
+      <main className="mt-[6rem]">
+        <section className="px-[0.875rem]">
+          <Form />
+        </section>
+      </main>
+		</div>
+	);
 };
 
 export default Contact;

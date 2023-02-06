@@ -31,6 +31,8 @@ module.exports = {
 				neutrals500: "#1C1C1C",
 				header: "rgba(255, 255, 255, 0.01)",
 				overlay: "rgba(15, 15, 15, 0.88);",
+				label: "#828282",
+				inputBorder: "#E0E0E0",
 			},
 			backgroundImage: {
 				download:
