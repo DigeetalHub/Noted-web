@@ -5,7 +5,3 @@
 html {
   scroll-behavior: smooth;
 }
-
-.ReactCollapse--collapse {
-  transition: height 500ms;
-}
