@@ -4,8 +4,7 @@ import { useState, createContext, useContext } from "react";
 const AccordionContext = createContext();
 
 const AccordionProvider = ({ children }) => {
-	// const [isOpen, setIsOpen] = useState(false);
-	const [isOpen, setIsOpen] = useState([]);
+	const [isOpen, setIsOpen] = useState([0]);
 
 	const values = {
 		isOpen,
