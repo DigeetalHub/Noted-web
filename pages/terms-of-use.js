@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from "next/head";
 import Accordion2 from "../components/Accordion2";
-import Link from "next/link";
 import {  termsOfUse } from "../data/data";
 
 

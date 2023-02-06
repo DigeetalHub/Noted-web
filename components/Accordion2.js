@@ -3,16 +3,14 @@ import Image from "next/image";
 import Plus from "../public/assets/icons/plus.svg";
 import Minus from "../public/assets/icons/minus.svg";
 import { Collapse } from "react-collapse";
-import { useEffect, useState } from "react";
 
 const AltAccordion = ({ items, index }) => {
-    const { isOpen, setIsOpen } = useToggle();
-    
+	const { isOpen, setIsOpen } = useToggle();
+
 	const openAccordion = (index) => {
 		const isOpened = isOpen.includes(index);
 		setIsOpen(isOpened ? isOpen.filter((i) => i !== index) : [...isOpen, index]);
-    };
-    
+	};
 
 	const {
 		title,

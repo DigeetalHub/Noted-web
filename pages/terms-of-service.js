@@ -1,13 +1,10 @@
-import React from 'react'
+import React from "react";
 import Head from "next/head";
 import Accordion2 from "../components/Accordion2";
-import Link from "next/link";
-import {termsOfService} from "../data/data";
+import { termsOfService } from "../data/data";
 
 const TermsOfService = () => {
-
-
-    return (
+	return (
 		<div className="">
 			<Head>
 				<title>Noted | For Photographers, Content Creators, Musicians, Videographers and Creatives</title>
@@ -32,6 +29,6 @@ const TermsOfService = () => {
 			</main>
 		</div>
 	);
-}
+};
 
-export default TermsOfService
+export default TermsOfService;
