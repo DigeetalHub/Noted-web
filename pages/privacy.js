@@ -3,9 +3,12 @@ import Head from "next/head";
 import Accordion from "../components/Accordion";
 import Link from "next/link";
 import { useToggle } from "../context/AccordionContext";
+import { privacyPolicy } from "../data/data2";
 
-const contact = ({ data }) => {
+const PrivacyPage = () => {
 	const { isActive, setIsActive } = useToggle();
+
+	
 
 	return (
 		<div className="">
@@ -46,22 +49,12 @@ const contact = ({ data }) => {
 						</p>
 					)}
 				</div>
-				{data.map(({ id, title, subtitle, description }, index) => (
-					<Accordion id={id} title={title} subtitle={subtitle} description={description} key={index} />
+				{privacyPolicy.map((item, index) => (
+					<Accordion items={item} key={index} index={index} />
 				))}
 			</main>
 		</div>
 	);
 };
 
-export default contact;
-
-export async function getStaticProps() {
-	const { privacyPolicy } = await import("../data/data.json");
-	// console.log(privacyPolicy);
-	return {
-		props: {
-			data: privacyPolicy,
-		},
-	};
-}
+export default PrivacyPage;
