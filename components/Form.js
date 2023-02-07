@@ -34,24 +34,16 @@ const Form = () => {
 			errorMsg: `Your phone number is also required so we can get back to you 🙂`,
 			errorMsg2: `Please enter a valid phone number please. Numbers only and not less than 10 digits.`,
 		},
-		{
-			label: "Message",
-			name: "message",
-			type: "text",
-			placeholder: "Leave us your message and we'll get in touch with you as soon as possible.",
-			errorMsg: `Leave us your message and we'll get in touch with you as soon as possible. 😃`,
-			errorMsg2: `Your message is too short. 😃`,
-		},
 	];
 
 	const schema = yup.object({
 		name: yup.string().required(inputs[0].errorMsg),
-		email: yup.string().email().required(inputs[1].errorMsg).matches(inputs[1].pattern, inputs[1].errorMsg2),
+		email: yup.string().email().required(inputs[1].errorMsg).matches(inputs[1].pattern, "Please enter a valid email."),
 		phone: yup.string().required(inputs[2].errorMsg).matches(/^\d+$/, inputs[2].errorMsg2),
 		message: yup
 			.string()
-			.required(inputs[3].errorMsg)
-			.min(5, inputs[3].errorMsg2),
+			.required("Leave us your message and we'll get in touch with you as soon as possible. 😃")
+			.min(5, "Your message is too short. 😃"),
 	});
 
 	const {
@@ -81,17 +73,17 @@ const Form = () => {
 
 	const enableButton = errors.name || errors.email || errors.phone || errors.message ? true : false;
 
-	const handleFormSubmit = (data) => {
+	const handleFormSubmit = () => {
 		reset();
 	};
 
 	return (
-		<div className="bg-white py-[3.5rem] px-8 flex flex-col gap-[2.8rem] rounded-2xl shadow-form ml-auto mr-[3rem] i14Max:w-[75%] md:w-[68%] fold2Full:w-[60%] z-[2] relative">
-			<div className="flex flex-col gap-4">
-				<Heading classes={"text-black font-bold text-[2.5rem]"} firstContent={"Contact Now"} />
+		<div className="bg-white py-[3.5rem] px-8 dualFold:px-[4rem] flex flex-col gap-[2.8rem] rounded-2xl shadow-form md:mx-auto lg:ml-auto lg:mr-[4rem] xl:mr-[5rem] i14Max:w-[75%] md:w-[68%] fold2Full:w-[60%] lg:w-[50%] xl:w-[45%] laptops:w-[42%] z-[2] relative">
+			<div className="flex flex-col gap-3">
+				<Heading classes={"text-black font-bold text-[2.5rem] i14Max:text-[3.2rem]"} firstContent={"Contact Us"} />
 				<Subheading
-					classes={"text-[1rem] leading-[1.4] text-gray-500 font-medium"}
-					content={"Do you have a complaint or you would like to make enquires, send us a message"}
+					classes={"text-[1rem] leading-[1.4] text-gray-500 font-medium i14Max:text-[1.2rem]"}
+					content={"Do you have a complaint or would like to make enquires? Send us a message"}
 				/>
 			</div>
 			<form className="" onSubmit={handleSubmit(handleFormSubmit)}>
@@ -107,14 +99,14 @@ const Form = () => {
 									placeholder={placeholder}
 									required={required}
 									className={`border-b-inputBorder border-b-2 invalid:border-b-red-500 autofill:bg-white autofill:text-transparent
-									 rounded-none p-[5px] focus:outline-none  peer placeholder-transparent transition-all w-full`}
+									 rounded-none p-[5px] focus:outline-none  peer placeholder-transparent transition-all w-full `}
 								/>{" "}
 								<span className="errorMsg text-red-500 text-sm mt-[3px] peer-invalid:block hidden">
 									{errors[name]?.message}
 								</span>
 								<label
 									htmlFor={name}
-									className="text-sm font-semibold text-gray-500 transition-all duration-[400ms] peer-placeholder-shown:text-base  peer-placeholder-shown:top-[0.35rem] peer-placeholder-shown:text-label peer-focus:-top-[1.2rem] peer-focus:-left-0 peer-focus:text-label peer-focus:text-sm absolute left-0 -top-[1.2rem]"
+									className="text-sm font-semibold i14Max:text-[1.5rem] text-label transition-all duration-[400ms] peer-placeholder-shown:text-base peer-placeholder-shown:top-[0.35rem] peer-placeholder-shown:text-label peer-focus:-top-[1.2rem] peer-focus:-left-0 peer-focus:text-label peer-focus:text-sm absolute left-0 -top-[1.2rem]"
 								>
 									{label}
 								</label>
