@@ -39,7 +39,7 @@ const Form = () => {
 	const schema = yup.object({
 		name: yup.string().required(inputs[0].errorMsg),
 		email: yup.string().email().required(inputs[1].errorMsg).matches(inputs[1].pattern, inputs[1].errorMsg2),
-		phone: yup.string().required(inputs[2].errorMsg).matches(/^\d+$/, inputs[2].errorMsg2).,
+		phone: yup.string().required(inputs[2].errorMsg).matches(/^\d+$/, inputs[2].errorMsg2),
 		message: yup.string().required(`Leave us your message and we'll get in touch with you as soon as possible. 😃`).min(5, `Your message is too short. 😃`)
 	});
 
