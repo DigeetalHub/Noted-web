@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Heading from "./Heading";
 import Subheading from "./Subheading";
+import Button from "./Button";
 
 const Form = () => {
 	const [formData, setFormData] = useState({
@@ -9,12 +10,6 @@ const Form = () => {
 		phone: "",
 		message: "",
 	});
-	const [emptyValues, setIsEmptyValues] = useState({
-		name: false,
-		email: false,
-		phone: false,
-		message: false,
-	});
 
 	const inputs = [
 		{
@@ -22,7 +17,6 @@ const Form = () => {
 			name: "name",
 			type: "text",
 			placeholder: "Name",
-			required: true,
 			errorMsg: `We'd really love to know your name so we can properly address you 😃`,
 		},
 		{
@@ -30,7 +24,6 @@ const Form = () => {
 			name: "email",
 			type: "email",
 			placeholder: "Email",
-			required: true,
 			errorMsg: `Your email is required so we can get back to you 😉`,
 		},
 		{
@@ -38,29 +31,39 @@ const Form = () => {
 			name: "phone",
 			type: "tel",
 			placeholder: "Phone",
-			required: true,
 			errorMsg: `Your phone number is also required so we can get back to you 🙂`,
 		},
 	];
+
+    const [disabled, setDisabled] = useState(true);
+    const [required, setRequired] = useState(false);
+
 
 	const handleChange = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
 		setFormData({ ...formData, [name]: value });
+		setDisabled(false);
 	};
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (formData.name === "" || formData.email === "" || formData.phone === "") {
-			setIsEmptyValues({
-				name: formData.name === "" ? true : false,
-				email: formData.email === "" ? true : false,
-				phone: formData.phone === "" ? true : false,
-				message: formData.message === "" ? true : false,
-			});
-		}
-		console.log(formData);
-	};
+        if ((formData.name === "" || formData.email === "" || formData.phone === "", formData.message === "")) {
+            setRequired(true);
+            
+        } else if (formData.name !== "" && formData.email !== "" && formData.phone !== "" && formData.message !== "") {
+            setRequired(false);
+            setDisabled(true);
+            setFormData({ name: "", email: "", phone: "", message: "" });
+        }
+        
+        else {
+            setRequired(false);
+            setDisabled(true);
+            setFormData({ name: "", email: "", phone: "", message: "" });
+        }
+        console.log(formData);
+    };
+    
 
 	return (
 		<div className="bg-white py-[3.5rem] px-6 flex flex-col gap-[2.5rem]">
@@ -73,7 +76,7 @@ const Form = () => {
 			</div>
 			<form className="" onSubmit={handleSubmit}>
 				<div className="flex flex-col gap-[2.5rem]">
-					{inputs.map(({ label, name, type, required, placeholder, errorMsg }, index) => {
+					{inputs.map(({ label, name, type, placeholder, errorMsg }, index) => {
 						return (
 							<div key={index} className="flex flex-col relative">
 								<input
@@ -92,7 +95,7 @@ const Form = () => {
 								>
 									{label}
 								</label>
-								{emptyValues[name] && <span className=" text-red-500 text-sm mt-[3px]">{errorMsg}</span>}
+								{<span className=" text-red-500 text-sm mt-[3px] peer-invalid:block hidden">{errorMsg}</span>}
 							</div>
 						);
 					})}
@@ -102,18 +105,19 @@ const Form = () => {
 						</label>
 						<textarea
 							className="w-full border-2 rounded border-b-inputBorder resize-none p-2"
-							name={formData.message}
+							name="message"
 							id="message"
 							cols="30"
 							rows="8"
 							value={formData.message}
 							onChange={handleChange}
 						></textarea>
-						{emptyValues.message && (
-							<span className=" text-red-500 text-sm">This is not complete without your message </span>
+						{!formData.message && (
+							<span className=" text-red-500 text-sm peer-invalid:block hidden">This is not complete without your message </span>
 						)}
 					</div>
 				</div>
+				<Button className="w-full py-3 bg-brandPrimary500 text-white mt-[3rem]" disabled={disabled} label="Send" />
 			</form>
 		</div>
 	);
