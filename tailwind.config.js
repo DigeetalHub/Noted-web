@@ -51,6 +51,7 @@ module.exports = {
 			boxShadow: {
 				card: "0px 24px 32px rgba(0, 0, 0, 0.12)",
 				cardHover: "0px 32px 48px rgba(0, 0, 0, 0.15)",
+				form: "0px 4px 40px rgba(0, 0, 0, 0.08)",
 			},
 		},
 		plugins: [],
