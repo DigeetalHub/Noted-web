@@ -1,4 +1,3 @@
-import { calcLength } from "framer-motion";
 import { useState, createContext, useContext } from "react";
 
 const AccordionContext = createContext();

@@ -31,6 +31,8 @@ module.exports = {
 				neutrals500: "#1C1C1C",
 				header: "rgba(255, 255, 255, 0.01)",
 				overlay: "rgba(15, 15, 15, 0.88);",
+				label: "#828282",
+				inputBorder: "#E0E0E0",
 			},
 			backgroundImage: {
 				download:
@@ -38,6 +40,7 @@ module.exports = {
 				heroImg: "url('/assets/images/hero-img.png')",
 				wavyBgDesktop: "url('/assets/images/wavy-bg-desktop.svg')",
 				wavyBgMobile: "url('/assets/images/wavy-bg-mobile.svg')",
+				contactBgMobile: "url('/assets/images/contact-bg-sm.png')",
 			},
 			backdropBlur: {
 				header: "20px",
@@ -49,6 +52,7 @@ module.exports = {
 			boxShadow: {
 				card: "0px 24px 32px rgba(0, 0, 0, 0.12)",
 				cardHover: "0px 32px 48px rgba(0, 0, 0, 0.15)",
+				form: "0px 4px 40px rgba(0, 0, 0, 0.08)",
 			},
 		},
 		plugins: [],
