@@ -66,7 +66,7 @@ const Form = () => {
 	};
 
 	return (
-		<div className="bg-white py-[3.5rem] px-6 flex flex-col gap-[2.5rem]">
+		<div className="bg-white py-[3.5rem] px-8 flex flex-col gap-[2.5rem] rounded-2xl shadow-form">
 			<div className="flex flex-col gap-4">
 				<Heading classes={"text-black font-bold text-[2rem]"} firstContent={"Contact Now"} />
 				<Subheading
@@ -75,7 +75,7 @@ const Form = () => {
 				/>
 			</div>
 			<form className="" onSubmit={handleSubmit(handleFormSubmit)}>
-				<div className="flex flex-col gap-[2.5rem] rounded-2xl shadow-form">
+				<div className="flex flex-col gap-[2.5rem]">
 					{inputs.map(({ label, name, type, pattern, placeholder, errorMsg, errorMsg2 }, index) => {
 						return (
 							<div key={index} className="flex flex-col relative">

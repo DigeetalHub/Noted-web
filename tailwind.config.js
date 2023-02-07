@@ -40,6 +40,7 @@ module.exports = {
 				heroImg: "url('/assets/images/hero-img.png')",
 				wavyBgDesktop: "url('/assets/images/wavy-bg-desktop.svg')",
 				wavyBgMobile: "url('/assets/images/wavy-bg-mobile.svg')",
+				contactBgMobile: "url('/assets/images/contact-bg-sm.png')",
 			},
 			backdropBlur: {
 				header: "20px",

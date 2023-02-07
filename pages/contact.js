@@ -19,9 +19,11 @@ const Contact = () => {
 				/>
 			</Head>
      
-      <main className="mt-[6rem]">
-        <section className="px-[0.875rem]">
-          <Form />
+      <main className="">
+        <section className=" h-full bg-contactBgMobile bg-no-repeat bg-cover bg-center">
+          <div className="mb-[5rem] bg-overlay py-[5rem] h-full px-[0.875rem] ">
+			<Form />
+		  </div>
         </section>
       </main>
 		</div>
