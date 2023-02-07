@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import Heading from "./Heading";
 import Subheading from "./Subheading";
 import Button from "./Button";
+import { useForm } from "react-hook-form";
 
 const Form = () => {
 	const [formData, setFormData] = useState({
@@ -18,13 +19,15 @@ const Form = () => {
 			type: "text",
 			placeholder: "Name",
 			errorMsg: `We'd really love to know your name so we can properly address you 😃`,
+			required: true,
 		},
 		{
 			label: "Email",
 			name: "email",
-			type: "email",
+			type: "text",
 			placeholder: "Email",
 			errorMsg: `Your email is required so we can get back to you 😉`,
+			required: true,
 		},
 		{
 			label: "Phone",
@@ -32,38 +35,20 @@ const Form = () => {
 			type: "tel",
 			placeholder: "Phone",
 			errorMsg: `Your phone number is also required so we can get back to you 🙂`,
+			required: true,
 		},
 	];
 
-    const [disabled, setDisabled] = useState(true);
-    const [required, setRequired] = useState(false);
-
+	const [disabled, setDisabled] = useState(true);
 
 	const handleChange = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
 		setFormData({ ...formData, [name]: value });
-		setDisabled(false);
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-        if ((formData.name === "" || formData.email === "" || formData.phone === "", formData.message === "")) {
-            setRequired(true);
-            
-        } else if (formData.name !== "" && formData.email !== "" && formData.phone !== "" && formData.message !== "") {
-            setRequired(false);
-            setDisabled(true);
-            setFormData({ name: "", email: "", phone: "", message: "" });
-        }
-        
-        else {
-            setRequired(false);
-            setDisabled(true);
-            setFormData({ name: "", email: "", phone: "", message: "" });
-        }
-        console.log(formData);
-    };
-    
+	};
 
 	return (
 		<div className="bg-white py-[3.5rem] px-6 flex flex-col gap-[2.5rem]">
@@ -76,7 +61,7 @@ const Form = () => {
 			</div>
 			<form className="" onSubmit={handleSubmit}>
 				<div className="flex flex-col gap-[2.5rem]">
-					{inputs.map(({ label, name, type, placeholder, errorMsg }, index) => {
+					{inputs.map(({ label, name, type, placeholder, required, errorMsg }, index) => {
 						return (
 							<div key={index} className="flex flex-col relative">
 								<input
@@ -89,13 +74,13 @@ const Form = () => {
 									className="border-b-2 border-b-inputBorder rounded-none py-[5px] focus:outline-none focus:border-b-2 focus:border-b-brandPrimary400 peer placeholder-transparent transition-all"
 									onChange={handleChange}
 								/>{" "}
+								{<span className="errorMsg text-red-500 text-sm mt-[3px] hidden">{errorMsg}</span>}
 								<label
 									htmlFor={name}
 									className="text-sm font-semibold text-gray-500 transition-all duration-[400ms] peer-placeholder-shown:text-base  peer-placeholder-shown:top-[0.35rem] peer-placeholder-shown:text-label peer-focus:-top-[1.2rem] peer-focus:-left-0 peer-focus:text-label peer-focus:text-sm absolute left-0 -top-[1.2rem]"
 								>
 									{label}
 								</label>
-								{<span className=" text-red-500 text-sm mt-[3px] peer-invalid:block hidden">{errorMsg}</span>}
 							</div>
 						);
 					})}
@@ -113,11 +98,17 @@ const Form = () => {
 							onChange={handleChange}
 						></textarea>
 						{!formData.message && (
-							<span className=" text-red-500 text-sm peer-invalid:block hidden">This is not complete without your message </span>
+							<span className=" text-red-500 text-sm peer-invalid:block hidden">
+								This is not complete without your message{" "}
+							</span>
 						)}
 					</div>
 				</div>
-				<Button className="w-full py-3 bg-brandPrimary500 text-white mt-[3rem]" disabled={disabled} label="Send" />
+				<Button
+					className="w-full py-3 bg-brandPrimary500 disabled:bg-neutrals200 text-white mt-[3rem]"
+					disabled={disabled}
+					label="Send"
+				/>
 			</form>
 		</div>
 	);

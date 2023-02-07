@@ -9,3 +9,7 @@ html {
 .ReactCollapse--collapse {
   transition: height 500ms;
 }
+
+input:invalid[focused="true"] ~ .errorMsg {
+  display: block;
+}
