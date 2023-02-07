@@ -8,12 +8,13 @@ const Form = () => {
 		email: "",
 		phone: "",
 		message: "",
-    });
-    const [emptyValues, setIsEmptyValues] = useState({
-        name: false,
-        email: false,
-        phone: false,
-    })
+	});
+	const [emptyValues, setIsEmptyValues] = useState({
+		name: false,
+		email: false,
+		phone: false,
+		message: false,
+	});
 
 	const inputs = [
 		{
@@ -49,16 +50,16 @@ const Form = () => {
 	};
 
 	const handleSubmit = (e) => {
-        e.preventDefault();
-        if(formData.name === "" || formData.email === "" || formData.phone === "") {
-            setIsEmptyValues({
-                name: formData.name === "" ? true : false,
-                email: formData.email === "" ? true : false,
-                phone: formData.phone === "" ? true : false,
-            })
-        } else {
-            console.log(formData);
-        }
+		e.preventDefault();
+		if (formData.name === "" || formData.email === "" || formData.phone === "") {
+			setIsEmptyValues({
+				name: formData.name === "" ? true : false,
+				email: formData.email === "" ? true : false,
+				phone: formData.phone === "" ? true : false,
+				message: formData.message === "" ? true : false,
+			});
+		}
+		console.log(formData);
 	};
 
 	return (
@@ -71,7 +72,7 @@ const Form = () => {
 				/>
 			</div>
 			<form className="" onSubmit={handleSubmit}>
-				<div className="flex flex-col gap-[3rem]">
+				<div className="flex flex-col gap-[2.5rem]">
 					{inputs.map(({ label, name, type, required, placeholder, errorMsg }, index) => {
 						return (
 							<div key={index} className="flex flex-col relative">
@@ -81,20 +82,37 @@ const Form = () => {
 									id={name}
 									placeholder={placeholder}
 									required={required}
-									className="border-b-2 border-b-inputBorder rounded-none py-[5px] focus:outline-none focus:border-b-2 focus:border-b-brandPrimary400 peer placeholder-transparent"
+									value={formData[name]}
+									className="border-b-2 border-b-inputBorder rounded-none py-[5px] focus:outline-none focus:border-b-2 focus:border-b-brandPrimary400 peer placeholder-transparent transition-all"
 									onChange={handleChange}
 								/>{" "}
 								<label
-									htmlFor="name"
+									htmlFor={name}
 									className="text-sm font-semibold text-gray-500 transition-all duration-[400ms] peer-placeholder-shown:text-base  peer-placeholder-shown:top-[0.35rem] peer-placeholder-shown:text-label peer-focus:-top-[1.2rem] peer-focus:-left-0 peer-focus:text-label peer-focus:text-sm absolute left-0 -top-[1.2rem]"
 								>
 									{label}
-                                </label>
-                                
-								{emptyValues[name] && <span className="peer-invalid:visible invisible text-red-500 text-sm mt-[3px]">{errorMsg}</span>}
+								</label>
+								{emptyValues[name] && <span className=" text-red-500 text-sm mt-[3px]">{errorMsg}</span>}
 							</div>
 						);
 					})}
+					<div className="flex flex-col gap-2">
+						<label htmlFor="message" className="text-base font-semibold text-gray-500 ">
+							Message
+						</label>
+						<textarea
+							className="w-full border-2 rounded border-b-inputBorder resize-none p-2"
+							name={formData.message}
+							id="message"
+							cols="30"
+							rows="8"
+							value={formData.message}
+							onChange={handleChange}
+						></textarea>
+						{emptyValues.message && (
+							<span className=" text-red-500 text-sm">This is not complete without your message </span>
+						)}
+					</div>
 				</div>
 			</form>
 		</div>
