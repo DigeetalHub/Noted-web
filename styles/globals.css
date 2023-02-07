@@ -23,13 +23,13 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-	-webkit-text-fill-color: rgb(107 114 128 /1);
-	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	-webkit-text-fill-color: rgb(107 114 128 /1)!important;
+	-webkit-box-shadow: 0 0 0px 1000px white inset!important;
 	transition: background-color 5000s ease-in-out 0s;
 	appearance: none !important;
 	background-color: white !important;
 }
 
 textarea {
-  color: rgb(107 114 128 /1);
+	color: rgb(107 114 128 /1);
 }

@@ -3,6 +3,8 @@ import Heading from "./Heading";
 import Subheading from "./Subheading";
 import Button from "./Button";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 const Form = () => {
 	const inputs = [
@@ -18,28 +20,36 @@ const Form = () => {
 			name: "email",
 			type: "email",
 			placeholder: "Email",
-			pattern: "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$",
+			pattern:
+				/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 			errorMsg: `Your email is required so we can get back to you 😉`,
-			errorMsg2: `Please enter a valid email. `,
+			errorMsg2: `Please enter a valid email.`,
 		},
 		{
 			label: "Phone",
 			name: "phone",
-			type: "tel",
+			type: "text",
 			placeholder: "Phone",
-			pattern: "[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
+			pattern: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
 			errorMsg: `Your phone number is also required so we can get back to you 🙂`,
-			errorMsg2: `Please enter a valid phone number please. Numbers only and not less than 10 digits. `,
+			errorMsg2: `Please enter a valid phone number please. Numbers only and not less than 10 digits.`,
 		},
 	];
+
+	const schema = yup.object({
+		name: yup.string().required(inputs[0].errorMsg),
+		email: yup.string().email().required(inputs[1].errorMsg).matches(inputs[1].pattern, inputs[1].errorMsg2),
+		phone: yup.string().required(inputs[2].errorMsg).matches(/^\d+$/, inputs[2].errorMsg2),
+		message: yup.string().required(`Leave us your message and we'll get in touch with you as soon as possible. 😃`).min(5, `Your message is too short. 😃`)
+	});
 
 	const {
 		register,
 		handleSubmit,
-		getFieldState,
 		reset,
-		formState: { errors, getValues, isDirty, isValid },
+		formState: { errors },
 	} = useForm({
+		resolver: yupResolver(schema),
 		defaultValues: {
 			name: "",
 			email: "",
@@ -70,29 +80,26 @@ const Form = () => {
 			<div className="flex flex-col gap-4">
 				<Heading classes={"text-black font-bold text-[2rem]"} firstContent={"Contact Now"} />
 				<Subheading
-					classes={"text-sm"}
+					classes={"text-base"}
 					content={"Do you have a complaint or you would like to make enquires, send us a message"}
 				/>
 			</div>
 			<form className="" onSubmit={handleSubmit(handleFormSubmit)}>
 				<div className="flex flex-col gap-[2.5rem]">
-					{inputs.map(({ label, name, type, pattern, placeholder, errorMsg, errorMsg2 }, index) => {
+					{inputs.map(({ label, name, type, placeholder }, index) => {
 						return (
 							<div key={index} className="flex flex-col relative">
 								<input
-									{...register(name, { required: errorMsg })}
+									{...register(name)}
 									aria-invalid={errors.name ? "true" : "false"}
 									type={type}
 									name={name}
-									id={name}
-									pattern={pattern}
 									placeholder={placeholder}
 									required={required}
 									className={`border-b-inputBorder border-b-2 invalid:border-b-red-500 autofill:bg-white autofill:text-transparent
 									 rounded-none py-[5px] focus:outline-none  peer placeholder-transparent transition-all`}
 								/>{" "}
 								<span className="errorMsg text-red-500 text-sm mt-[3px] peer-invalid:block hidden">
-									{errorMsg2}
 									{errors[name]?.message}
 								</span>
 								<label
