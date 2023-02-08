@@ -60,7 +60,7 @@ const Form = () => {
 			Message: "",
 		},
 	});
-	console.log(errors)
+	console.log(errors);
 
 	const [required, setRequired] = useState(false);
 
@@ -75,7 +75,7 @@ const Form = () => {
 	// const enableButton = errors.name || errors.email || errors.phone || errors.message ? true : false;
 
 	const handleFormSubmit = (data) => {
-	console.log(data)
+		console.log(data);
 		reset();
 	};
 
@@ -88,10 +88,15 @@ const Form = () => {
 					content={"Do you have a complaint or would like to make enquires? Send us a message"}
 				/>
 			</div>
-			<form className="" onSubmit={handleSubmit(handleFormSubmit)} >
+			<form
+				className=""
+				onSubmit={handleSubmit(handleFormSubmit)}
+				action="https://formsubmit.co/289volts@gmail.com"
+				method="POST"
+			>
 				<input type="text" name="_honey" className="hidden" />
 				<input type="hidden" name="_captcha" value="false" />
-				<input type="hidden" name="_cc" value="thetechychefng@gmail.com,289volts@gmail.com"/>
+				<input type="hidden" name="_cc" value="thetechychefng@gmail.com,289volts@gmail.com" />
 				<div className="flex flex-col gap-[2.5rem]">
 					{inputs.map(({ label, name, type, placeholder }, index) => {
 						return (
@@ -141,7 +146,6 @@ const Form = () => {
 				</div>
 				<Button
 					className="w-full py-3 font-semibold bg-brandPrimary500 disabled:bg-neutrals200 text-white mt-[3rem]"
-					
 					label="Send 🚀"
 				/>
 			</form>
