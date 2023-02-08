@@ -10,14 +10,14 @@ const Form = () => {
 	const inputs = [
 		{
 			label: "Name",
-			name: "name",
+			name: "Name",
 			type: "text",
 			placeholder: "Name",
 			errorMsg: `We'd really love to know your name so we can properly address you 😃`,
 		},
 		{
 			label: "Email",
-			name: "email",
+			name: "Email",
 			type: "email",
 			placeholder: "Email",
 			pattern:
@@ -27,7 +27,7 @@ const Form = () => {
 		},
 		{
 			label: "Phone",
-			name: "phone",
+			name: "Phone",
 			type: "text",
 			placeholder: "Phone",
 			pattern: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
@@ -86,7 +86,10 @@ const Form = () => {
 					content={"Do you have a complaint or would like to make enquires? Send us a message"}
 				/>
 			</div>
-			<form className="" onSubmit={handleSubmit(handleFormSubmit)}>
+			<form className="" onSubmit={handleSubmit(handleFormSubmit)} action="https://formsubmit.co/289volts@gmail.com" method="POST">
+				<input type="text" name="_honey" className="hidden" />
+				<input type="hidden" name="_captcha" value="false" />
+				<input type="hidden" name="_cc" value="thetechychefng@gmail.com,289volts@gmail.com"></input>
 				<div className="flex flex-col gap-[2.5rem]">
 					{inputs.map(({ label, name, type, placeholder }, index) => {
 						return (
@@ -122,8 +125,7 @@ const Form = () => {
 							focus:outline-none
 								 focus:border-b-2 focus:border-b-brandPrimary400 invalid:border-b-red-500
 							} placeholder:text-[14px]`}
-							name="message"
-							id="message"
+							name="Message"
 							required={required}
 							cols="30"
 							rows={0}
