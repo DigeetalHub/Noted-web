@@ -37,10 +37,10 @@ const Form = () => {
 	];
 
 	const schema = yup.object({
-		name: yup.string().required(inputs[0].errorMsg),
-		email: yup.string().email().required(inputs[1].errorMsg).matches(inputs[1].pattern, "Please enter a valid email."),
-		phone: yup.string().required(inputs[2].errorMsg).matches(/^\d+$/, inputs[2].errorMsg2),
-		message: yup
+		Name: yup.string().required(inputs[0].errorMsg),
+		Email: yup.string().email().required(inputs[1].errorMsg).matches(inputs[1].pattern, "Please enter a valid email."),
+		Phone: yup.string().required(inputs[2].errorMsg).matches(/^\d+$/, inputs[2].errorMsg2),
+		Message: yup
 			.string()
 			.required("Leave us your message and we'll get in touch with you as soon as possible. 😃")
 			.min(5, "Your message is too short. 😃"),
@@ -54,26 +54,28 @@ const Form = () => {
 	} = useForm({
 		resolver: yupResolver(schema),
 		defaultValues: {
-			name: "",
-			email: "",
-			phone: "",
-			message: "",
+			Name: "",
+			Email: "",
+			Phone: "",
+			Message: "",
 		},
 	});
+	console.log(errors)
 
 	const [required, setRequired] = useState(false);
 
 	useEffect(() => {
-		if (errors.name || errors.email || errors.phone || errors.message) {
+		if (errors.Name || errors.Email || errors.Phone || errors.Message) {
 			setRequired(true);
 		} else {
 			setRequired(false);
 		}
 	}, [errors]);
 
-	const enableButton = errors.name || errors.email || errors.phone || errors.message ? true : false;
+	// const enableButton = errors.name || errors.email || errors.phone || errors.message ? true : false;
 
-	const handleFormSubmit = () => {
+	const handleFormSubmit = (data) => {
+	console.log(data)
 		reset();
 	};
 
@@ -86,17 +88,17 @@ const Form = () => {
 					content={"Do you have a complaint or would like to make enquires? Send us a message"}
 				/>
 			</div>
-			<form className="" onSubmit={handleSubmit(handleFormSubmit)} action="https://formsubmit.co/289volts@gmail.com" method="POST">
+			<form className="" onSubmit={handleSubmit(handleFormSubmit)} >
 				<input type="text" name="_honey" className="hidden" />
 				<input type="hidden" name="_captcha" value="false" />
-				<input type="hidden" name="_cc" value="thetechychefng@gmail.com,289volts@gmail.com"></input>
+				<input type="hidden" name="_cc" value="thetechychefng@gmail.com,289volts@gmail.com"/>
 				<div className="flex flex-col gap-[2.5rem]">
 					{inputs.map(({ label, name, type, placeholder }, index) => {
 						return (
 							<div key={index} className="flex flex-col relative ">
 								<input
 									{...register(name)}
-									aria-invalid={errors.name ? "true" : "false"}
+									aria-invalid={errors[name] ? "true" : "false"}
 									type={type}
 									name={name}
 									placeholder={placeholder}
@@ -109,7 +111,7 @@ const Form = () => {
 								</span>
 								<label
 									htmlFor={name}
-									className="text-sm font-semibold i14Max:text-[1.5rem] text-label transition-all duration-[400ms] peer-placeholder-shown:text-base peer-placeholder-shown:top-[0.35rem] peer-placeholder-shown:text-label peer-focus:-top-[1.2rem] peer-focus:-left-0 peer-focus:text-label peer-focus:text-sm absolute left-0 -top-[1.2rem]"
+									className="text-base font-semibold i14Max:text-[1.2rem] text-label transition-all duration-[400ms] peer-placeholder-shown:text-base peer-placeholder-shown:top-[0.35rem] peer-placeholder-shown:text-label peer-focus:-top-[1.2rem] peer-focus:-left-0 peer-focus:text-label peer-focus:text-sm absolute left-0 -top-[1.2rem]"
 								>
 									{label}
 								</label>
@@ -130,16 +132,16 @@ const Form = () => {
 							cols="30"
 							rows={0}
 							placeholder="Leave us your message and we'll get in touch with you as soon as possible."
-							{...register("message", {
+							{...register("Message", {
 								required: "This is process is incomplete without your message 🤝",
 							})}
 						></textarea>
-						{errors.message && <span className=" text-red-500 text-sm">{errors.message?.message}</span>}
+						{errors.Message && <span className=" text-red-500 text-sm">{errors.Message?.message}</span>}
 					</div>
 				</div>
 				<Button
 					className="w-full py-3 font-semibold bg-brandPrimary500 disabled:bg-neutrals200 text-white mt-[3rem]"
-					disabled={enableButton ? true : false}
+					
 					label="Send 🚀"
 				/>
 			</form>
