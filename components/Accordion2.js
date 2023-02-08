@@ -19,7 +19,7 @@ const AltAccordion = ({ items, index }) => {
 		<div className="mb-6">
 			<motion.div className={`w-full`}>
 				<motion.div
-					className="flex justify-between items-center gap-[3.5rem] md:gap-[30%]"
+					className="flex justify-between items-start gap-[3.5rem] md:gap-[30%]"
 					onClick={() => openAccordion(index)}
 				>
 					<h2 className="uppercase font-bold text-xl fold2Full:text-2xl fold2Full:hover:text-brandPrimary400 cursor-pointer fold2Full:hover:translate-x-[1rem] transition duration-500">
