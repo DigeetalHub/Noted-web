@@ -60,7 +60,6 @@ const Form = () => {
 			Message: "",
 		},
 	});
-	console.log(errors);
 
 	const [required, setRequired] = useState(false);
 
@@ -73,22 +72,29 @@ const Form = () => {
 	}, [errors]);
 
 	// const enableButton = errors.name || errors.email || errors.phone || errors.message ? true : false;
-	const url = "https://formsubmit.co/289volts@gmail.com";
+	const url = "https://formspree.io/f/myyaeezz";
 	const handleFormSubmit = (data) => {
-		reset();
-		console.log(data);
 		fetch(url, {
 			method: "POST",
+			body: JSON.stringify(data),
 			headers: {
 				Accept: "application/json",
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(data),
 		})
-			.then((res) => res.json())
-			.then((data) => {
-				console.log(data);
+			.then((res) => {
+				if (res.status === 200) {
+					alert("Message sent successfully. We'll get back to you as soon as possible. 😃");
+				} else {
+					alert("Message not sent. Please try again. 😃");
+				}
+			})
+			.catch((err) => {
+				console.log(err);
+				alert("Message not sent. Please try again. 😃");
 			});
+
+		reset();
 	};
 
 	return (
@@ -103,7 +109,7 @@ const Form = () => {
 			<form className="" onSubmit={handleSubmit(handleFormSubmit)}>
 				<input type="text" name="_honey" className="hidden" />
 				<input type="hidden" name="_captcha" value="false" />
-				<input type="hidden" name="_cc" value="thetechychefng@gmail.com,289volts@gmail.com" />
+				<input type="hidden" name="_cc" value="roland@digeetalhub.com,289volts@gmail.com" />
 				<div className="flex flex-col gap-[2.5rem]">
 					{inputs.map(({ label, name, type, placeholder }, index) => {
 						return (

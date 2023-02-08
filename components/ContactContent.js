@@ -8,10 +8,17 @@ export default function ContactContent({ heading, text, icon, email, tel }) {
 				<Image src={icon} alt="" />
 				<h2 className="text-[2rem] font-bold text-brandPrimary50">{heading}</h2>
 			</div>
-			{tel && <Link href={`tel:${tel}`} className="text-xl text-neutrals50 underline-offset-4 underline">{tel}</Link>}
-			{text && <p  className="text-xl text-neutrals50">{text}</p>}
+			{tel && (
+				<Link href={`tel:${tel}`} className="text-xl text-neutrals50 underline-offset-4 underline">
+					{tel}
+				</Link>
+			)}
+			{text && <p className="text-xl text-neutrals50">{text}</p>}
 			{email && (
-				<Link href="mailto:getnoted@notedmediagroup.com" className="text-xl text-neutrals50 underline-offset-4 underline ">
+				<Link
+					href="mailto:getnoted@notedmediagroup.com"
+					className="text-xl text-neutrals50 underline-offset-4 underline "
+				>
 					{email}
 				</Link>
 			)}
