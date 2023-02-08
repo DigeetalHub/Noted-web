@@ -100,10 +100,7 @@ const Form = () => {
 					content={"Do you have a complaint or would like to make enquires? Send us a message"}
 				/>
 			</div>
-			<form
-				className=""
-				onSubmit={handleSubmit(handleFormSubmit)}
-			>
+			<form className="" onSubmit={handleSubmit(handleFormSubmit)}>
 				<input type="text" name="_honey" className="hidden" />
 				<input type="hidden" name="_captcha" value="false" />
 				<input type="hidden" name="_cc" value="thetechychefng@gmail.com,289volts@gmail.com" />
@@ -126,7 +123,7 @@ const Form = () => {
 								</span>
 								<label
 									htmlFor={name}
-									className="text-base font-semibold i14Max:text-[1.1rem] text-label transition-all duration-[400ms] peer-placeholder-shown:text-base peer-placeholder-shown:top-[0.35rem] peer-placeholder-shown:text-label peer-focus:-top-[1.2rem] peer-focus:-left-0 peer-focus:text-label peer-focus:text-sm absolute left-0 -top-[1.2rem]"
+									className="text-base font-semibold text-label transition-all duration-[400ms] peer-placeholder-shown:text-base peer-placeholder-shown:top-[0.35rem] peer-placeholder-shown:text-label peer-focus:-top-[1.2rem] peer-focus:-left-0 peer-focus:text-label dualFold:peer-focus:text-[1.25rem] absolute left-0 -top-[1.2rem]"
 								>
 									{label}
 								</label>
@@ -134,7 +131,7 @@ const Form = () => {
 						);
 					})}
 					<div className="flex flex-col gap-2">
-						<label htmlFor="message" className="text-base font-semibold text-gray-500 i14Max:text-[1.1rem]">
+						<label htmlFor="message" className="text-base font-semibold text-gray-500 dualFold:text-[1.1rem]">
 							Message
 						</label>
 						<textarea
