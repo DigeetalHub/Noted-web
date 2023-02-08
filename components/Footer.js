@@ -58,7 +58,7 @@ const Footer = () => {
 						<Image src={Copyright} alt="Copyright icon" className="mr-[5px] fold:mr-2 w-[10px] fold:w-[15px]" /> Copyright{" "}
 						{year} | All rights reserved. Noted
 					</p>
-					<p className="text-center">Designed and Developed by <Link href="https://digeetalhub.com" className="underline underline-offset-4">DigeetalHub</Link></p>
+					<p className="text-center">Designed and Developed by <Link href="https://digeetalhub.com" target="_blank" className="underline underline-offset-4">DigeetalHub</Link></p>
 				</div>
 			</div>
 		</footer>
