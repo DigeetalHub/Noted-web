@@ -10,7 +10,7 @@ const Footer = () => {
 	const year = new Date().getFullYear();
 
 	return (
-		<footer className="py-6 px-4 bg-brandPrimary900 mt-[3rem] fold:mt-[5.5rem] md:pt-[5.5rem]">
+		<footer className="py-6 px-4 fold:pt-[3rem] bg-brandPrimary900 mt-[3rem] fold:mt-[5.5rem] md:pt-[3rem]">
 			<div className="flex flex-col flex-wrap gap-[1.7rem] fold:gap-[2.5rem] text-center text-white dualFold:flex-row dualFold:justify-between dualFold:text-left dualFold:w-[90%] dualFold:mx-auto dualFold:gap-y-[4rem] lg:w-[80%] bigScreen:w-[70%]">
 				<div className="flex flex-col dualFold:w-[33%] xl:w-[24%] gap-[0.625rem] fold:gap-4">
 					<Image src={Logo} alt="Website logo in the Footer" className="mx-auto dualFold:m-0 w-[57px] fold:w-[76px] bigScreen:w-[90px]" />
@@ -53,11 +53,12 @@ const Footer = () => {
 					<h3 className="font-semibold text-white text-[0.75rem] fold:text-base md:font-light">Join our community:</h3>
 					<Socials />
 				</div>
-				<div className="border-t-[1px] border-t-white pt-5 w-full">
+				<div className="border-t-[1px] border-t-white pt-5 w-full space-y-4">
 					<p className="flex items-center font-semibold justify-center text-[0.55rem] fold:text-sm s22:text-base">
-						<Image src={Copyright} alt="Copyright icon" className="mr-[5px] fold:mr-2 w-[14px] fold:w-auto" /> Copyright{" "}
-						{year} | Noted
+						<Image src={Copyright} alt="Copyright icon" className="mr-[5px] fold:mr-2 w-[10px] fold:w-[15px]" /> Copyright{" "}
+						{year} | All rights reserved. Noted
 					</p>
+					<p className="">Designed and Developed by <Link href="https://digeetalhub.com" className="underline underline-offset-4">DigeetalHub</Link></p>
 				</div>
 			</div>
 		</footer>
