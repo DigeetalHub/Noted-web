@@ -41,6 +41,7 @@ module.exports = {
 				wavyBgDesktop: "url('/assets/images/wavy-bg-desktop.svg')",
 				wavyBgMobile: "url('/assets/images/wavy-bg-mobile.svg')",
 				contactBgMobile: "url('/assets/images/contact-bg-sm.png')",
+				contactBgDesktop: "url('/assets/images/contact-bg-desktop.png')",
 			},
 			backdropBlur: {
 				header: "20px",

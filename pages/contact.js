@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Form from "../components/Form";
+import ContactOverlay from "../components/ContactOverlay";
 
 const Contact = () => {
 	return (
@@ -18,14 +19,15 @@ const Contact = () => {
 					content="artists, photography, Photographers, Content Creators, Musicians, Videographers, Creatives"
 				/>
 			</Head>
-     
-      <main className="">
-        <section className=" h-full bg-contactBgMobile bg-no-repeat bg-cover bg-center">
-          <div className="mb-[5rem] bg-overlay py-[5rem] h-full px-[0.875rem] ">
-			<Form />
-		  </div>
-        </section>
-      </main>
+
+			<main className="relative">
+				<ContactOverlay />
+				<section className=" h-full bg-contactBgMobile md:bg-contactBgDesktop bg-no-repeat bg-cover bg-center ">
+					<div className="mb-[5rem] bg-overlay py-[5rem] h-full px-[0.875rem] i14Max:pt-[5.5rem] ">
+						<Form />
+					</div>
+				</section>
+			</main>
 		</div>
 	);
 };
