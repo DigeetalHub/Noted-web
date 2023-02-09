@@ -1,70 +1,38 @@
 import { useToggle } from "../context/AccordionContext";
+import { Collapse } from "react-collapse";
+import AccordionContent from "./AccordionContent2";
+import Image from "next/image";
+import Plus from "../public/assets/icons/plus.svg";
 
-const Accordion = ({ items, cookiesItems, index }) => {
+const Accordion = ({ items, index }) => {
 	const { isOpen, setIsOpen } = useToggle();
 
-	const openAccordion = () => {
-		setIsOpen(index === isOpen ? null : index);
+	const openAccordion = (index) => {
+		const isOpened = isOpen.includes(index);
+		setIsOpen(isOpened ? isOpen.filter((i) => i !== index) : [...isOpen, index]);
 	};
-	const { title, mainTitle, description, informationList, purposeContent, otherInformation, content } = items;
+	const { mainTitle } = items;
 
 	return (
 		<div className="">
-			{
-				<div key={index} className="w-full ">
-					<div className="relative">
-						<h2 className="font-bold text-xl mt-6 mb-4  w-full" onClick={() => openAccordion(index)}>
-							{mainTitle}
-						</h2>
-						<div className="absolute h-[15px] w-[15px] right-6 top-[13px]">
-							<div className="w-[15px] h-[2px] bg-black rotate-90"></div>
-							<div className="w-[15px] h-[2px] bg-black -mt-[2px]"></div>
-						</div>
-					</div>
-					{isOpen && (
-						<div className="transition duration-1000">
-							hello
-							{content.map(({ title, description }, index) => {
-								console.log(title, description);
-								return (
-									<div className="space-y-4" key={index}>
-										<h3 className="font-semibold">{title}</h3>
-										<p className="text-sm ">{description}</p>
-									</div>
-								);
-							})}
-							{/* {purposeContent.map(({ title, description, informationYouGiveUs }, index) => {
-							return (
-								<div className="mt-4" key={index}>
-									<div className="space-y-2">
-										<h3 className="font-semibold">{title}</h3>
-										<p className="text-sm ">{description}</p>
-										<h4 className="font-semibold">{informationYouGiveUs}</h4>
-									</div>
-								</div>
-							);
-						})}
+			<div key={index} className="w-full mb-8">
+				<div
+					className="flex justify-between items-start gap-[3.5rem] md:gap-[30%]"
+					onClick={() => openAccordion(index)}
+				>
+					<h2 className="uppercase font-bold text-xl fold2Full:text-2xl fold2Full:hover:text-brandPrimary400 cursor-pointer fold2Full:hover:translate-x-[1rem] transition duration-500">
+						{mainTitle}
+					</h2>
+					<Image src={Plus} alt="" className={`${isOpen.includes(index) ? "rotate-45" : ""} transition duration-500`} />
+				</div>
+				<Collapse isOpened={isOpen.includes(index)}>
+					{isOpen.includes(index) && (
 						<div className="">
-							{informationList.map((item, index) => {
-								return (
-									<ul key={index} className="list-disc ml-4 text-sm ">
-										<li className="mt-1">{item}</li>
-									</ul>
-								);
-							})}
-						</div>
-						{otherInformation.map(({ title, description }, index) => {
-							return (
-								<div key={index} className="mt-4 space-y-2">
-									<h3 className="font-semibold">{title}</h3>
-									<p className="text-sm">{description}</p>
-								</div>
-							);
-						})} */}
+							<AccordionContent data={items} index={index} />
 						</div>
 					)}
-				</div>
-			}
+				</Collapse>
+			</div>
 		</div>
 	);
 };

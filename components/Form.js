@@ -5,7 +5,6 @@ import Button from "./Button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-// import { useToasts } from "react-toast-notifications";
 import { toast } from "react-toastify";
 
 const Form = () => {
@@ -73,6 +72,7 @@ const Form = () => {
 	const enableButton = errors.Name || errors.Email || errors.Phone || errors.Message ? true : false;
 	const url = "https://formspree.io/f/myyaeezz";
 	const handleFormSubmit = (data) => {
+		scrollToTop(0, 0);
 		fetch(url, {
 			method: "POST",
 			body: JSON.stringify(data),

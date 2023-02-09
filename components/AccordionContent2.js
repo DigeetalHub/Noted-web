@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const AccordionContent = ({ data, index }) => {
 	const {
-		title1,
-		title2,
+		title,
+
 		description1,
 		description2,
 		description3,
@@ -17,15 +17,11 @@ const AccordionContent = ({ data, index }) => {
 		list1,
 		list2,
 	} = data;
-
-	console.log(data);
 	return (
 		<div className="">
+			{title ? <h3 className="font-semibold ">{title}</h3> : null}
 			<div className="space-y-2 mt-4">
-				{description1}
-				{title1 ? <h3 className="font-semibold ">{title1}</h3> : null}
 				{description1 ? <p className="text-sm fold2Full:text-base">{description1}</p> : null}
-				{title2 ? <h3 className="font-semibold ">{title2}</h3> : null}
 				{description2 ? <p className="text-sm fold2Full:text-base">{description2}</p> : null}
 				{description3 ? <p className="text-sm fold2Full:text-base">{description3}</p> : null}
 				{description4 ? <p className="text-sm fold2Full:text-base">{description4}</p> : null}

@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Accordion2 from "../components/Accordion2";
-import { termsOfService } from "../data/data";
+import { termsOfService } from "../data/data2";
 
 const TermsOfService = () => {
 	return (
