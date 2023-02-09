@@ -3,7 +3,7 @@ import Image from "next/image";
 import Plus from "../public/assets/icons/plus.svg";
 import { motion } from "framer-motion";
 import { Collapse } from "react-collapse";
-import AccordionContent from "./AccordionContent";
+import AccordionContent2 from "./AccordionContent2";
 
 const AltAccordion = ({ items, index }) => {
 	const { isOpen, setIsOpen } = useToggle();
@@ -30,7 +30,7 @@ const AltAccordion = ({ items, index }) => {
 				<Collapse isOpened={isOpen.includes(index)}>
 					{isOpen.includes(index) && (
 						<motion.div className="">
-							<AccordionContent data={items} index={index} />
+							<AccordionContent2 data={items} index={index} />
 						</motion.div>
 					)}
 				</Collapse>
