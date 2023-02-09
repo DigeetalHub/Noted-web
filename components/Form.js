@@ -72,7 +72,7 @@ const Form = () => {
 	const enableButton = errors.Name || errors.Email || errors.Phone || errors.Message ? true : false;
 	const url = "https://formspree.io/f/myyaeezz";
 	const handleFormSubmit = (data) => {
-		scrollToTop(0, 0);
+		
 		fetch(url, {
 			method: "POST",
 			body: JSON.stringify(data),

@@ -4,6 +4,10 @@ import Accordion from "../components/Accordion";
 import { privacyPolicy } from "../data/data";
 
 const PrivacyPage = () => {
+	React.useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	
 	return (
 		<div className="">
 			<Head>

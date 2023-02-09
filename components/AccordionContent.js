@@ -8,12 +8,12 @@ const AccordionContent = ({ data, index }) => {
 			{data.map((item, i) => {
 				const { heading, description } = item;
 				return (
-					<div key={index} className="space-y-4">
+					<div key={i} className="space-y-4">
 						<h3 className="font-semibold">{heading}</h3>
 						{description.includes(";") ? (
 							<ul>
 								{description.split(";").map((li, i) => (
-									<li key={index} className="text-sm fold2Full:text-base list-disc ml-5">
+									<li key={i} className="text-sm fold2Full:text-base list-disc ml-5">
 										{li}
 									</li>
 								))}

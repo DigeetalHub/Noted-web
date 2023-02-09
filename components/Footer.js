@@ -4,6 +4,7 @@ import Link from "next/link";
 import Logo from "../public/assets/images/Noted-logo.png";
 import Email from "../public/assets/icons/email.svg";
 import Copyright from "../public/assets/icons/copyright.svg";
+import WhitePhone from "../public/assets/icons/whitePhone.svg";
 import Socials from "./Socials";
 
 const Footer = () => {
@@ -22,19 +23,19 @@ const Footer = () => {
 					<h3 className="font-bold text-neutrals50 text-[0.875rem] fold:text-xl bigScreen:text-[1.7rem]">Explore</h3>
 					<Link
 						href="/privacy"
-						className="font-semibold text-neutrals100 border-b-[2px] border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
+						className="font-semibold text-neutrals100 lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
 					>
 						Privacy Policy
 					</Link>
 					<Link
 						href="/terms-of-service"
-						className="font-semibold text-neutrals100 border-b-[2px] border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
+						className="font-semibold text-neutrals100 lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
 					>
 						Terms of service
 					</Link>
 					<Link
 						href="/terms-of-use"
-						className="font-semibold text-neutrals100 border-b-[2px] border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
+						className="font-semibold text-neutrals100 lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
 					>
 						Terms of use
 					</Link>
@@ -46,7 +47,14 @@ const Footer = () => {
 						className="font-semibold text-neutrals100 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
 					>
 						<Image src={Email} alt="Email icon" className="inline-block w-[12px] fold:w-auto" />{" "}
-						<span className="ml-[0.5rem] fold:ml-[0.4rem] border-b-[2px] border-b-brandPrimary500">info@noted.com</span>
+						<span className="ml-[0.5rem] fold:ml-[0.4rem] lg:focus:border-b-[2px] lg:focus:border-b-brandPrimary500">info@noted.com</span>
+					</Link>
+					<Link
+						href="tel:(123) 456-7890"
+						className="font-semibold text-neutrals100 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
+					>
+						<Image src={WhitePhone} alt="Email icon" className="inline-block w-[12px] fold:w-[20px] fill-white" />{" "}
+						<span className="ml-[0.5rem] fold:ml-[0.4rem] lg:focus:border-b-[2px] lg:focus:border-b-brandPrimary500">(123) 456-7890</span>
 					</Link>
 				</div>
 				<div className="flex flex-col gap-3 dualFold:flex-row items-center md:mt-[2.5rem] xl:w-[40%]">
