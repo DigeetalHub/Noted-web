@@ -202,4 +202,5 @@ export const privacyPolicy = [
 			},
 		],
 	},
+
 ];

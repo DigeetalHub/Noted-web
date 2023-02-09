@@ -28,12 +28,12 @@ const PrivacyPage = () => {
 					<h2 className="font-semibold">Effective Date: 01-03-2023</h2>
 				</div>
 
-				{privacyPolicy.map((item, index) => (
-					<Accordion items={item} key={index} index={index} />
-				))}
-			</main>
-		</div>
-	);
+        {privacyPolicy.map((item, index) => (
+          <Accordion items={item} key={index} index={index} />
+        ))}
+      </main>
+    </div>
+  );
 };
 
 export default PrivacyPage;
