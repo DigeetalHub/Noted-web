@@ -5,7 +5,6 @@ import Image from "next/image";
 import Plus from "../public/assets/icons/plus.svg";
 
 const Accordion = ({ items, index }) => {
-  console.log(items);
   const { isOpen, setIsOpen } = useToggle();
 
 	const openAccordion = (index) => {
