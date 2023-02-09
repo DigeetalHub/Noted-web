@@ -1,6 +1,6 @@
 import { useToggle } from "../context/AccordionContext";
 import { Collapse } from "react-collapse";
-import AccordionContent from "./AccordionContent2";
+import AccordionContent from "./AccordionContent";
 import Image from "next/image";
 import Plus from "../public/assets/icons/plus.svg";
 
@@ -11,7 +11,7 @@ const Accordion = ({ items, index }) => {
 		const isOpened = isOpen.includes(index);
 		setIsOpen(isOpened ? isOpen.filter((i) => i !== index) : [...isOpen, index]);
 	};
-	const { mainTitle } = items;
+	const { mainTitle, data } = items;
 
 	return (
 		<div className="">
@@ -28,7 +28,7 @@ const Accordion = ({ items, index }) => {
 				<Collapse isOpened={isOpen.includes(index)}>
 					{isOpen.includes(index) && (
 						<div className="">
-							<AccordionContent data={items} index={index} />
+							<AccordionContent data={data} index={index} />
 						</div>
 					)}
 				</Collapse>
