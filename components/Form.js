@@ -41,7 +41,7 @@ const Form = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     resolver: yupResolver(schema(inputs)),
     defaultValues: {
@@ -60,16 +60,14 @@ const Form = () => {
       setRequired(true);
       setEnableButton(true);
     } else {
-      setRequired(false);
       setEnableButton(false);
+      setRequired(false);
     }
-  }, [errors]);
-
-  const handleFormSubmit = async (data) => {
+  }, [isValid, errors]);
+ 
     const url = "https://formspree.io/f/myyaeezz";
 
-	const enableButton = errors.Name || errors.Email || errors.Phone || errors.Message ? true : false;
-	const url = "https://formspree.io/f/myyaeezz";
+	// const enableButton = errors.Name || errors.Email || errors.Phone || errors.Message ? true : false;
 	const handleFormSubmit = (data) => {
 		
 		fetch(url, {
@@ -83,11 +81,11 @@ const Form = () => {
 			.then((res) => {
 				if (res.status === 200) {
 					toast.success("Message sent successfully. We'll get back to you as soon as possible. 😃", {
-						autoClose: 2000,
+						autoClose: 2500,
 						icon: "🚀",
 					});
 				} else {
-					toast.error("Message not sent . Please try again.", { autoClose: 2000, icon: "🚀" });
+					toast.error("Message not sent . Please try again.", { autoClose: 2500});
 				}
 			})
 			.catch((err) => {
@@ -103,7 +101,7 @@ const Form = () => {
     <div className="bg-white py-[3.5rem] px-8 dualFold:px-[4rem] flex flex-col gap-[2.8rem] rounded-2xl shadow-form md:mx-auto lg:ml-auto lg:mr-[4rem] xl:mr-[5rem] i14Max:w-[75%] md:w-[68%] fold2Full:w-[60%] lg:w-[50%] xl:w-[45%] laptops:w-[42%] z-[2] relative">
       <div className="flex flex-col gap-3">
         <Heading
-          classes={"text-black font-bold text-[2.5rem] i14Max:text-[3.2rem]"}
+          classes={"text-black font-bold text-[2.2rem] i14Max:text-[2.8rem]"}
           firstContent={"Contact Us"}
         />
         <Subheading
@@ -123,7 +121,7 @@ const Form = () => {
           name="_cc"
           value="roland@digeetalhub.com,289volts@gmail.com"
         />
-        <div className="flex flex-col gap-[2.5rem]">
+        <div className="flex flex-col gap-[2rem]">
           {inputs.map(({ label, name, type, placeholder }, index) => {
             return (
               <div key={index} className="flex flex-col relative ">
