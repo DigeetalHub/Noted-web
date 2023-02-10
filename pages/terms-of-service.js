@@ -4,6 +4,10 @@ import Accordion2 from "../components/Accordion2";
 import { termsOfService } from "../data/data2";
 
 const TermsOfService = () => {
+	React.useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	
 	return (
 		<div className="">
 			<Head>
