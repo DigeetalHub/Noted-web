@@ -67,7 +67,6 @@ const Form = () => {
  
     const url = "https://formspree.io/f/myyaeezz";
 
-	// const enableButton = errors.Name || errors.Email || errors.Phone || errors.Message ? true : false;
 	const handleFormSubmit = async (data) => {
 		
 		await fetch(url, {
