@@ -8,6 +8,7 @@ import AccordionContent2 from "./AccordionContent2";
 const AltAccordion = ({ items, index }) => {
 	const { isOpen, setIsOpen } = useToggle();
 
+
 	const openAccordion = (index) => {
 		const isOpened = isOpen.includes(index);
 		setIsOpen(isOpened ? isOpen.filter((i) => i !== index) : [...isOpen, index]);
