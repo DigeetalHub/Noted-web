@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const AccordionContent2 = ({ data, index }) => {
-  console.log(data)
   return (
     <div className="my-4 space-y-4">
       {data.map((item, index) => {
