@@ -4,6 +4,7 @@ import Accordion from "../components/Accordion";
 import { privacyPolicy } from "../data/data";
 
 const PrivacyPage = () => {
+
   return (
     <div className="">
       <Head>
@@ -26,6 +27,8 @@ const PrivacyPage = () => {
           <h1 className="text-[2rem] font-bold uppercase">Privacy Policy</h1>
           <h2 className="font-semibold">Effective Date: 01-03-2023</h2>
         </div>
+=======
+	
 
         {privacyPolicy.map((item, index) => (
           <Accordion items={item} key={index} index={index} />

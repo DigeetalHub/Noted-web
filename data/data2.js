@@ -1,3 +1,4 @@
+
 export const termsOfService = [
 	{
 		mainTitle: "Introduction",
@@ -481,4 +482,5 @@ export const termsOfUse = [
 			},
 		],
 	},
+
 ];

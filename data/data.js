@@ -1,4 +1,5 @@
 export const privacyPolicy = [
+
   {
     mainTitle: "Introduction",
     data: [
@@ -106,10 +107,12 @@ export const privacyPolicy = [
 				As we believe necessary or appropriate (a) to comply with applicable laws; (b) to comply with lawful requests and legal process, including to respond to requests from public and government authorities; (c) to enforce our Policy; and (d) to protect our rights, privacy, safety or property, and/or that of you or others;
 				For analysis and study services; and
 				As described in the “Sharing of your Personal Data” section below.`,
+
 			},
 		],
 	},
 	{
+
 		mainTitle: "Sharing Your Personal Data",
 		data: [
 			{
