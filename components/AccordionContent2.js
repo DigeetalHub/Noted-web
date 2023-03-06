@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const AccordionContent = ({ data, index }) => {
+
+const AccordionContent2 = ({ data, index }) => {
+
   return (
     <div className="my-4 space-y-4">
       {data.map((item, index) => {
@@ -32,4 +34,4 @@ const AccordionContent = ({ data, index }) => {
   );
 };
 
-export default AccordionContent;
+export default AccordionContent2;

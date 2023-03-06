@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Accordion2 from "../components/Accordion2";
+import Accordion from "../components/Accordion";
 import { termsOfService } from "../data/data2";
 
 const TermsOfService = () => {
@@ -28,7 +28,7 @@ const TermsOfService = () => {
 					<h2 className="font-semibold">Effective Date: 01-03-2023</h2>
 				</div>
 				{termsOfService.map((item, index) => (
-					<Accordion2 items={item} key={index} index={index} />
+					<Accordion items={item} key={index} index={index} />
 				))}
 			</main>
 		</div>

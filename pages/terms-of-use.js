@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Accordion2 from "../components/Accordion2";
+import Accordion from "../components/Accordion";
 import { termsOfUse } from "../data/data2";
 
 const TermsOfUse = () => {
@@ -28,7 +28,7 @@ const TermsOfUse = () => {
 					<h2 className="font-semibold fold2Full:font-bold">Effective Date: 01-03-2023</h2>
 				</div>
 				{termsOfUse.map((item, index) => (
-					<Accordion2 items={item} key={index} index={index} />
+					<Accordion items={item} key={index} index={index} />
 				))}
 			</main>
 		</div>
