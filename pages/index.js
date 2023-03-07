@@ -22,8 +22,10 @@ export default function Home() {
 	const { scroll, setScrollToAbout, scrollNav, whiteNav, scrollToAbout } = useScroll();
 	const aboutRef = useRef();
 	const router = useRouter();
+	const [word, setWord] = useState("Discover");
 	const [name, setName] = useState("videographers");
-	const titles = ["creators", "photographers", "videographers", "musicians"];
+	const titles = ["content creators", "photographers", "videographers", "musicians"];
+	const words = ["Collab with", "Partner with", "Match with", "Discover"];
 
 	useEffect(() => {
 		if (scrollToAbout) {
@@ -39,14 +41,20 @@ export default function Home() {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			const index = titles.indexOf(name);
+			const wordIndex = words.indexOf(word);
 			if (index === titles.length - 1) {
 				setName(titles[0]);
 			} else {
 				setName(titles[index + 1]);
 			}
+			if (wordIndex === words.length - 1) {
+				setWord(words[0]);
+			} else {
+				setWord(words[wordIndex + 1]);
+			}
 		}, 3000);
 		return () => clearInterval(interval);
-	}, [name]);
+	}, [name, word]);
 
 	return (
 		<div className="">
@@ -65,7 +73,7 @@ export default function Home() {
 			<main className="snap-y scroll-pt-[2rem]" onScroll={scrollNav}>
 				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[84.5vh] s22:h-[82.5vh] i11Pro:h-[82vh] i13:h-[82.5vh] XR:h-[83.5vh] i14Max:h-[76vh] dualFold:h-[100vh] md:h-screen relative">
 					<div className="h-full pt-[2.9rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[4.5rem] px-2 fold:px-4 md:justify-center">
-						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 dualFold:w-[60%] md:w-[79%] fold2Full:w-[82%] xl:w-[58%] laptops:w-[50%] bigScreen:w-[52%]">
+						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 dualFold:w-[60%] md:w-[79%] fold2Full:w-[82%] xl:w-[60.5%] laptops:w-[65%] bigScreen:w-[60%]">
 							<Heading
 								firstContent={"Connect with"}
 								endContent={"from everywhere across the globe"}
@@ -73,20 +81,20 @@ export default function Home() {
 								classes="font-bold text-white text-[0.875rem] fold:text-[1.4rem] s22:text-[2rem] XR:text-[2.2rem] i14Max:text-[2.3rem] leading-[1.2] md:hidden"
 							/>
 							<Heading
-								firstColoredContent={"Discover"}
+								firstColoredContent={word}
 								endContent={"hidden creatives around the world using Noted"}
-								classes="font-bold text-white text-[2rem] fold2Full:text-[2.5rem] bigScreen:text-[3.5rem] leading-[1.27] hidden md:block"
+								classes="font-bold text-white text-[2rem] fold2Full:text-[2.5rem] 2xl:text-[3rem] bigScreen:text-[3.5rem] leading-[1.27] hidden md:block"
 							/>
 							<Subheading
-								classes="text-neutrals200 s22:leading-[23.5px] i11Pro:leading-[25px] XR:leading-[25.5px] fold:text-[0.7rem] s22:text-[0.9rem] i11Pro:text-[0.9rem] i13:text-[1rem] i14Max:text-[1.1rem] hidden fold:block md:hidden"
-								content="Swipe, Match, Create - Connect with fellow creators on our app designed for photographers,  musicians, and more. Download now and start collaborating!"
+								classes="text-neutrals200 s22:leading-[23.5px] i11Pro:leading-[25px] XR:leading-[25.5px] fold:text-[0.7rem] s22:text-[0.9rem] i11Pro:text-[0.9rem] i13:text-[1rem] i14Max:text-[1.1rem] fold:block md:hidden"
+								content="Search, Collaborate, Create - Connect with fellow creators on our app designed for photographers,  musicians, and more. Download now and start collaborating!"
 							/>
 							<Subheading
-								classes="text-neutrals100 leading-[28.5px] md:text-[1.25rem] md:w-[85%] iPadAir:w-[70%] md:mx-auto bigScreen:text-[2rem] bigScreen:leading-[1.3] hidden md:block"
-								content="Swipe, Match, Create - Connect with fellow creators on our app designed for photographers, videographers, musicians, and more. Download now and start collaborating!"
+								classes="text-neutrals100 leading-[28.5px] md:text-[1.125rem] md:w-[85%] iPadAir:w-[90%] md:mx-auto bigScreen:text-[2rem] bigScreen:leading-[1.3] hidden md:block"
+								content="Search, Collaborate, Create - Connect with fellow creators on our app designed for photographers, videographers, musicians, and more. Download now and start collaborating!"
 							/>
 						</div>
-						<div className="flex flex-col dualFold:flex-row justify-center gap-3 dualFold:gap-6 fold:w-full dualFold:w-[65%] md:w-[60%] lg:w-[50%] xl:w-[35%] mx-auto">
+						<div className="flex flex-col dualFold:flex-row justify-center gap-3 dualFold:gap-6 fold:w-full dualFold:w-[65%] md:w-[30%] xl:w-[20%] mx-auto">
 							<Button
 								label="Download Now"
 								className="text-white py-[8px] fold:py-2 s22:py-3 mx-auto w-[92%] fold:w-[80%] border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] dualFold:w-[100%] md:w-[100%] lg:w-[85%] xl:w-[%] bigScreen:w-[15] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
