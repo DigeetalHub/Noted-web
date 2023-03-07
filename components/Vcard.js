@@ -11,9 +11,9 @@ const Vcard = () => {
 	return (
 		<div className="w-[90%] flex flex-col items-center justify-center border border-brandPrimary500 py-[2.5rem] px-6 rounded-3xl gap-[2.5rem]">
 			<div className="space-y-2">
-				<div className="p-5 border-2 rounded-full border-brandPrimary500 w-[fit-content] mx-auto">
+				<div className="p-4 border-2 rounded-full border-brandPrimary500 w-[fit-content] mx-auto">
 					<Image
-						className="w-[80px] object-cover aspect-square m-0
+						className="w-[65px] md:w-[70px] object-cover aspect-square m-0
                     "
 						src={logo}
 						alt=""
@@ -22,9 +22,9 @@ const Vcard = () => {
 				</div>
 				<p className="font-medium">Search, Match and Create</p>
 			</div>
-			<div className="flex flex-col gap-7 w-full">
+			<div className="flex flex-col gap-6 w-full">
 				<Link
-					href="htps://www.tiktok.com/@notedmedia"
+					href="https://www.tiktok.com/@notedmedia"
 					className="w-full py-4 bg-brandPrimary500 rounded text-white font-semibold text-center flex justify-center items-center gap-2"
 				>
 					<span className="">TikTok</span> <Image src={tiktok} alt="" className="w-[21px]" />
@@ -49,6 +49,13 @@ const Vcard = () => {
 					target="_blank"
 				>
 					<span className="">LinkedIn</span> <Image src={linkedin} alt="" className="w-[22px]" />
+				</Link>
+				<Link
+					href="https://www.notedmediagroup.com"
+					className="w-full py-4 bg-brandPrimary500 rounded text-white font-semibold text-center flex justify-center items-center gap-2"
+					target="_blank"
+				>
+					Visit our Website
 				</Link>
 			</div>
 		</div>
