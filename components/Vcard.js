@@ -20,7 +20,7 @@ const Vcard = () => {
 						priority
 					/>
 				</div>
-				<p className="font-medium">Search, Match and Create</p>
+				<p className="font-medium">Search. Collaborate. Create</p>
 			</div>
 			<div className="flex flex-col gap-6 w-full">
 				<Link

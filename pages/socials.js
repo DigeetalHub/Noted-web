@@ -17,7 +17,7 @@ const Socials = () => {
 					content="artists, photography, Photographers, Content Creators, Musicians, Videographers, Creatives"
 				/>
 			</Head>
-			<div className="py-[1rem] w-full flex items-center justify-center max-w-[420px] md:h-screen md:mx-auto">
+			<div className="py-[1rem] w-full flex items-center justify-center max-w-[420px] md:h-screen md:mx-auto ">
 				<Vcard />
 			</div>
 		</>
