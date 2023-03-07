@@ -90,7 +90,7 @@ export default function Home() {
 								content="Search, Collaborate, Create - Connect with fellow creators on our app designed for photographers,  musicians, and more. Download now and start collaborating!"
 							/>
 							<Subheading
-								classes="text-neutrals100 leading-[28.5px] md:text-[1.125rem] md:w-[85%] iPadAir:w-[80%] md:mx-auto bigScreen:text-[2rem] bigScreen:leading-[1.3] hidden md:block"
+								classes="text-neutrals100 leading-[28.5px] md:text-[1.125rem] md:w-[85%] iPadAir:w-[90%] md:mx-auto bigScreen:text-[2rem] bigScreen:leading-[1.3] hidden md:block"
 								content="Search, Collaborate, Create - Connect with fellow creators on our app designed for photographers, videographers, musicians, and more. Download now and start collaborating!"
 							/>
 						</div>
