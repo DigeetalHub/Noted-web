@@ -31,7 +31,7 @@ const Vcard = () => {
 				</Link>
 				<Link
 					href="https://twitter.com/notedmedia_"
-					className="w-full py-4 bg-brandPrimary500 rounded text-white font-semibold text-center flex justify-center items-center gap-2"
+					className="w-full py-4 bg-brandPrimary500 rounded text-white font-semibold text-center flex justify-center items-center gap-2" target="_blank"
 				>
 					<span className="">Twitter</span> <Image src={twitter} alt="" className="w-[21px]" />
 				</Link>
