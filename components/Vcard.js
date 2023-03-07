@@ -9,7 +9,7 @@ import logo from "../public/assets/images/linktree-logo.svg";
 
 const Vcard = () => {
 	return (
-		<div className="w-[90%] flex flex-col items-center justify-center border border-brandPrimary500 py-[2.5rem] px-6 rounded-3xl gap-[4rem]">
+		<div className="w-[90%] flex flex-col items-center justify-center border border-brandPrimary500 py-[2.5rem] px-6 rounded-3xl gap-[2.5rem]">
 			<div className="space-y-2">
 				<div className="p-5 border-2 rounded-full border-brandPrimary500 w-[fit-content] mx-auto">
 					<Image
@@ -31,19 +31,22 @@ const Vcard = () => {
 				</Link>
 				<Link
 					href="https://twitter.com/notedmedia_"
-					className="w-full py-4 bg-brandPrimary500 rounded text-white font-semibold text-center flex justify-center items-center gap-2" target="_blank"
+					className="w-full py-4 bg-brandPrimary500 rounded text-white font-semibold text-center flex justify-center items-center gap-2"
+					target="_blank"
 				>
 					<span className="">Twitter</span> <Image src={twitter} alt="" className="w-[21px]" />
 				</Link>
 				<Link
 					href="https://instagram.com/notedmedia_"
-					className="w-full py-4 bg-brandPrimary500 rounded text-white font-semibold text-center flex justify-center items-center gap-2 "
+					className="w-full py-4 bg-brandPrimary500 rounded text-white font-semibold text-center flex justify-center items-center gap-2"
+					target="_blank"
 				>
 					<span className="">Instagram</span> <Image src={instagram} alt="" className="w-[24px]" />
 				</Link>
 				<Link
 					href="https://www.linkedin.com/company/noted-media-group/"
 					className="w-full py-4 bg-brandPrimary500 rounded text-white font-semibold text-center flex justify-center items-center gap-2"
+					target="_blank"
 				>
 					<span className="">LinkedIn</span> <Image src={linkedin} alt="" className="w-[22px]" />
 				</Link>
