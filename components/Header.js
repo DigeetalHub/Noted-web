@@ -9,7 +9,7 @@ import Close from "../public/assets/icons/close-icon.svg";
 import Button from "./Button";
 import { useScroll } from "../context/ScrollContext";
 
-const Header = () => {
+const Header = ({className}) => {
   const Navlinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/#about" },
@@ -44,7 +44,7 @@ const Header = () => {
 
   return (
     <header
-      className={`${
+      className={`${className} ${
         isWhite ? "bg-white" : "dualFold:bg-header"
       } fixed top-0 left-0 right-0 z-10 transition duration-50`}
     >

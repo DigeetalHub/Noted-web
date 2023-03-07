@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
@@ -22,6 +22,8 @@ export default function Home() {
 	const { scroll, setScrollToAbout, scrollNav, whiteNav, scrollToAbout } = useScroll();
 	const aboutRef = useRef();
 	const router = useRouter();
+	const [name, setName] = useState("videographers");
+	const titles = ["creators", "photographers", "videographers", "musicians"];
 
 	useEffect(() => {
 		if (scrollToAbout) {
@@ -33,6 +35,18 @@ export default function Home() {
 			setScrollToAbout(false);
 		}
 	}, [scrollToAbout, setScrollToAbout, router]);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			const index = titles.indexOf(name);
+			if (index === titles.length - 1) {
+				setName(titles[0]);
+			} else {
+				setName(titles[index + 1]);
+			}
+		}, 3000);
+		return () => clearInterval(interval);
+	}, [name]);
 
 	return (
 		<div className="">
@@ -50,12 +64,12 @@ export default function Home() {
 			</Head>
 			<main className="snap-y scroll-pt-[2rem]" onScroll={scrollNav}>
 				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[84.5vh] s22:h-[82.5vh] i11Pro:h-[82vh] i13:h-[82.5vh] XR:h-[83.5vh] i14Max:h-[76vh] dualFold:h-[100vh] md:h-screen relative">
-					<div className="h-full pt-[2.9rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[2.5rem] px-2 fold:px-4 md:justify-center">
+					<div className="h-full pt-[2.9rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[4.5rem] px-2 fold:px-4 md:justify-center">
 						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 dualFold:w-[60%] md:w-[79%] fold2Full:w-[82%] xl:w-[58%] laptops:w-[50%] bigScreen:w-[52%]">
 							<Heading
 								firstContent={"Connect with"}
 								endContent={"from everywhere across the globe"}
-								coloredContent={"creators"}
+								coloredContent={name}
 								classes="font-bold text-white text-[0.875rem] fold:text-[1.4rem] s22:text-[2rem] XR:text-[2.2rem] i14Max:text-[2.3rem] leading-[1.2] md:hidden"
 							/>
 							<Heading
@@ -65,22 +79,17 @@ export default function Home() {
 							/>
 							<Subheading
 								classes="text-neutrals200 s22:leading-[23.5px] i11Pro:leading-[25px] XR:leading-[25.5px] fold:text-[0.7rem] s22:text-[0.9rem] i11Pro:text-[0.9rem] i13:text-[1rem] i14Max:text-[1.1rem] hidden fold:block md:hidden"
-								content="Lorem ipsum dolor sit amet consectetur. Rhoncus pretium in sed blandit habitant nulla viverra. Sed et
-								fermentum mattis volutpat viverra augue faucibus integer."
+								content="Swipe, Match, Create - Connect with fellow creators on our app designed for photographers,  musicians, and more. Download now and start collaborating!"
 							/>
 							<Subheading
 								classes="text-neutrals100 leading-[28.5px] md:text-[1.25rem] md:w-[85%] iPadAir:w-[70%] md:mx-auto bigScreen:text-[2rem] bigScreen:leading-[1.3] hidden md:block"
-								content="Have unrestricted access to as many talents as you want, with never-ending conversations."
+								content="Swipe, Match, Create - Connect with fellow creators on our app designed for photographers, videographers, musicians, and more. Download now and start collaborating!"
 							/>
 						</div>
 						<div className="flex flex-col dualFold:flex-row justify-center gap-3 dualFold:gap-6 fold:w-full dualFold:w-[65%] md:w-[60%] lg:w-[50%] xl:w-[35%] mx-auto">
 							<Button
 								label="Download Now"
 								className="text-white py-[8px] fold:py-2 s22:py-3 mx-auto w-[92%] fold:w-[80%] border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] dualFold:w-[100%] md:w-[100%] lg:w-[85%] xl:w-[%] bigScreen:w-[15] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
-							/>
-							<Button
-								label="Learn more"
-								className="text-brandPrimary500 border-[1px] border-brandPrimary400 text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] py-2 fold:py-2 s22:py-[0.6875rem] w-full mx-auto fold:w-[80%] dualFold:w-[89%] md:w-[83%] lg:w-[80%] xl:w-[72%] px-6 rounded font-semibold bigScreen:text-[1.5rem] lg:hover:bg-brandPrimary400 lg:hover:text-white transition duration-300 ease-in-out]"
 							/>
 						</div>
 					</div>
@@ -188,7 +197,7 @@ export default function Home() {
 					<div className="dualFold:flex flex-row justify-between gap-[4rem] mt-4 lg:flex-row lg:mx-auto lg:mt-[2.4rem] lg:w-[80%] bigScreen:w-[65%] bigScreen:mx-auto">
 						<Subheading
 							classes="text-neutrals200 text-[0.6rem] fold:text-base text-center font-semibold dualFold:hidden"
-							content={`Noted is a tool designed for connecting creators on both a local and global scale. Whether you are looking for a videographer to shoot your next video, a vocalist for your next album or new producer for a different sound, Noted will help you find the talent your project may be missing. To simply put it, Noted is a place for creators everywhere to search, collaborate, and create.`}
+							content={`Noted is an app designed for connecting creators on both a local and global scale. Whether you are looking for a videographer to shoot your next video, a vocalist for your next album or new producer for a different sound, Noted will help you find the talent your project may be missing. To simply put it, Noted is a place for creators everywhere to search, collaborate, and create.`}
 						/>
 						<Subheading
 							classes="hidden dualFold:block text-neutrals200 font-semibold md:pt-[2rem] md:text-[1.25rem] md:leading-[1.27] xl:leading-[1.36] laptops:leading-[1.45] md:text-neutrals500 md:w-[60%] lg:text-[1.25rem] lg:w-[57%] lg:pt-[3rem] lg:text-left xl:w-[56%] laptops:w-[59%] xl:text-[1.5rem] bigScreen:text-[1.5rem] bigScreen:w-[57%]"
