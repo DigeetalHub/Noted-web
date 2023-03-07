@@ -1,6 +1,6 @@
 import { useToggle } from "../context/AccordionContext";
 import { Collapse } from "react-collapse";
-import AccordionContent from "./AccordionContent";
+import AccordionContent from "./AccordionContent2";
 import Image from "next/image";
 import Plus from "../public/assets/icons/plus.svg";
 

@@ -9,9 +9,7 @@ const Heading = ({
 }) => {
   return (
     <h1 className={classes}>
-      <span className="text-brandPrimary500">{firstColoredContent}</span>
-      {firstContent}{" "}
-      <span className="text-brandPrimary500">{coloredContent}</span>{" "}
+      <span className="text-brandPrimary500">{firstColoredContent}</span>{firstContent}<span className="text-brandPrimary500 text-center block mx-auto">{coloredContent}</span>{" "}
       {endContent}
     </h1>
   );

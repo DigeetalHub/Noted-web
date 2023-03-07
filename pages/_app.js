@@ -1,7 +1,5 @@
 import "../styles/globals.css";
-import { Jost } from "@next/font/google";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { Montserrat } from "@next/font/google";
 import { ScrollProvider } from "../context/ScrollContext";
 import { AccordionProvider } from "../context/AccordionContext";
 import { Fragment } from "react";
@@ -9,20 +7,19 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import "react-toastify/dist/ReactToastify.css";
+import Layout from "../components/Layout";
 
-const jost = Jost({ subsets: ["latin"] });
+const mont = Montserrat({ subsets: ["latin"] });
 
 function MyApp({ Component, pageProps }) {
 	return (
 		<Fragment>
 			<AccordionProvider>
 				<ScrollProvider>
-					<main className={`${jost.className}`}>
-						<Header />
-						<Component {...pageProps} />
+						<Layout className={`${mont.className}`}>
+							<Component {...pageProps} />
 						<ToastContainer />
-						<Footer />
-					</main>
+						</Layout>
 				</ScrollProvider>
 			</AccordionProvider>
 		</Fragment>

@@ -7,11 +7,13 @@ import Copyright from "../public/assets/icons/copyright.svg";
 import WhitePhone from "../public/assets/icons/whitePhone.svg";
 import Socials from "./Socials";
 
-const Footer = () => {
+const Footer = ({ className }) => {
 	const year = new Date().getFullYear();
 
 	return (
-		<footer className="py-6 px-4 fold:pt-[3rem] bg-brandPrimary900 mt-[3rem] fold:mt-[5.5rem] md:pt-[3rem]">
+		<footer
+			className={`${className} py-6 px-4 fold:pt-[3rem] bg-brandPrimary900 mt-[3rem] fold:mt-[5.5rem] md:pt-[3rem]`}
+		>
 			<div className="flex flex-col flex-wrap gap-[1.7rem] fold:gap-[2.5rem] text-center text-white dualFold:flex-row dualFold:justify-between dualFold:text-left dualFold:w-[90%] dualFold:mx-auto dualFold:gap-y-[4rem] lg:w-[80%] bigScreen:w-[70%]">
 				<div className="flex flex-col dualFold:w-[33%] xl:w-[24%] gap-[0.625rem] fold:gap-4">
 					<Image
@@ -47,21 +49,12 @@ const Footer = () => {
 				<div className="flex flex-col gap-3">
 					<h3 className="font-bold text-neutrals50 text-[0.875rem] fold:text-xl bigScreen:text-[1.7rem]">Contact</h3>
 					<Link
-						href="mailto:info@noted.com"
+						href="mailto:getnoted@notedmediagroup.com"
 						className="font-semibold text-neutrals100 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
 					>
 						<Image src={Email} alt="Email icon" className="inline-block w-[12px] fold:w-auto" />{" "}
-						<span className="ml-[0.5rem] fold:ml-[0.4rem] lg:focus:border-b-[2px] lg:focus:border-b-brandPrimary500">
-							info@noted.com
-						</span>
-					</Link>
-					<Link
-						href="tel:(123) 456-7890"
-						className="font-semibold text-neutrals100 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
-					>
-						<Image src={WhitePhone} alt="Email icon" className="inline-block w-[12px] fold:w-[20px] fill-white" />{" "}
-						<span className="ml-[0.5rem] fold:ml-[0.4rem] lg:focus:border-b-[2px] lg:focus:border-b-brandPrimary500">
-							(123) 456-7890
+						<span className="ml-[0.5rem] fold:ml-[0.4rem] border-b-[2px] border-b-brandPrimary500">
+							getnoted@notedmediagroup.com
 						</span>
 					</Link>
 				</div>
@@ -72,11 +65,12 @@ const Footer = () => {
 				<div className="border-t-[1px] border-t-white pt-5 w-full space-y-4">
 					<p className="flex items-center font-semibold justify-center text-[0.55rem] fold:text-sm s22:text-base">
 						<Image src={Copyright} alt="Copyright icon" className="mr-[5px] fold:mr-2 w-[10px] fold:w-[15px]" />{" "}
-						Copyright {year} | All rights reserved. Noted
+						Copyright {year} |&nbsp;<span className="hidden md:block">All rights reserved. Noted</span>
+						<span className="md:hidden">Noted</span>
 					</p>
-					<p className="text-center">
+					<p className="text-center font-medium">
 						Designed and Developed by{" "}
-						<Link href="https://digeetalhub.com" target="_blank" className="underline underline-offset-4">
+						<Link href="https://www.digeetalhub.com" target="_blank" className="underline underline-offset-4">
 							DigeetalHub
 						</Link>
 					</p>
