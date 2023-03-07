@@ -1,13 +1,16 @@
+import { useRouter } from "next/router";
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
 const Layout = ({ children, className }) => {
+	const { pathname } = useRouter();
+	const isSocials = pathname === "/socials";
 	return (
 		<>
-			<Header className={className} />
+			{isSocials ? null : <Header className={className} />}
 			<main className={className}>{children}</main>
-			<Footer  className={className} />
+			{isSocials ? null : <Footer className={className} />}
 		</>
 	);
 };
