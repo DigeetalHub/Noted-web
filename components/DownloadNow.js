@@ -1,8 +1,9 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import Image from "next/image";
 import appScreens from "../public/assets/images/appScreens1.webp";
 import { supabase } from "../utils/supabaseClient";
+import { toast } from "react-toastify";
 
 const DownloadNow = () => {
   const [name, setName] = useState("");
@@ -26,8 +27,13 @@ const DownloadNow = () => {
     if (error) {
       setMessage(error.message);
     } else {
-      setMessage(
-        "Thank you for registration! We will be in touch with you soon."
+      setMessage();
+      toast.success(
+        "Thank you for registration! We will be in touch with you soon 😃",
+        {
+          autoClose: 2500,
+          icon: "🚀",
+        }
       );
     }
     setLoading(false);
