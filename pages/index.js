@@ -10,13 +10,12 @@ import IconText from "../components/IconText";
 import DocumentIcon from "../public/assets/icons/document-download.svg";
 import User from "../public/assets/icons/user-icon.svg";
 import Stats from "../public/assets/icons/stats.svg";
-import UserSearch from "../public/assets/icons/user-search.svg";
-import People from "../public/assets/icons/people.svg";
-import Plus from "../public/assets/icons/plus-circle.svg";
-import Repeat from "../public/assets/icons/repeat.svg";
 import Snapshot from "../public/assets/images/snapshot.svg";
 import DownloadNow from "../components/DownloadNow";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import IconTextCard from "../components/IconTextCard";
+import { cardsData } from "../data/cardsData";
 
 export default function Home() {
 	const { scroll, setScrollToAbout, scrollNav, whiteNav, scrollToAbout } = useScroll();
@@ -95,10 +94,12 @@ export default function Home() {
 							/>
 						</div>
 						<div className="flex flex-col dualFold:flex-row justify-center gap-3 dualFold:gap-6 fold:w-full dualFold:w-[65%] md:w-[30%] xl:w-[20%] mx-auto">
-							<Button
-								label="Download Now"
-								className="text-white py-[8px] fold:py-2 s22:py-3 mx-auto w-[92%] fold:w-[80%] border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] dualFold:w-[100%] md:w-[100%] lg:w-[85%] xl:w-[%] bigScreen:w-[15] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
-							/>
+							<Link
+								href="#waiting-list"
+								className="text-white py-[8px] fold:py-2 s22:py-3 mx-auto w-[92%] fold:w-[80%] border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] dualFold:w-[100%] md:w-[100%] lg:w-[75%] xl:w-[%] bigScreen:w-[15] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem] text-center"
+							>
+								Download Now
+							</Link>
 						</div>
 					</div>
 					{!whiteNav && (
@@ -147,61 +148,45 @@ export default function Home() {
 						/>
 					</div>
 				</section>
-				<section className="p-4 i13:p-[2.5rem] i13:pb-4 text-center md:py-[5rem] lg:px-[3.5rem] xl:px-[4rem] bigScreen:px-[6rem]">
-					<Subheading
-						classes="text-neutrals500 font-bold text-[0.75rem] s22:text-[1.25rem] mb-[1.5rem] md:hidden"
-						content="Discover Hidden Talent Around the World Using Noted"
-					/>
-					<Subheading
-						classes="text-neutrals500 font-bold text-[2rem] lg:text-[2.5rem] mb-[1.5rem] hidden md:block bigScreen:text-[3.5rem]"
-						content="How it works!"
-					/>
-					<div className="grid dualFold:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 bigScreen:w-[95%] bigScreen:mx-auto bigScreen:gap-6">
-						<IconText
-							src={UserSearch}
-							alt="Icon explaining how users can search for other users"
-							text="Find any artists that your project could be missing"
-							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 xl:px-4 laptops:px-5 2xl:px-8 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem] bigScreen:px-0"
-							className="p-[0.8rem] fold:p-6 fold:py-[2.5rem] gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
-							imgClassName="bg-brandPrimary50"
-						/>
-						<IconText
-							src={People}
-							alt="Icon explaining users can collaborate with other users"
-							text="Collaborate and discuss potential ideas and workings"
-							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 i13:px-0 i14Max:px-3 md:px-0 xl:px-2 2xl:px-8 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem] bigScreen:px-0"
-							className="p-[0.8rem] fold:p-6 fold:py-[2.5rem] gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
-							imgClassName="bg-brandPrimary50"
-						/>
-
-						<IconText
-							src={Plus}
-							alt="Icon explaining users can immediately start working with other users"
-							text="Create your next body of work with your newly found artists"
-							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold md:text-[1.25rem] lg:text-[1.4rem] xl:px-1 xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem] bigScreen:px-0"
-							className="p-[0.8rem] fold:p-6 fold:py-[2.5rem] gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded transition duration-500 lg:hover:shadow-cardHover"
-							imgClassName="bg-brandPrimary50"
-						/>
-
-						<IconText
-							src={Repeat}
-							alt="Icon explaining users can repeat the process whenever there's a project"
-							text="Repeat the process whenever there's a project"
-							textClassName="font-semibold text-[0.6rem] fold:text-[1rem] md:font-bold fold:px-3 i14Max:px-5 xl:px-3 2xl:px-8 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem] bigScreen:px-0"
-							className="p-[0.8rem] fold:p-6 fold:py-[2.5rem] gap-4 fold:gap-6 lg:py-[2rem] xl:py-[3.5rem] flex flex-col items-center justify-center bg-white shadow-card rounded lg:col-start-2 xl:col-auto transition duration-500 lg:hover:shadow-cardHover"
-							imgClassName="bg-brandPrimary50"
-						/>
+				<section className="p-4 py-[3rem] text-center">
+					<div className="">
+						<div className="">
+							<div className="mb-[3rem]">
+								<h2 className="text-neutrals500 leading-[1.1] font-bold text-[0.75rem] s22:text-[2rem] mb-[1.25rem]">
+									Easily connect with Creatives globally
+								</h2>
+								<p className="font-semibold text-[0.6rem] fold:text-[1rem] leading-[25.6px] i14Max:px-5 xl:px-3 2xl:px-8 md:text-[1.25rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem] bigScreen:px-0">
+									Let&apos;s help you find the best talent to work with from anywhere in the world.
+								</p>
+							</div>
+							<div className="p-4 bg-brandPrimary50 relative text-left space-y-2">
+								<p className="text-sm">
+									Collaborating with professionals is a key ingredient for success. By working with individuals who
+									bring unique perspectives, experiences, and expertise, we can achieve more together than we ever could
+									alone
+								</p>
+								<p className="text-sm font-semibold">- Unknown</p>
+								<span className="font-bold text-[4rem] text-brandPrimary500 absolute top-[-2.5rem] left-0">“</span>
+								<span className="font-bold text-[4rem] text-brandPrimary500 absolute bottom-[-2rem] right-0 rotate-180">
+									“
+								</span>
+							</div>
+							<div className="mt-[3rem] flex flex-col gap-6">
+								{cardsData.map(({ image, num, heading, desc }) => (
+									<IconTextCard image={image} num={num} heading={heading} desc={desc} key={num} />
+								))}
+							</div>
+						</div>
 					</div>
 				</section>
 				<article
 					ref={aboutRef}
-					className="mt-4 fold:mt-0 bg-brandPrimary50 fold:bg-transparent fold:bg-wavyBgMobile md:bg-wavyBgDesktop bg-no-repeat bg-center bg-cover px-[1rem] fold:px-[1.875rem] py-[2.5rem] fold:py-[5.5rem] md:py-[7rem] md:px-[3rem]"
+					className="text-white px-4 py-[3rem] bg-neutrals500  "
 				>
-					<Heading
-						classes="text-neutrals500 text-center font-bold fold:text-[1.25rem] md:text-[2rem] lg:text-[2.5rem] bigScreen:text-[3.5rem]"
-						coloredContent="Noted"
-						firstContent="About"
-					/>
+					<div className="text-center">
+						<h2 className="">Match with the best creatives</h2>
+						<p className=""></p>
+					</div>
 					<div className="dualFold:flex flex-row justify-between gap-[4rem] mt-4 lg:flex-row lg:mx-auto lg:mt-[2.4rem] lg:w-[80%] bigScreen:w-[65%] bigScreen:mx-auto">
 						<Subheading
 							classes="text-neutrals200 text-[0.6rem] fold:text-base text-center font-semibold dualFold:hidden"
