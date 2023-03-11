@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const FeaturesCard = ({ image, heading, desc }) => {
 	return (
-		<div className="border-4 border-brandPrimary100 p-9 flex flex-col gap-[4.5rem] md:w-[48%]">
+		<div className="border-4 border-brandPrimary100 p-9 flex flex-col gap-[4.5rem] md:w-[48%] xl:w-[33%]">
 			<div className="flex flex-col items-center gap-6">
 				<div className="p-4 bg-neutrals600 rounded-[4px] mr-auto">
 					<Image src={image} alt="" className="w-auto" />

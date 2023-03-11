@@ -152,13 +152,13 @@ export default function Home() {
 					</div>
 				</section>
 				<section className="p-4 py-[3rem] text-center">
-					<div className="md:w-[90%] mx-auto">
+					<div className="md:w-[90%] mx-auto xl:w-[80%]">
 						<div className="items-center md:flex md:mb-0 justify-between">
-							<div className="mb-[3rem] md:w-[50%] md:text-left">
-								<h2 className="text-neutrals500 leading-[1.1] font-bold text-[0.75rem] s22:text-[2rem] mb-[1.25rem]">
+							<div className="mb-[3rem] md:w-[50%] md:text-left md:mb-0 xl:w-[52%]">
+								<h2 className="text-neutrals500 leading-[1.1] font-bold text-[0.75rem] s22:text-[2rem] mb-[1.25rem] xl:text-[3rem]">
 									Easily connect with Creatives globally
 								</h2>
-								<p className="font-semibold text-[0.6rem] fold:text-[1rem] leading-[25.6px] i14Max:px-5 md:px-0 md:text-[1rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem] bigScreen:px-0">
+								<p className="font-semibold text-[0.6rem] fold:text-[1rem] leading-[25.6px] i14Max:px-5 md:px-0 md:text-[1rem] lg:text-[1.4rem] xl:text-[1.25rem] laptops:text-[1.25rem] bigScreen:text-[2rem] bigScreen:px-0 xl:w-[80%]">
 									Let&apos;s help you find the best talent to work with from anywhere in the world.
 								</p>
 							</div>
@@ -175,7 +175,7 @@ export default function Home() {
 								</span>
 							</div>
 						</div>
-						<div className="mt-[3rem] flex flex-col gap-6 md:flex-row flex-wrap md:justify-center">
+						<div className="mt-[3rem] flex flex-col gap-6 md:flex-row flex-wrap md:justify-center md:mt-[4rem] xl:flex-nowrap xl:justify-between">
 							{cardsData.map(({ image, num, heading, desc }) => (
 								<IconTextCard image={image} num={num} heading={heading} desc={desc} key={num} />
 							))}
@@ -183,9 +183,9 @@ export default function Home() {
 					</div>
 				</section>
 				<section ref={aboutRef} className="text-white px-4 py-[3rem] pb-[4.5rem] bg-neutrals500 overflow-hidden">
-					<div className="md:w-[90%] mx-auto">
-						<div className="flex flex-col gap-6 md:flex-row md:justify-between md:items-center">
-							<div className="text-center space-y-6 md:w-[50%] md:text-left">
+					<div className="md:w-[90%] mx-auto xl:w-[70%]">
+						<div className="flex flex-col gap-6 md:flex-row-reverse md:justify-between md:items-center">
+							<div className="text-center space-y-6 md:w-[50%] md:text-left xl:w-[60%]">
 								<h2 className="font-bold text-[2rem] leading-[1.2]">Match with the best creatives</h2>
 								<p className="font-semibold leading-[25.6px]">
 									With just a simple swipe you can get the ground running with the best creative on our networks of
@@ -207,20 +207,20 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="mt-[5rem] flex flex-col gap-6 md:flex-row md:justify-between md:items-center">
-							<div className="flex flex-col gap-5 text-center md:w-[50%] md:text-left">
+							<div className="flex flex-col gap-5 text-center md:w-[50%] md:text-left xl:w-[60%]">
 								<h2 className="font-bold text-[2rem] leading-[1.2]">Explore the amazing map features</h2>
 								<p className="font-semibold leading-[25.6px]">
 									With just a simple swipe you can get the ground running with the best creative on our networks of
 									talented creatives right from your device
 								</p>
-								<div className="border-t-2 border-t-brandPrimary100 space-y-3 pt-7">
+								<div className="border-t-2 border-t-brandPrimary100 space-y-3 pt-7 xl:w-[70%]">
 									{iconAndText2.map(({ image, text }, index) => (
 										<ShieldText key={index} image={image} desc={text} />
 									))}
 								</div>
 							</div>
-							<div className="  py-[1.9rem]">
-								<div className="relative flex items-center flex-col mt-8">
+							<div className="py-[1.9rem]">
+								<div className="relative flex items-center flex-col mt-8 ">
 									<div className="absolute top-1/2 z-[2] w-[390px] aspect-square translate-y-[-50%] bg-brandPrimary100/[0.1] blur-[95.5px] rounded-full"></div>
 									<div className="absolute w-[350px] top-[23rem] -right-[7rem] z-[1] bg-brandPrimary600/[0.1] rounded-t-[280px] h-[180px] rotate-[-227deg]"></div>
 									<Image src={mapSnapshot} alt="" className="z-[3]" />
@@ -230,11 +230,11 @@ export default function Home() {
 					</div>
 				</section>
 				<section className="px-4 py-[3rem]">
-					<div className="md:w-[90%] mx-auto">
+					<div className="md:w-[90%] mx-auto xl:w-[80%]">
 						<h2 className="text-neutrals500 text-center leading-[1.1] font-bold text-[0.75rem] s22:text-[2rem] mb-[1.25rem]">
 							Other amazing features you want to know about
 						</h2>
-						<div className="mt-6 flex flex-col gap-6 md:flex-row flex-wrap md:justify-center">
+						<div className="mt-6 flex flex-col gap-6 md:flex-row flex-wrap md:justify-center xl:flex-nowrap xl:justify-between">
 							{featuresData.map(({ image, heading, desc, num }, index) => (
 								<FeaturesCard image={image} heading={heading} alt={num} desc={desc} key={heading} />
 							))}
@@ -242,7 +242,7 @@ export default function Home() {
 					</div>
 				</section>
 				<section id="waiting-list" className="snap-center bg-neutrals500 pt-[3rem] px-4">
-					<div className="md:w-[90%] mx-auto">
+					<div className="md:w-[90%] mx-auto xl:w-[80%]">
 						<DownloadNow classes="" content="" />
 					</div>
 				</section>
