@@ -5,12 +5,25 @@ import { missionVisionData, valuesData } from "../data/cardsData";
 import ValueCard from "../components/ValueCard";
 import { motion as m } from "framer-motion";
 import Image from "next/image";
+import Head from "next/head";
 import arrow from "../public/assets/icons/arrow.svg"
 
 const About = () => {
 	
 	return (
 		<>
+			<Head>
+				<title>Noted | For Photographers, Content Creators, Musicians, Videographers and Creatives</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta
+					name="description"
+					content="Connect and Collaborate with creators from everywhere across the globe. Discover how!"
+				/>
+				<meta
+					name="keywords"
+					content="artists, photography, Photographers, Content Creators, Musicians, Videographers, Creatives"
+				/>
+			</Head>
 			<section className="bg-heroImg bg-no-repeat bg-cover bg-center relative">
 				<div className="h-full bg-overlay flex flex-col items-center justify-end fold:px-4 md:justify-center">
 					<div className="flex flex-col gap-7 pb-[3.2rem] text-center text-white dualFold:w-[60%] md:w-[80%] fold2Full:w-[80%] xl:w-[60.5%] laptops:w-[65%] bigScreen:w-[60%] pt-[8rem]">
@@ -60,10 +73,10 @@ const About = () => {
 						</p>
 						<p className="">Here are our core values <span className="md:hidden">below</span> <Image className="ml-4 hidden md:inline" src={arrow} alt="" /> </p>
 					</div>
-					<m.div className="scroll md:w-[58%] p-4 overflow-hidden lg:w-[50%] xl:w-[67%]">
+					<m.div className="scroll md:w-[58%] md:p-4 overflow-hidden lg:w-[50%] xl:w-[67%]">
 						<m.div
 							
-							className="scroll scroll-p-4 p-4  md:overflow-x-scroll flex flex-col gap-7 text-left md:flex-row snap-x w-full"
+							className="scroll scroll-p-4 md:p-4 py-4  md:overflow-x-scroll flex flex-col gap-7 text-left md:flex-row snap-x w-full"
 						>
 							{valuesData.map(({ image, heading, num, desc }) => (
 								<ValueCard key={num} image={image} heading={heading} desc={desc} alt={heading} />

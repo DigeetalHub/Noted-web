@@ -23,6 +23,7 @@ import FeaturesCard from "../components/FeaturesCard";
 export default function Home() {
 	const { scroll, setScrollToAbout, scrollNav, whiteNav, scrollToAbout } = useScroll();
 	const aboutRef = useRef();
+	const waitingListRef = useRef();
 	const router = useRouter();
 	const [word, setWord] = useState("Discover");
 	const [name, setName] = useState("videographers");
@@ -32,13 +33,21 @@ export default function Home() {
 	useEffect(() => {
 		if (scrollToAbout) {
 			window.scrollTo({
-				top: aboutRef.current.offsetTop,
+				top: aboutRef.current.offsetTop - 50,
 				left: 0,
 				behavior: "smooth",
 			});
 			setScrollToAbout(false);
 		}
 	}, [scrollToAbout, setScrollToAbout, router]);
+
+	const scrollToList = () => {
+		window.scrollTo({
+			top: waitingListRef.current.offsetTop - 50,
+			left: 0,
+			behavior: "smooth",
+		});
+	};
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -97,12 +106,17 @@ export default function Home() {
 							/>
 						</div>
 						<div className="flex flex-col dualFold:flex-row justify-center gap-3 dualFold:gap-6 fold:w-full dualFold:w-[65%] md:w-[30%] xl:w-[20%] mx-auto">
-							<Link
+							<Button
+								onClick={scrollToList}
+								label="Join the waiting list"
+								className="text-white py-[8px] fold:py-2 s22:py-3 mx-auto w-[92%] fold:w-[80%] border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] dualFold:w-[100%] md:w-[100%] lg:w-[85%] xl:w-[%] bigScreen:w-[15] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
+							/>
+							{/* <Link
 								href="#waiting-list"
 								className="text-white py-[8px] fold:py-2 s22:py-3 mx-auto w-[92%] fold:w-[80%] border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] dualFold:w-[100%] md:w-[100%] lg:w-[75%] xl:w-[%] bigScreen:w-[15] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem] text-center"
 							>
 								Join the waiting list
-							</Link>
+							</Link> */}
 						</div>
 					</div>
 					{!whiteNav && (
@@ -241,10 +255,8 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-				<section id="waiting-list" className="snap-center bg-neutrals500 pt-[3rem] px-4">
-					<div className="md:w-[90%] mx-auto xl:w-[80%]">
-						<DownloadNow classes="" content="" />
-					</div>
+				<section ref={waitingListRef} id="waiting-list" className="snap-center bg-neutrals500 pt-[3rem] px-4">
+					<div className="md:w-[90%] mx-auto xl:w-[80%]"><DownloadNow classes="" content="" /></div>
 				</section>
 			</main>
 		</div>
