@@ -29,7 +29,7 @@ const DownloadNow = () => {
 					Join our waiting list for the upcoming app. Experience a personalized platform connecting you with like-minded
 					individuals. Be the first to know when it's available – sign up now!
 				</p>
-				<form className="text-left flex flex-col gap-5" onSubmit={e => handleSubmit(e)}>
+				<form className="text-left flex flex-col gap-5" onSubmit={handleSubmit}>
 					<div className="flex flex-col gap-2">
 						<label htmlFor="name" className="font-medium">
 							Name
