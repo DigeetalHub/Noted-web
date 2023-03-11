@@ -72,6 +72,6 @@ export const featuresData = [
 		image: user,
 		heading: "Personalized profile",
 		num: "03",
-		desc: "Get creative with a personalized profile. Show your skills and personality with a profile that truly reflects who you are.",
+		desc: "Get creative with your profile. Show your skills and personality with a profile that truly reflects who you are.",
 	},
 ];
