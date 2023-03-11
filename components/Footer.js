@@ -12,7 +12,7 @@ const Footer = ({ className }) => {
 
 	return (
 		<footer
-			className={`${className} py-6 px-4 fold:pt-[3rem] bg-brandPrimary900 mt-[3rem] fold:mt-[5.5rem] md:pt-[3rem]`}
+			className={`${className} py-6 px-4  bg-brandPrimary900`}
 		>
 			<div className="flex flex-col flex-wrap gap-[1.7rem] fold:gap-[2.5rem] text-center text-white dualFold:flex-row dualFold:justify-between dualFold:text-left dualFold:w-[90%] dualFold:mx-auto dualFold:gap-y-[4rem] lg:w-[80%] bigScreen:w-[70%]">
 				<div className="flex flex-col dualFold:w-[33%] xl:w-[24%] gap-[0.625rem] fold:gap-4">
@@ -25,41 +25,43 @@ const Footer = ({ className }) => {
 						Discover hidden talents around the world using Noted
 					</p>
 				</div>
-				<nav className="flex flex-col gap-2 fold:gap-3 dualFold:w-[20%] lg:w-[18%]">
-					<h3 className="font-bold text-neutrals50 text-[0.875rem] fold:text-xl bigScreen:text-[1.7rem]">Explore</h3>
-					<Link
-						href="/privacy"
-						className="font-semibold text-neutrals100 lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
-					>
-						Privacy Policy
-					</Link>
-					<Link
-						href="/terms-of-service"
-						className="font-semibold text-neutrals100 lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
-					>
-						Terms of service
-					</Link>
-					<Link
-						href="/terms-of-use"
-						className="font-semibold text-neutrals100 lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
-					>
-						Terms of use
-					</Link>
+				<nav className="flex flex-col gap-2 fold:gap-4 dualFold:w-[20%] lg:w-[18%]">
+					<h3 className="font-bold text-white text-[0.875rem] fold:text-xl bigScreen:text-[1.7rem]">Explore</h3>
+					<div className="flex flex-col gap-6">
+						<Link
+							href="/privacy"
+							className="text-white lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 border-b-2 border-b-brandPrimary500 pb-1"
+						>
+							Privacy Policy
+						</Link>
+						<Link
+							href="/terms-of-service"
+							className="text-white lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 border-b-2 border-b-brandPrimary500 pb-1"
+						>
+							Terms of service
+						</Link>
+						<Link
+							href="/terms-of-use"
+							className="text-white lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 border-b-2 border-b-brandPrimary500 pb-1"
+						>
+							Terms of use
+						</Link>
+					</div>
 				</nav>
 				<div className="flex flex-col gap-3">
 					<h3 className="font-bold text-neutrals50 text-[0.875rem] fold:text-xl bigScreen:text-[1.7rem]">Contact</h3>
 					<Link
 						href="mailto:getnoted@notedmediagroup.com"
-						className="font-semibold text-neutrals100 text-[0.65rem] fold:text-xs md:text-base md:font-normal"
+						className=" text-white"
 					>
 						<Image src={Email} alt="Email icon" className="inline-block w-[12px] fold:w-auto" />{" "}
-						<span className="ml-[0.5rem] fold:ml-[0.4rem] border-b-[2px] border-b-brandPrimary500">
+						<span className="ml-[0.5rem] fold:ml-[0.4rem] border-b-[2px] border-b-brandPrimary500 pb-1">
 							getnoted@notedmediagroup.com
 						</span>
 					</Link>
 				</div>
 				<div className="flex flex-col gap-3 dualFold:flex-row items-center md:mt-[2.5rem] xl:w-[40%]">
-					<h3 className="font-semibold text-white text-[0.75rem] fold:text-base md:font-light">Join our community:</h3>
+					<h3 className="text-white text-[0.75rem] fold:text-base md:font-light">Join our community:</h3>
 					<Socials />
 				</div>
 				<div className="border-t-[1px] border-t-white pt-5 w-full space-y-4">

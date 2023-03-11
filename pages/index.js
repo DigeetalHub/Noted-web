@@ -10,12 +10,15 @@ import IconText from "../components/IconText";
 import DocumentIcon from "../public/assets/icons/document-download.svg";
 import User from "../public/assets/icons/user-icon.svg";
 import Stats from "../public/assets/icons/stats.svg";
-import Snapshot from "../public/assets/images/snapshot.svg";
+import matchSnapshot from "../public/assets/images/matchSnapshot.svg";
+import mapSnapshot from "../public/assets/images/mapSnapshot.svg";
 import DownloadNow from "../components/DownloadNow";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import IconTextCard from "../components/IconTextCard";
-import { cardsData } from "../data/cardsData";
+import { cardsData, iconAndText1, iconAndText2, featuresData } from "../data/cardsData";
+import ShieldText from "../components/shieldText";
+import FeaturesCard from "../components/FeaturesCard";
 
 export default function Home() {
 	const { scroll, setScrollToAbout, scrollNav, whiteNav, scrollToAbout } = useScroll();
@@ -179,30 +182,64 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-				<article
-					ref={aboutRef}
-					className="text-white px-4 py-[3rem] bg-neutrals500  "
-				>
-					<div className="text-center">
-						<h2 className="">Match with the best creatives</h2>
-						<p className=""></p>
+				<section ref={aboutRef} className="text-white px-4 py-[3rem] pb-[4.5rem] bg-neutrals500 overflow-hidden">
+					<div className="">
+						<div className="flex flex-col gap-6">
+							<div className="text-center space-y-6">
+								<h2 className="font-bold text-[2rem] leading-[1.2]">Match with the best creatives</h2>
+								<p className="font-semibold leading-[25.6px]">
+									With just a simple swipe you can get the ground running with the best creative on our networks of
+									talented creatives right from your device
+								</p>
+							</div>
+							<div className="border-t-2 border-t-brandPrimary100 py-[1.9rem]">
+								<div className="space-y-3">
+									{iconAndText1.map(({ image, text }, index) => (
+										<ShieldText key={index} image={image} desc={text} />
+									))}
+								</div>
+								<div className="relative flex items-center flex-col mt-8">
+									<div className="absolute top-1/2 z-[2] w-[390px] aspect-square translate-y-[-50%] bg-brandPrimary100/[0.1] blur-[95.5px] rounded-full"></div>
+									<div className="absolute w-[350px] top-[23rem] -left-[4rem] z-[1] bg-brandPrimary600/[0.1] rounded-t-[280px]    h-[180px] rotate-[227deg]"></div>
+									<Image src={matchSnapshot} alt="" className="z-[3]" />
+								</div>
+							</div>
+						</div>
+						<div className="mt-[5rem] flex flex-col gap-6">
+							<div className="flex flex-col gap-5 text-center">
+								<h2 className="font-bold text-[2rem] leading-[1.2]">Explore the amazing map features</h2>
+								<p className="font-semibold leading-[25.6px]">
+									With just a simple swipe you can get the ground running with the best creative on our networks of
+									talented creatives right from your device
+								</p>
+							</div>
+							<div className="border-t-2 border-t-brandPrimary100 py-[1.9rem]">
+								<div className="space-y-3">
+									{iconAndText2.map(({ image, text }, index) => (
+										<ShieldText key={index} image={image} desc={text} />
+									))}
+								</div>
+								<div className="relative flex items-center flex-col mt-8">
+									<div className="absolute top-1/2 z-[2] w-[390px] aspect-square translate-y-[-50%] bg-brandPrimary100/[0.1] blur-[95.5px] rounded-full"></div>
+									<div className="absolute w-[350px] top-[23rem] -right-[4rem] z-[1] bg-brandPrimary600/[0.1] rounded-t-[280px]   h-[180px] rotate-[-227deg]"></div>
+									<Image src={mapSnapshot} alt="" className="z-[3]" />
+								</div>
+							</div>
+						</div>
 					</div>
-					<div className="dualFold:flex flex-row justify-between gap-[4rem] mt-4 lg:flex-row lg:mx-auto lg:mt-[2.4rem] lg:w-[80%] bigScreen:w-[65%] bigScreen:mx-auto">
-						<Subheading
-							classes="text-neutrals200 text-[0.6rem] fold:text-base text-center font-semibold dualFold:hidden"
-							content={`Noted is an app designed for connecting creators on both a local and global scale. Whether you are looking for a videographer to shoot your next video, a vocalist for your next album or new producer for a different sound, Noted will help you find the talent your project may be missing. To simply put it, Noted is a place for creators everywhere to search, collaborate, and create.`}
-						/>
-						<Subheading
-							classes="hidden dualFold:block text-neutrals200 font-semibold md:pt-[2rem] md:text-[1.25rem] md:leading-[1.27] xl:leading-[1.36] laptops:leading-[1.45] md:text-neutrals500 md:w-[60%] lg:text-[1.25rem] lg:w-[57%] lg:pt-[3rem] lg:text-left xl:w-[56%] laptops:w-[59%] xl:text-[1.5rem] bigScreen:text-[1.5rem] bigScreen:w-[57%]"
-							content={`Are you looking for an easy way to discover, listen to, and share music? Look no further than our music application! Our app allows you to stream the latest hits, explore new genres, and create personalized playlists. With over 50 million tracks to choose from, you’ll never run out of music to enjoy. Plus, our app is simple and intuitive to use, so you can find your favorite songs quickly and without hassle. Download now and start listening to music that you love!`}
-						/>
-						<Image
-							className="hidden dualFold:block dualFold:w-[30%] xl:w-[34%] bigScreen:w-[32%]"
-							src={Snapshot}
-							alt="snapshot of the interface of the app"
-						/>
+				</section>
+				<section className="px-4 py-[3rem]">
+					<div className="">
+						<h2 className="text-neutrals500 text-center leading-[1.1] font-bold text-[0.75rem] s22:text-[2rem] mb-[1.25rem]">
+							Other amazing features you want to know about
+						</h2>
+						<div className="mt-6 flex flex-col gap-6">
+							{featuresData.map(({ image, heading, desc, num }, index) => (
+								<FeaturesCard image={image} heading={heading} alt={num} desc={desc} key={heading} />
+							))}
+						</div>
 					</div>
-				</article>
+				</section>
 				<DownloadNow classes="" content="" />
 			</main>
 		</div>
