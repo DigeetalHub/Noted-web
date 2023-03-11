@@ -21,7 +21,7 @@ import ShieldText from "../components/ShieldText";
 import FeaturesCard from "../components/FeaturesCard";
 
 export default function Home() {
-	const { scroll, setScrollToAbout, scrollNav, whiteNav, scrollToAbout } = useScroll();
+	const { scroll, setScrollToFeatures, scrollNav, whiteNav, scrollToFeatures } = useScroll();
 	const aboutRef = useRef();
 	const waitingListRef = useRef();
 	const router = useRouter();
@@ -31,15 +31,15 @@ export default function Home() {
 	const words = ["Collab with", "Partner with", "Match with", "Discover"];
 
 	useEffect(() => {
-		if (scrollToAbout) {
+		if (scrollToFeatures) {
 			window.scrollTo({
 				top: aboutRef.current.offsetTop - 50,
 				left: 0,
 				behavior: "smooth",
 			});
-			setScrollToAbout(false);
+			setScrollToFeatures(false);
 		}
-	}, [scrollToAbout, setScrollToAbout, router]);
+	}, [scrollToFeatures, setScrollToFeatures, router]);
 
 	const scrollToList = () => {
 		window.scrollTo({
@@ -47,6 +47,11 @@ export default function Home() {
 			left: 0,
 			behavior: "smooth",
 		});
+	};
+
+	const scrollToFeaturesSection = () => {
+		router.push("/", "/#about");
+		setScrollToFeatures(true);
 	};
 
 	useEffect(() => {
@@ -105,18 +110,17 @@ export default function Home() {
 								content="Search, Collaborate, Create - Connect with fellow creators on our app designed for photographers, videographers, musicians, and more. Join the waiting list to get notified of our release!"
 							/>
 						</div>
-						<div className="flex flex-col dualFold:flex-row justify-center gap-3 dualFold:gap-6 fold:w-full dualFold:w-[65%] md:w-[30%] xl:w-[20%] mx-auto">
+						<div className="flex flex-col dualFold:flex-row justify-center gap-3 dualFold:gap-6 fold:w-full dualFold:w-[65%] md:w-[65%] lg:[47%] xl:w-[38%] mx-auto">
 							<Button
 								onClick={scrollToList}
 								label="Join the waiting list"
 								className="text-white py-[8px] fold:py-2 s22:py-3 mx-auto w-[92%] fold:w-[80%] border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] dualFold:w-[100%] md:w-[100%] lg:w-[85%] xl:w-[%] bigScreen:w-[15] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
 							/>
-							{/* <Link
-								href="#waiting-list"
-								className="text-white py-[8px] fold:py-2 s22:py-3 mx-auto w-[92%] fold:w-[80%] border-[1px] border-brandPrimary500 bg-brandPrimary500 font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] dualFold:w-[100%] md:w-[100%] lg:w-[75%] xl:w-[%] bigScreen:w-[15] lg:hover:bg-transparent lg:hover:text-brandPrimary400 transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem] text-center"
-							>
-								Join the waiting list
-							</Link> */}
+							<Button
+								onClick={scrollToFeaturesSection}
+								label="Learn more"
+								className="text-brandPrimary400 py-[8px] fold:py-2 s22:py-3 mx-auto w-[92%] fold:w-[80%] border-[1px] border-brandPrimary500 bg-transparent font-semibold rounded text-[0.65rem] fold:text-[0.75rem] s22:text-[1rem] dualFold:w-[100%] md:w-[100%] lg:w-[85%] xl:w-[%] bigScreen:w-[15] lg:hover:bg-brandPrimary500 lg:hover:text-white transition duration-300 ease-in-out] bigScreen:py-4 bigScreen:text-[1.5rem]"
+							/>
 						</div>
 					</div>
 					{!whiteNav && (
@@ -256,7 +260,9 @@ export default function Home() {
 					</div>
 				</section>
 				<section ref={waitingListRef} id="waiting-list" className="snap-center bg-neutrals500 pt-[3rem] px-4">
-					<div className="md:w-[90%] mx-auto xl:w-[80%]"><DownloadNow classes="" content="" /></div>
+					<div className="md:w-[90%] mx-auto xl:w-[80%]">
+						<DownloadNow classes="" content="" />
+					</div>
 				</section>
 			</main>
 		</div>

@@ -9,7 +9,7 @@ const ScrollContext = createContext();
 
 const ScrollProvider = ({ children }) => {
   const [whiteNav, setWhiteNav] = useState(false);
-  const [scrollToAbout, setScrollToAbout] = useState(false);
+  const [scrollToFeatures, setScrollToFeatures] = useState(false);
 
   const scroll = () => {
     scrollBy(0, 80);
@@ -35,8 +35,8 @@ const ScrollProvider = ({ children }) => {
     setWhiteNav,
     scroll,
     scrollNav,
-    scrollToAbout,
-    setScrollToAbout,
+    scrollToFeatures,
+    setScrollToFeatures,
   };
 
   return (
