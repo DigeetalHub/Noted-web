@@ -210,8 +210,8 @@ export default function Home() {
 							<div className="flex flex-col gap-5 text-center md:w-[50%] md:text-left xl:w-[60%]">
 								<h2 className="font-bold text-[2rem] leading-[1.2]">Explore the amazing map features</h2>
 								<p className="font-semibold leading-[25.6px]">
-									With just a simple swipe you can get the ground running with the best creative on our networks of
-									talented creatives right from your device
+									Connect with the best creative on our networks of talented creatives right from your device with our
+									map feature
 								</p>
 								<div className="border-t-2 border-t-brandPrimary100 space-y-3 pt-7 xl:w-[70%]">
 									{iconAndText2.map(({ image, text }, index) => (
