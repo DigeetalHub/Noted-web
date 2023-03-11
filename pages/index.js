@@ -17,7 +17,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import IconTextCard from "../components/IconTextCard";
 import { cardsData, iconAndText1, iconAndText2, featuresData } from "../data/cardsData";
-import ShieldText from "../components/shieldText";
+import ShieldText from "../components/ShieldText";
 import FeaturesCard from "../components/FeaturesCard";
 
 export default function Home() {
@@ -208,7 +208,7 @@ export default function Home() {
 						</div>
 						<div className="mt-[5rem] flex flex-col gap-6 md:flex-row md:justify-between md:items-center">
 							<div className="flex flex-col gap-5 text-center md:w-[50%] md:text-left xl:w-[60%]">
-								<h2 className="font-bold text-[2rem] leading-[1.2]">Explore the amazing map features</h2>
+								<h2 className="font-bold text-[2rem] leading-[1.2] lg:text-[3rem]">Explore the amazing map features</h2>
 								<p className="font-semibold leading-[25.6px]">
 									Connect with the best creative on our networks of talented creatives right from your device with our
 									map feature

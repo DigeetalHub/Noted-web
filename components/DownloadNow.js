@@ -73,7 +73,7 @@ const DownloadNow = () => {
 				<Image
 					src={appScreens}
 					alt="the app screens showing different parts of the app"
-					className="z-[2] translate-x-[-0.7rem]"
+					className="z-[2] translate-x-[-0.7rem] lg:w-[50%]"
 				/>
 			</div>
 		</section>
