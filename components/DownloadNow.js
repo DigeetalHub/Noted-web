@@ -22,14 +22,14 @@ const DownloadNow = () => {
 		setEmail("");
 	};
 	return (
-		<section className="bg-neutrals500 pt-[3rem] px-4">
+		<section className="">
 			<div className="text-center text-brandPrimary50 space-y-6">
 				<h2 className="leading-[1.2] font-bold text-[2rem]">Get started to enjoy an amazing experience</h2>
 				<p className="font-semibold">
 					Join our waiting list for the upcoming app. Experience a personalized platform connecting you with like-minded
-					individuals. Be the first to know when it&apos;s available – sign up now!
+					individuals. Be the first to know when it&apos;s available &#8211; sign up now!
 				</p>
-				<form className="text-left flex flex-col gap-5" onSubmit={handleSubmit}>
+				<form className="text-left flex flex-col gap-5 md:w-[60] md:flex-row md:gap-4 md:items-end md:justify-center" onSubmit={handleSubmit}>
 					<div className="flex flex-col gap-2">
 						<label htmlFor="name" className="font-medium">
 							Name
@@ -60,7 +60,7 @@ const DownloadNow = () => {
 						<Button
 							disabled={disabled}
 							label="Sign Up"
-							className="enabled:bg-brandPrimary500 disabled:bg-neutrals200 px-6 py-[11px] rounded-md font-medium mt-2"
+							className="enabled:bg-brandPrimary500 disabled:bg-neutrals200 px-6 py-[11px] rounded-md font-medium mt-2 md:py-3"
 						/>
 					</div>
 				</form>
