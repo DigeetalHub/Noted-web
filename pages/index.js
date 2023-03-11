@@ -240,7 +240,9 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-				<DownloadNow classes="" content="" />
+				<section id="waiting-list" className="">
+					<DownloadNow classes="" content="" />
+				</section>
 			</main>
 		</div>
 	);
