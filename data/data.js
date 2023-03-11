@@ -1,51 +1,50 @@
 export const privacyPolicy = [
-
-  {
-    mainTitle: "Introduction",
-    data: [
-      {
-        heading: "",
-        description: `This privacy policy (“Policy”) describes how Noted Media Group in Florida (“Company,” “we,” and “our”) processes, collects, uses and shares personal data when using this website https://www.notedmedia.com (the “Website”). Please read the following information carefully to understand our practices regarding your personal data and how we will process data.`,
-      },
-    ],
-  },
-  {
-    mainTitle: "Purpose of processing",
-    data: [
-      {
-        heading: "What is personal data?",
-        description: `We collect information about you in a range of forms, including personal data. As used in this Policy, “personal data” is as defined in the General Data Protection Regulation, this includes any information which, either alone or in combination with other information we process about you, identifies you as an individual, including, for example, your name, postal address, email address and telephone number.`,
-      },
-      {
-        heading: "Why do we need your personal data?",
-        description: `We will only process your personal data in accordance with applicable data protection and privacy laws. We need certain personal data in order to provide you with access to the website. If you registered with us, you will have been asked to tick to agree to provide this information in order to access our services, purchase our products, or view our content. This consent provides us with the legal basis we require under applicable law to process your data. You maintain the right to withdraw such consent at any time.`,
-      },
-      {
-        heading: "Collecting your personal data",
-        description: `We collect information about you in the following ways:`,
-      },
-      {
-        heading: "Information you give us. This Includes:",
-        description: `The personal data you provide when you register to use our website, including your name, postal address, email address, telephone number, username, password and demographic information (such as your gender); The personal data that may be contained in any video, comment or other submission you upload or post to the website; The personal data you provide in connection with our rewards program and other promotions we run on the website; The personal data you provide when you report a problem with our website or when we provide you with customer support; The personal data you provide when you make a purchase thorough our website and; The personal data you provide when you correspond with us by phone, email or otherwise.`,
-      },
-      {
-        heading: "Information from Social Networking Websites",
-        description:
-          "Our website includes interfaces that allow you to connect with social networking sites (each a “SNS”). If you connect to a SNS through our website, you authorize us to access, use and store the information that you agreed the SNS could provide to us based on your settings on that SNS. We will access, use and store that information in accordance with this Policy. You can revoke our access to the information you provide in this way at any time by amending the appropriate settings from within your account settings on the applicable SNS.",
-      },
-      {
-        heading: "Information Automatically Collected",
-        description:
-          "We automatically log information about you and your computer or mobile device when you access our website. For example, when visiting our website, we log your computer or mobile device operating system name and version, manufacturer and model, browser type, browser language, screen resolution, the website you visited before browsing to our website, pages you viewed, how long you spent on a page, access times and information about your use of and actions on our website. We collect this information about you using cookies.",
-      },
-      {
-        heading: "Automated Decision Making and Profiling",
-        description:
-          "We do not use your personal data for the purposes of automated decision-making. However, we may do so in order to fulfill obligations imposed by law, in which case we will inform you of any such processing and provide you with an opportunity to object.",
-      },
-    ],
-  },
-  {
+	{
+		mainTitle: "Introduction",
+		data: [
+			{
+				heading: "",
+				description: `This privacy policy (“Policy”) describes how Noted Media Group in Florida (“Company,” “we,” and “our”) processes, collects, uses and shares personal data when using this website https://www.notedmedia.com (the “Website”). Please read the following information carefully to understand our practices regarding your personal data and how we will process data.`,
+			},
+		],
+	},
+	{
+		mainTitle: "Purpose of processing",
+		data: [
+			{
+				heading: "What is personal data?",
+				description: `We collect information about you in a range of forms, including personal data. As used in this Policy, “personal data” is as defined in the General Data Protection Regulation, this includes any information which, either alone or in combination with other information we process about you, identifies you as an individual, including, for example, your name, postal address, email address and telephone number.`,
+			},
+			{
+				heading: "Why do we need your personal data?",
+				description: `We will only process your personal data in accordance with applicable data protection and privacy laws. We need certain personal data in order to provide you with access to the website. If you registered with us, you will have been asked to tick to agree to provide this information in order to access our services, purchase our products, or view our content. This consent provides us with the legal basis we require under applicable law to process your data. You maintain the right to withdraw such consent at any time.`,
+			},
+			{
+				heading: "Collecting your personal data",
+				description: `We collect information about you in the following ways:`,
+			},
+			{
+				heading: "Information you give us. This Includes:",
+				description: `The personal data you provide when you register to use our website, including your name, postal address, email address, telephone number, username, password and demographic information (such as your gender); The personal data that may be contained in any video, comment or other submission you upload or post to the website; The personal data you provide in connection with our rewards program and other promotions we run on the website; The personal data you provide when you report a problem with our website or when we provide you with customer support; The personal data you provide when you make a purchase thorough our website and; The personal data you provide when you correspond with us by phone, email or otherwise.`,
+			},
+			{
+				heading: "Information from Social Networking Websites",
+				description:
+					"Our website includes interfaces that allow you to connect with social networking sites (each a “SNS”). If you connect to a SNS through our website, you authorize us to access, use and store the information that you agreed the SNS could provide to us based on your settings on that SNS. We will access, use and store that information in accordance with this Policy. You can revoke our access to the information you provide in this way at any time by amending the appropriate settings from within your account settings on the applicable SNS.",
+			},
+			{
+				heading: "Information Automatically Collected",
+				description:
+					"We automatically log information about you and your computer or mobile device when you access our website. For example, when visiting our website, we log your computer or mobile device operating system name and version, manufacturer and model, browser type, browser language, screen resolution, the website you visited before browsing to our website, pages you viewed, how long you spent on a page, access times and information about your use of and actions on our website. We collect this information about you using cookies.",
+			},
+			{
+				heading: "Automated Decision Making and Profiling",
+				description:
+					"We do not use your personal data for the purposes of automated decision-making. However, we may do so in order to fulfill obligations imposed by law, in which case we will inform you of any such processing and provide you with an opportunity to object.",
+			},
+		],
+	},
+	{
 		mainTitle: "Cookies",
 		data: [
 			{
@@ -89,7 +88,7 @@ export const privacyPolicy = [
 		data: [
 			{
 				heading: "",
-				description: `We may use other companies to serve third-party advertisements when you visit and use the website. These companies may collect and use click stream information, browser type, time and date, subject of advertisements clicked or scrolled over during your visits to the website and other websites in order to provide advertisements about goods and services likely to be of interest to you. These companies typically use tracking technologies to collect this information. Other companies’ use of their tracking technologies is subject to their own privacy policies.`,
+				description: `We may use other companies to serve third-party advertisements when you visit and use the website. These companies may collect and use click stream information, browser type, time and date, subject of advertisements clicked or scrolled over during your visits to the website and other websites in order to provide advertisements about goods and services likely to be of interest to you. These companies typically use tracking technologies to collect this information. Other companies' use of their tracking technologies is subject to their own privacy policies.`,
 			},
 			{
 				heading: "Using Your Personal Data",
@@ -107,17 +106,15 @@ export const privacyPolicy = [
 				As we believe necessary or appropriate (a) to comply with applicable laws; (b) to comply with lawful requests and legal process, including to respond to requests from public and government authorities; (c) to enforce our Policy; and (d) to protect our rights, privacy, safety or property, and/or that of you or others;
 				For analysis and study services; and
 				As described in the “Sharing of your Personal Data” section below.`,
-
 			},
 		],
 	},
 	{
-
 		mainTitle: "Sharing Your Personal Data",
 		data: [
 			{
 				heading: "",
-				description: `We may use other companies to serve third-party advertisements when you visit and use the website. These companies may collect and use click stream information, browser type, time and date, subject of advertisements clicked or scrolled over during your visits to the website and other websites in order to provide advertisements about goods and services likely to be of interest to you. These companies typically use tracking technologies to collect this information. Other companies’ use of their tracking technologies is subject to their own privacy policies.`,
+				description: `We may use other companies to serve third-party advertisements when you visit and use the website. These companies may collect and use click stream information, browser type, time and date, subject of advertisements clicked or scrolled over during your visits to the website and other websites in order to provide advertisements about goods and services likely to be of interest to you. These companies typically use tracking technologies to collect this information. Other companies' use of their tracking technologies is subject to their own privacy policies.`,
 			},
 		],
 	},
@@ -178,7 +175,7 @@ export const privacyPolicy = [
 				description: `Opt-out. You may contact us anytime to opt-out of: (i) direct marketing communications, (ii) automated decision-making and/or profiling, (iii) our collection of sensitive personal data, (iv) any new processing of your personal data that we may carry out beyond the original purpose, or (v) the transfer of your personal data outside the EEA. Please note that your use of some of the website may be ineffective upon opt-out.;
 				Access: You may access the information we hold about you at any time via your profile/account or by contacting us directly.;
 				Amend: You can also contact us to update or correct any inaccuracies in your personal data.;
-				Move: Your personal data is portable – i.e. you to have the flexibility to move your data to other service providers as you wish.;
+				Move: Your personal data is portable - i.e. you to have the flexibility to move your data to other service providers as you wish.;
 				Erase and forget: In certain situations, for example when the information we hold about you is no longer relevant or is incorrect, you can request that we erase your data.`,
 			},
 			{
@@ -205,6 +202,4 @@ export const privacyPolicy = [
 			},
 		],
 	},
-
-
 ];

@@ -3,7 +3,7 @@ import React from "react";
 
 const IconTextCard = ({ num, image, heading, desc }) => {
 	return (
-		<div className="border-4 border-neutrals50 p-6 flex flex-col gap-[4.5rem]">
+		<div className="border-4 border-neutrals50 p-6 flex flex-col gap-[4.5rem] md:w-[48%] xl:w-[33%]">
 			<div className="relative w-[fit-content]">
 				<p className="font-bold text-[5rem] text-neutrals500 text-left leading-[0.8] before:block before:absolute before:w-[56px] before:h-[56px] before:z-[-1] before:right-[-0.1rem] before:top-[-0.2rem]  before:bg-brandPrimary100 relative inline-block">
 					{num}
