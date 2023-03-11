@@ -22,21 +22,29 @@ const DownloadNow = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    const { error } = await supabase.from("waitlist").insert({ name, email });
-    if (error) {
-      setMessage(error.message);
+
+    //validate email with regex
+    const re = /\S+@\S+\.\S+/;
+    if (!re.test(email)) {
+      setMessage("Please enter a valid email address");
+      return;
     } else {
-      setMessage();
-      toast.success(
-        "Thank you for registration! We will be in touch with you soon 😃",
-        {
-          autoClose: 2500,
-          icon: "🚀",
-        }
-      );
+      setLoading(true);
+      const { error } = await supabase.from("waitlist").insert({ name, email });
+      if (error) {
+        setMessage(error.message);
+      } else {
+        setMessage();
+        toast.success(
+          "Thank you for registration! We will be in touch with you soon 😃",
+          {
+            autoClose: 5000,
+            icon: "🚀",
+          }
+        );
+      }
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
