@@ -38,7 +38,7 @@ const DownloadNow = () => {
         setName("");
         setEmail("");
         toast.success(
-          "Thank you for registration! We will be in touch with you soon 😃",
+          "Your submission has been NOTED! We will be in touch soon 😃",
           {
             autoClose: 5000,
             icon: "🚀",
@@ -69,7 +69,7 @@ const DownloadNow = () => {
           know when it&apos;s available &#8211; sign up now!
         </p>
 
-        <div className="my-3 text-brandPrimary500">{message}</div>
+        <div className="mt-3 text-brandPrimary500">{message}</div>
         <div className="pt-5">
           <form
             className="flex flex-col w-full gap-5 text-left md:flex-row md:gap-4 md:items-end md:justify-center xl:w-justify-between"

@@ -33,3 +33,7 @@ select:-webkit-autofill:focus {
 textarea {
   color: rgb(107 114 128 /1);
 }
+
+.scroll::-webkit-scrollbar{
+  display: none;
+}
