@@ -3,13 +3,17 @@ import Link from "next/link";
 import FeaturesCard from "../components/FeaturesCard";
 import { missionVisionData, valuesData } from "../data/cardsData";
 import ValueCard from "../components/ValueCard";
+import { motion as m } from "framer-motion";
+import Image from "next/image";
+import arrow from "../public/assets/icons/arrow.svg"
 
 const About = () => {
+	
 	return (
 		<>
-			<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto  md:h-screen relative">
+			<section className="bg-heroImg bg-no-repeat bg-cover bg-center relative">
 				<div className="h-full bg-overlay flex flex-col items-center justify-end fold:px-4 md:justify-center">
-					<div className="flex flex-col gap-7 pb-[3.2rem] text-center text-white dualFold:w-[60%] md:w-[79%] fold2Full:w-[82%] xl:w-[60.5%] laptops:w-[65%] bigScreen:w-[60%] pt-[8rem]">
+					<div className="flex flex-col gap-7 pb-[3.2rem] text-center text-white dualFold:w-[60%] md:w-[80%] fold2Full:w-[80%] xl:w-[60.5%] laptops:w-[65%] bigScreen:w-[60%] pt-[8rem]">
 						<h1 className="font-bold text-[2rem]">
 							Welcome to <span className="text-brandPrimary500">Noted Media</span>
 						</h1>
@@ -30,16 +34,16 @@ const About = () => {
 							career. At Noted Media, we continuously strive to improve our platform to meet the evolving needs of our
 							users.
 						</p>
-						<p className="text-[1.5rem] font-bold">
+						<p className="text-[1.5rem] font-bold md:w-[80%] mx-auto">
 							Join us today and take the first step towards achieving your creative ambitions!
 						</p>
 					</div>
 				</div>
 			</section>
 			<section className="bg-brandPrimary50">
-				<div className="py-[4rem] px-4 text-center">
+				<div className="py-[4rem] px-4 text-center md:w-[90%] mx-auto md:gap-5xl:w-[80%]">
 					<h2 className="font-bold text-[2rem] mb-[2rem]">Mission / Vision</h2>
-					<div className="flex flex-col gap-6 text-left">
+					<div className="flex flex-col gap-6 text-left md:flex-row justify-center ">
 						{missionVisionData.map(({ image, heading, num, desc }) => (
 							<FeaturesCard key={num} image={image} heading={heading} desc={desc} alt={num} />
 						))}
@@ -47,20 +51,25 @@ const About = () => {
 				</div>
 			</section>
 			<section className="py-[4rem] px-4">
-				<div className="">
-					<div className="">
-						_<h2 className="font-bold text-[2rem] text-center mb-[1.7rem]">Our Core Values</h2>
+				<div className="md:w-[90%] mx-auto md:flex md:gap-5 justify-between xl:w-[80%]">
+					<div className="md:w-[50%] md:mt-8 lg:w-[35%]">
+						_<h2 className="font-bold text-[2rem] text-center mb-[1.7rem] md:text-left">Our Core Values</h2>
 						<p className="mb-4">
 							Defining our core values is essential to our success. They guide our decisions, shape our culture, and
 							define who we are.
 						</p>
-						<p className="">Here are our core values below</p>
+						<p className="">Here are our core values <span className="md:hidden">below</span> <Image className="ml-4 hidden md:inline" src={arrow} alt="" /> </p>
 					</div>
-					<div className="flex flex-col gap-7 text-left">
-						{valuesData.map(({ image, heading, num, desc }) => (
-							<ValueCard key={num} image={image} heading={heading} desc={desc} alt={heading} />
-						))}
-					</div>
+					<m.div className="scroll md:w-[58%] p-4 overflow-hidden lg:w-[50%] xl:w-[67%]">
+						<m.div
+							
+							className="scroll scroll-p-4 p-4  md:overflow-x-scroll flex flex-col gap-7 text-left md:flex-row snap-x w-full"
+						>
+							{valuesData.map(({ image, heading, num, desc }) => (
+								<ValueCard key={num} image={image} heading={heading} desc={desc} alt={heading} />
+							))}
+						</m.div>
+					</m.div>
 				</div>
 			</section>
 		</>
