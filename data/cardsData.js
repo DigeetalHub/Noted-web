@@ -5,6 +5,7 @@ import shield from "../public/assets/icons/shield.svg";
 import message from "../public/assets/icons/message.svg";
 import search from "../public/assets/icons/search.svg";
 import user from "../public/assets/icons/user.svg";
+import tree from "../public/assets/icons/tree.svg";
 export const cardsData = [
 	{
 		image: userSearch,
@@ -73,5 +74,54 @@ export const featuresData = [
 		heading: "Personalized profile",
 		num: "03",
 		desc: "Get creative with your profile. Show your skills and personality with a profile that truly reflects who you are.",
+	},
+];
+
+
+export const missionVisionData = [
+	{
+		image: message,
+		heading: "Mission",
+		num: "01",
+		desc: "To empower creatives by connecting them with clients and collaborators on a streamlined digital platform.",
+	},
+	{
+		image: message,
+		heading: "Vision",
+		num: "02",
+		desc: "To become the leading platform for creative professionals worldwide.",
+	},
+];
+
+export const valuesData = [
+	{
+		image: tree,
+		heading: "Empowerment",
+		num: "01",
+		desc: "Providing creatives with a platform they need to achieve their ambitions.",
+	},
+	{
+		image: tree,
+		heading: "Creativity",
+		num: "02",
+		desc: "Encouraging and celebrating creative expression and innovation.",
+	},
+	{
+		image: tree,
+		heading: "Collaboration",
+		num: "03",
+		desc: "Building a supportive community that values teamwork and communication.",
+	},
+	{
+		image: tree,
+		heading: "Fun",
+		num: "04",
+		desc: "Creating a fun and engaging environment that inspires and motivates our users to pursue their creative passions.",
+	},
+	{
+		image: tree,
+		heading: "Passion",
+		num: "05",
+		desc: "Fostering a passion for creativity and the creative industry among our team and community.",
 	},
 ];
