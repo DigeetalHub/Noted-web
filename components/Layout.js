@@ -9,7 +9,7 @@ const Layout = ({ children, className }) => {
 	return (
 		<>
 			{isSocials ? null : <Header className={className} />}
-			<main className={className}>{children}</main>
+			<main className={`${className} snap-y scroll-pt-[3rem]`}>{children}</main>
 			{isSocials ? null : <Footer className={className} />}
 		</>
 	);

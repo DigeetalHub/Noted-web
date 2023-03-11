@@ -27,7 +27,7 @@ const DownloadNow = () => {
 				<h2 className="leading-[1.2] font-bold text-[2rem]">Get started to enjoy an amazing experience</h2>
 				<p className="font-semibold">
 					Join our waiting list for the upcoming app. Experience a personalized platform connecting you with like-minded
-					individuals. Be the first to know when it's available – sign up now!
+					individuals. Be the first to know when it&apos;s available – sign up now!
 				</p>
 				<form className="text-left flex flex-col gap-5" onSubmit={handleSubmit}>
 					<div className="flex flex-col gap-2">

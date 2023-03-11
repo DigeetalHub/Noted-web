@@ -16,7 +16,7 @@ export const cardsData = [
 		image: enc,
 		heading: "E2E encrypted chats",
 		num: "02",
-		desc: "Never worry about the security of your conversations with other creatives. We don’t have access to your conversations.",
+		desc: "Never worry about the security of your conversations with other creatives. We don't have access to your conversations.",
 	},
 	{
 		image: darkGlobe,
