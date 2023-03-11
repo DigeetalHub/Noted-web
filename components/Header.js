@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -17,7 +17,7 @@ const Header = ({ className }) => {
 	];
 	const [menuOpen, setMenuOpen] = React.useState(false);
 
-	const { whiteNav, setScrollToAbout } = useScroll();
+	const { whiteNav, setScrollToFeatures } = useScroll();
 
 	const [isWhite, setIsWhite] = React.useState(whiteNav);
 	const router = useRouter();
@@ -35,19 +35,20 @@ const Header = ({ className }) => {
 	};
 
 	const closeMenu = (e) => {
-		if (e.target.innerText === "Learn more") {
-			router.push("/", "/#about");
-			setScrollToAbout(true);
+    if (e.target.innerText === "Learn more") {
+      router.push("/", "/#about")
+			setScrollToFeatures(true);
 		}
 		setMenuOpen(false);
 	};
 
-	const headerRef = useRef();
-	// console.log(headerRef.current);
+  const scrollToFeaturesSection = () => {
+		router.push("/", "/#about");
+		setScrollToFeatures(true);
+	};
 
 	return (
 		<header
-			ref={headerRef}
 			className={`${className} ${
 				isWhite ? "bg-white" : "dualFold:bg-header"
 			} fixed top-0 left-0 right-0 z-10 transition duration-50`}
@@ -151,10 +152,11 @@ const Header = ({ className }) => {
 						})}
 					</ul>
 				</nav>
-				{/* <Button
+        <Button
+          onClick={scrollToFeaturesSection}
 					label="Learn more"
 					className="text-brandPrimary500 border-[1px] border-brandPrimary400 py-[0.6875rem] px-6 rounded font-medium hover:bg-brandPrimary400 hover:text-white transition duration-300 ease-in-out]"
-				/> */}
+				/>
 			</div>
 		</header>
 	);
