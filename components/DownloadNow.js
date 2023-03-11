@@ -35,6 +35,8 @@ const DownloadNow = () => {
         setMessage(error.message);
       } else {
         setMessage();
+        setName("");
+        setEmail("");
         toast.success(
           "Thank you for registration! We will be in touch with you soon 😃",
           {
