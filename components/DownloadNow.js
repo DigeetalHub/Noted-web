@@ -34,9 +34,9 @@ const DownloadNow = () => {
       if (error) {
         setMessage(error.message);
       } else {
-        setMessage();
         setName("");
         setEmail("");
+        setMessage();
         toast.success(
           "Your submission has been NOTED! We will be in touch soon 😃",
           {
