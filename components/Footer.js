@@ -14,7 +14,7 @@ const Footer = ({ className }) => {
 		<footer
 			className={`${className} py-6 px-4 md:pt-[4rem]  bg-brandPrimary900`}
 		>
-			<div className="flex flex-col flex-wrap gap-[1.7rem] fold:gap-[2.5rem] text-center text-white dualFold:flex-row dualFold:justify-between dualFold:text-left dualFold:w-[90%] dualFold:mx-auto dualFold:gap-y-[4rem] lg:w-[80%] bigScreen:w-[70%]">
+			<div className="flex flex-col flex-wrap gap-[1.7rem] fold:gap-[2.5rem] text-center text-white dualFold:flex-row dualFold:justify-between dualFold:text-left dualFold:w-[90%] dualFold:mx-auto dualFold:gap-y-[4rem] lg:w-[80%] bigScreen:w-[70%] fold:text-sm s22:text-base">
 				<div className="flex flex-col dualFold:w-[33%] xl:w-[24%] gap-[0.625rem] fold:gap-4">
 					<Image
 						src={Logo}

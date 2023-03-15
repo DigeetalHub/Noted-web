@@ -87,7 +87,7 @@ export default function Home() {
 				/>
 			</Head>
 			<main className="snap-y scroll-pt-[2rem]" onScroll={scrollNav}>
-				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[84.5vh] s22:h-[82.5vh] i11Pro:h-[82vh] i13:h-[82.5vh] XR:h-[83.5vh] i14Max:h-[76vh] dualFold:h-[100vh] md:h-screen relative">
+				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[84.5vh] s22:h-[93.5vh] i11Pro:h-[84.5vh] i13:h-[86.5vh] XR:h-[94.5vh] i14Max:h-[76vh] dualFold:h-[100vh] md:h-screen relative">
 					<div className="h-full pt-[2.9rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[4.5rem] px-2 fold:px-4 md:justify-center">
 						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 dualFold:w-[60%] md:w-[79%] fold2Full:w-[82%] xl:w-[60.5%] laptops:w-[65%] bigScreen:w-[60%]">
 							<Heading
