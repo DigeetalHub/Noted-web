@@ -3,7 +3,7 @@ import { Montserrat } from "@next/font/google";
 import { ScrollProvider } from "../context/ScrollContext";
 import { AccordionProvider } from "../context/AccordionContext";
 import { Fragment } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Analytics } from "@vercel/analytics/react";
 import Layout from "../components/Layout";
