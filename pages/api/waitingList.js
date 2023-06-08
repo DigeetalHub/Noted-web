@@ -1,4 +1,3 @@
-import { connectDb } from "../../utils/connect";
 import { MongoClient } from "mongodb";
 
 const client = new MongoClient(process.env.MONGO_URI);
@@ -30,8 +29,8 @@ export default async function handler(req, res) {
 				}
 				client.close();
 			} catch (error) {
-                res.status(400).json({ success: false, message: error.message });
-                console.log(error.message)
+				res.status(400).json({ success: false, message: error.message });
+				console.log(error.message);
 			}
 			break;
 	}
