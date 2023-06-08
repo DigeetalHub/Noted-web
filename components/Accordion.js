@@ -34,6 +34,7 @@ const Accordion = ({ items, index }) => {
             } transition duration-500`}
           />
         </div>
+        
         <Collapse isOpened={isOpen.includes(index)}>
           {isOpen.includes(index) && (
             <div className="">
