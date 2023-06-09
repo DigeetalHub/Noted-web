@@ -3,6 +3,7 @@ import Button from "./Button";
 import Image from "next/image";
 import appScreens from "../public/assets/images/appScreens1.webp";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const DownloadNow = () => {
 	const [name, setName] = useState("");
@@ -30,26 +31,23 @@ const DownloadNow = () => {
 		} else {
 			setLoading(true);
 		}
-
-		try {
-			fetch("/api/waitingList", {
-				method: "POST",
-				body: JSON.stringify({ name, email }),
-				headers: {
-					"Content-Type": "application/json",
-				},
+		axios
+			.post("/api/waitingList", { name, email })
+			.then((res) => {
+				console.log(res);
+				setName("");
+				setEmail("");
+				setMessage("");
+				toast.success("Your submission has been NOTED! We will be in touch soon 😃", {
+					autoClose: 5000,
+					icon: "🚀",
+				});
+				setLoading(false);
+			})
+			.catch((err) => {
+				setMessage(err.response.data.message);
+				setLoading(false);
 			});
-			setName("");
-			setEmail("");
-			setMessage("");
-			toast.success("Your submission has been NOTED! We will be in touch soon 😃", {
-				autoClose: 5000,
-				icon: "🚀",
-			});
-			setLoading(false);
-		} catch (error) {
-			console.log(error.message);
-		}
 	};
 
 	useEffect(() => {
