@@ -34,7 +34,6 @@ const DownloadNow = () => {
 		axios
 			.post("/api/waitingList", { name, email })
 			.then((res) => {
-				console.log(res);
 				setName("");
 				setEmail("");
 				setMessage("");
