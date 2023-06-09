@@ -1,6 +1,5 @@
-import { MongoClient } from "mongodb";
-
-const client = new MongoClient(process.env.MONGO_URI);
+import { connectDB } from "../../lib/connectDB";
+import { Users } from "../../models/waitListSchema";
 
 export default async function handler(req, res) {
 	const { method } = req;
@@ -8,31 +7,23 @@ export default async function handler(req, res) {
 
 	switch (method) {
 		case "POST":
-			const connectDB = async () => {
-				await client.connect();
-				console.log("Connected successfully to server");
-				const db = client.db("Waitlist");
-				const collection = db.collection("users");
-
-				if (name && email) {
-					await collection.insertOne({ name, email, createdAt: new Date().toLocaleDateString("en-NG") });
-					res.status(201).json({ success: true, message: "User added successfully" });
-				} else {
-					return res.status(400).json({ success: false, message: "Please fill in all fields" });
+			try {
+				await connectDB();
+				const user = await Users.findOne({ email });
+				if (user) {
+					return res.status(400).json({ success: false, message: "You have already added this email" });
 				}
-			};
-
-			connectDB()
-				.then((result) => {
+				Users.create({ name, email }).then((result) => {
 					res.status(201).json({ success: true, message: "User added successfully" });
-					console.log(result);
-				})
-				.catch((error) => {
-					res.status(400).json({ success: false, message: error.message });
-					console.log(error.message);
-				})
-				.finally(() => client.close());
+				});
+			} catch (error) {
+				res.status(400).json({ success: false, message: error.message });
+				console.log(error.message);
+			}
+			break;
 
+		default:
+			res.status(405).json({ success: false, message: "Method Not Allowed" });
 			break;
 	}
 }
