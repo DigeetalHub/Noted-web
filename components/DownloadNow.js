@@ -32,7 +32,7 @@ const DownloadNow = () => {
 			setLoading(true);
 		}
 		axios
-			.post("/api/waitingList", { name, email })
+			.post("/api/waitingList", { name:name.trim(), email })
 			.then((res) => {
 				setName("");
 				setEmail("");
@@ -82,7 +82,7 @@ const DownloadNow = () => {
 								className="p-3 bg-brandPrimary50 rounded-[4px] text-neutrals900 w-full"
 								type="text"
 								name="name"
-								value={name.trim()}
+								value={name}
 								onChange={(e) => setName(e.target.value)}
 								placeholder="Enter your name..."
 							/>
