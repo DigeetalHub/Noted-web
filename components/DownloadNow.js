@@ -82,7 +82,7 @@ const DownloadNow = () => {
 								className="p-3 bg-brandPrimary50 rounded-[4px] text-neutrals900 w-full"
 								type="text"
 								name="name"
-								value={name.trimEnd()}
+								value={name.trim()}
 								onChange={(e) => setName(e.target.value)}
 								placeholder="Enter your name..."
 							/>
