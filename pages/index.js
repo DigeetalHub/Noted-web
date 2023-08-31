@@ -1,11 +1,11 @@
-import Head from "next/head";
 import { useRef, useEffect, useState } from "react";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
 import Subheading from "../components/Subheading";
 import Mouse from "../public/assets/icons/mouse.svg";
-import { useScroll } from "../context/ScrollContext";
 import IconText from "../components/IconText";
 import DocumentIcon from "../public/assets/icons/document-download.svg";
 import User from "../public/assets/icons/user-icon.svg";
@@ -13,12 +13,11 @@ import Stats from "../public/assets/icons/stats.svg";
 import matchSnapshot from "../public/assets/images/matchSnapshot.svg";
 import mapSnapshot from "../public/assets/images/mapSnapshot.svg";
 import DownloadNow from "../components/DownloadNow";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { useScroll } from "../context/ScrollContext";
 import IconTextCard from "../components/IconTextCard";
-import { cardsData, iconAndText1, iconAndText2, featuresData } from "../data/cardsData";
 import ShieldText from "../components/ShieldText";
 import FeaturesCard from "../components/FeaturesCard";
+import { cardsData, iconAndText1, iconAndText2, featuresData } from "../data/cardsData";
 
 export default function Home() {
 	const { scroll, setScrollToFeatures, scrollNav, whiteNav, scrollToFeatures } = useScroll();
@@ -76,7 +75,10 @@ export default function Home() {
 		<div className="">
 			<Head>
 				<title>Noted | For Photographers, Content Creators, Musicians, Videographers and Creatives</title>
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1"
+				/>
 				<meta
 					name="description"
 					content="Connect and Collaborate with creators from everywhere across the globe. Discover how!"
@@ -86,7 +88,10 @@ export default function Home() {
 					content="artists, photography, Photographers, Content Creators, Musicians, Videographers, Creatives"
 				/>
 			</Head>
-			<main className="snap-y scroll-pt-[2rem]" onScroll={scrollNav}>
+			<main
+				className="snap-y scroll-pt-[2rem]"
+				onScroll={scrollNav}
+			>
 				<section className="bg-heroImg bg-no-repeat bg-cover bg-center h-auto fold:h-[84.5vh] s22:h-[93.5vh] i11Pro:h-[84.5vh] i13:h-[86.5vh] XR:h-[94.5vh] i14Max:h-[76vh] dualFold:h-[100vh] md:h-screen relative">
 					<div className="h-full pt-[2.9rem] fold:pt-0 bg-overlay flex flex-col items-center justify-end pb-[4.5rem] px-2 fold:px-4 md:justify-center">
 						<div className="flex flex-col gap-4 text-center mb-4 fold:mb-8 md:mb-10 dualFold:w-[60%] md:w-[79%] fold2Full:w-[82%] xl:w-[60.5%] laptops:w-[65%] bigScreen:w-[60%]">
@@ -125,7 +130,10 @@ export default function Home() {
 					</div>
 					{!whiteNav && (
 						<div className="scroll-btn w-full hidden md:flex flex-col justify-center gap-3 absolute bottom-[1rem] z-10">
-							<button className="mx-auto" onClick={scroll}>
+							<button
+								className="mx-auto"
+								onClick={scroll}
+							>
 								<Image
 									src={Mouse}
 									alt="Clickable icon to scroll down to see main content"
@@ -182,11 +190,11 @@ export default function Home() {
 							</div>
 							<div className="p-4 bg-brandPrimary50 relative text-left space-y-2 md:w-[40%]">
 								<p className="text-sm leading-[1.7]">
-									Collaborating with professionals is a key ingredient for success. By working with individuals who
-									bring unique perspectives, experiences, and expertise, we can achieve more together than we ever could
-									alone
+									Content is all around us in some shape or form. We feel as if the average content creator is
+									unappreciated and that the best artist are oftentimes hidden gems. Noted was created to excavate these
+									gems and put them on full display.
 								</p>
-								<p className="text-sm font-semibold">- Unknown</p>
+								<p className="text-sm font-semibold">Jamari McNabb - Founder, Noted Media</p>
 								<span className="font-bold text-[4rem] text-brandPrimary500 absolute top-[-2.5rem] left-0">“</span>
 								<span className="font-bold text-[4rem] text-brandPrimary500 absolute bottom-[-2rem] right-0 rotate-180">
 									“
@@ -195,12 +203,21 @@ export default function Home() {
 						</div>
 						<div className="mt-[3rem] flex flex-col gap-6 md:flex-row flex-wrap md:justify-center md:mt-[4rem] xl:flex-nowrap xl:justify-between">
 							{cardsData.map(({ image, num, heading, desc }) => (
-								<IconTextCard image={image} num={num} heading={heading} desc={desc} key={num} />
+								<IconTextCard
+									image={image}
+									num={num}
+									heading={heading}
+									desc={desc}
+									key={num}
+								/>
 							))}
 						</div>
 					</div>
 				</section>
-				<section ref={aboutRef} className="text-white px-4 py-[3rem] pb-[4.5rem] bg-neutrals500 overflow-hidden">
+				<section
+					ref={aboutRef}
+					className="text-white px-4 py-[3rem] pb-[4.5rem] bg-neutrals500 overflow-hidden"
+				>
 					<div className="md:w-[90%] mx-auto xl:w-[75%]">
 						<div className="flex flex-col gap-6 md:flex-row-reverse md:justify-between md:items-center">
 							<div className="text-center space-y-6 md:w-[53%] md:text-left lg:w-[60%]">
@@ -211,7 +228,11 @@ export default function Home() {
 								</p>
 								<div className="space-y-3 border-t-2 pt-7 text-left">
 									{iconAndText1.map(({ image, text }, index) => (
-										<ShieldText key={index} image={image} desc={text} />
+										<ShieldText
+											key={index}
+											image={image}
+											desc={text}
+										/>
 									))}
 								</div>
 							</div>
@@ -220,7 +241,11 @@ export default function Home() {
 								<div className="relative flex items-center flex-col mt-8">
 									<div className="absolute top-1/2 z-[2] w-[390px] aspect-square translate-y-[-50%] bg-brandPrimary100/[0.1] blur-[95.5px] rounded-full"></div>
 									<div className="absolute w-[350px] top-[23rem] -left-[4rem] z-[1] bg-brandPrimary600/[0.1] rounded-t-[280px] h-[180px] rotate-[227deg] md:-left-[7rem]"></div>
-									<Image src={matchSnapshot} alt="" className="z-[3]" />
+									<Image
+										src={matchSnapshot}
+										alt=""
+										className="z-[3]"
+									/>
 								</div>
 							</div>
 						</div>
@@ -233,7 +258,11 @@ export default function Home() {
 								</p>
 								<div className="border-t-2 border-t-brandPrimary100 space-y-3 text-left pt-7 xl:w-[70%]">
 									{iconAndText2.map(({ image, text }, index) => (
-										<ShieldText key={index} image={image} desc={text} />
+										<ShieldText
+											key={index}
+											image={image}
+											desc={text}
+										/>
 									))}
 								</div>
 							</div>
@@ -241,7 +270,11 @@ export default function Home() {
 								<div className="relative flex items-center flex-col mt-8 ">
 									<div className="absolute top-1/2 z-[2] w-[390px] aspect-square translate-y-[-50%] bg-brandPrimary100/[0.1] blur-[95.5px] rounded-full"></div>
 									<div className="absolute w-[350px] top-[23rem] -right-[7rem] z-[1] bg-brandPrimary600/[0.1] rounded-t-[280px] h-[180px] rotate-[-227deg]"></div>
-									<Image src={mapSnapshot} alt="" className="z-[3]" />
+									<Image
+										src={mapSnapshot}
+										alt=""
+										className="z-[3]"
+									/>
 								</div>
 							</div>
 						</div>
@@ -254,14 +287,27 @@ export default function Home() {
 						</h2>
 						<div className="mt-6 flex flex-col gap-6 md:flex-row flex-wrap md:justify-center xl:flex-nowrap xl:justify-between">
 							{featuresData.map(({ image, heading, desc, num }, index) => (
-								<FeaturesCard image={image} heading={heading} alt={num} desc={desc} key={heading} />
+								<FeaturesCard
+									image={image}
+									heading={heading}
+									alt={num}
+									desc={desc}
+									key={heading}
+								/>
 							))}
 						</div>
 					</div>
 				</section>
-				<section ref={waitingListRef} id="waiting-list" className="snap-center bg-neutrals500 pt-[3rem] px-4">
+				<section
+					ref={waitingListRef}
+					id="waiting-list"
+					className="snap-center bg-neutrals500 pt-[3rem] px-4"
+				>
 					<div className="md:w-[90%] mx-auto xl:w-[80%]">
-						<DownloadNow classes="" content="" />
+						<DownloadNow
+							classes=""
+							content=""
+						/>
 					</div>
 				</section>
 			</main>
