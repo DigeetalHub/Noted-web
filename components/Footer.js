@@ -4,7 +4,6 @@ import Link from "next/link";
 import Logo from "../public/assets/images/Noted-logo.png";
 import Email from "../public/assets/icons/email.svg";
 import Copyright from "../public/assets/icons/copyright.svg";
-import WhitePhone from "../public/assets/icons/whitePhone.svg";
 import Socials from "./Socials";
 
 const Footer = ({ className }) => {
@@ -27,7 +26,7 @@ const Footer = ({ className }) => {
 				</div>
 				<nav className="flex flex-col gap-2 fold:gap-4 dualFold:w-[20%] lg:w-[18%]">
 					<h3 className="font-bold text-white text-[0.875rem] fold:text-xl bigScreen:text-[1.7rem]">Explore</h3>
-					<div className="flex flex-col gap-6">
+					<div className="flex flex-col gap-4">
 						<Link
 							href="/privacy"
 							className="text-white lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 border-b-2 border-b-brandPrimary500 pb-1"
@@ -45,6 +44,12 @@ const Footer = ({ className }) => {
 							className="text-white lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 border-b-2 border-b-brandPrimary500 pb-1"
 						>
 							Terms of use
+						</Link>
+						<Link
+							href="/eula"
+							className="text-white lg:hover:border-b-[2px] lg:hover:border-b-brandPrimary500 w-[fit-content] mx-auto dualFold:mx-0 border-b-2 border-b-brandPrimary500 pb-1"
+						>
+							EULA
 						</Link>
 					</div>
 				</nav>
