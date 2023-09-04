@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Accordion from "../components/Accordion";
-import { termsOfService } from "../data/data2";
+import { termsOfService } from "../data/termsDetails";
 
 const TermsOfService = () => {
 	React.useEffect(() => {

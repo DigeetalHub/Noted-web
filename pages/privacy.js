@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Accordion from "../components/Accordion";
-import { privacyPolicy } from "../data/data";
+import { privacyPolicy } from "../data/privacyPolicy";
 
 const PrivacyPage = () => {
 	return (
