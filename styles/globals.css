@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#__next {
+  @apply gap-[3.5rem] flex h-[100dvh] max-h-screen flex-col justify-between;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -34,6 +38,6 @@ textarea {
   color: rgb(107 114 128 /1);
 }
 
-.scroll::-webkit-scrollbar{
+.scroll::-webkit-scrollbar {
   display: none;
 }
