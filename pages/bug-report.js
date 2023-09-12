@@ -7,7 +7,7 @@ const BugReport = () => {
   const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const imageInputRef = useRef(null);
 
   // const handleImage = async (e) => {
@@ -24,12 +24,14 @@ const BugReport = () => {
 
   const handleUpload = async (e) => {
     e.preventDefault();
-    if (!message || !file || !name) return;
+    if (!message || !image || !name) {
+      return;
+    }
     const formData = new FormData();
     formData.append("name", name);
     formData.append("message", message);
     formData.append("files", image);
-
+    
     setLoading(true);
     try {
       const response = await axios.post(
@@ -51,7 +53,6 @@ const BugReport = () => {
       console.log("Response from API:", response.data);
       setName("");
       setMessage("");
-      setImage(null);
       if (imageInputRef.current) {
         imageInputRef.current.value = "";
       }
@@ -62,17 +63,10 @@ const BugReport = () => {
           icon: "🚀",
         },
       );
-      console.log(formData);
       setLoading(false);
     } catch (error) {
       // Handle error
       console.error("Error sending data:", error);
-      setName("");
-      setMessage("");
-      setImage(null);
-      if (imageInputRef.current) {
-        imageInputRef.current.value = "";
-      }
       toast.error("Report not sent . Please try again.", { autoClose: 2000 });
       setLoading(false);
     }
