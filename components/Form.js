@@ -88,7 +88,6 @@ const Form = () => {
 			})
 			.catch((err) => {
 				console.log(err);
-				alert("Message not sent. Please try again. 😃");
 			});
 
 		reset();
