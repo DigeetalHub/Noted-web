@@ -7,32 +7,26 @@ const BugReport = () => {
   const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const imageInputRef = useRef(null);
 
-  // const handleImage = async (e) => {
-  //   const file = e.target?.files[0]
-
-  //   if (file.size > 10000000) {
-  //     return alert.show(
-  //       <div className="">
-  //         Error: Photo must be less than 10mb. Please try again!!
-  //       </div>
-  //     )
-  //   }
-  // }
+  const disableBtn = () => {
+    if (!message || !name) {
+      return true;
+    }
+  };
 
   const handleUpload = async (e) => {
+    setLoading(true);
     e.preventDefault();
-    if (!message || !image || !name) {
+    if (!message || !name) {
       return;
     }
     const formData = new FormData();
     formData.append("name", name);
     formData.append("message", message);
     formData.append("files", image);
-    
-    setLoading(true);
+
     try {
       const response = await axios.post(
         "https://noted-backend-production.up.railway.app/api/v1/user/contact",
@@ -49,7 +43,6 @@ const BugReport = () => {
         },
       );
 
-      // Handle success
       console.log("Response from API:", response.data);
       setName("");
       setMessage("");
@@ -65,7 +58,6 @@ const BugReport = () => {
       );
       setLoading(false);
     } catch (error) {
-      // Handle error
       console.error("Error sending data:", error);
       toast.error("Report not sent . Please try again.", { autoClose: 2000 });
       setLoading(false);
@@ -108,7 +100,6 @@ const BugReport = () => {
               type="text"
               onChange={(e) => {
                 setName(e.target.value);
-                console.log(name);
               }}
               value={name}
               id="name"
@@ -155,12 +146,11 @@ const BugReport = () => {
             onClick={handleUpload}
             className="mt-[1.5rem] rounded-full px-6 py-2 font-medium text-brandPrimary500 ring-1 ring-brandPrimary500 disabled:cursor-not-allowed disabled:bg-neutrals200 disabled:text-white disabled:ring-0 md:w-[20%]"
             type="submit"
-            disabled={loading}
+            disabled={disableBtn() || loading}
           >
             Submit
           </button>
         </form>
-        {/* {feedback ? <p className="mt-[2rem] text-center">{feedback}</p> : null} */}
       </div>
     </>
   );
