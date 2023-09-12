@@ -1,39 +1,58 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Head from "next/head";
 
 const BugReport = () => {
   const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const imageInputRef = useRef(null);
+
+  // const handleImage = async (e) => {
+  //   const file = e.target?.files[0]
+
+  //   if (file.size > 10000000) {
+  //     return alert.show(
+  //       <div className="">
+  //         Error: Photo must be less than 10mb. Please try again!!
+  //       </div>
+  //     )
+  //   }
+  // }
 
   const handleUpload = async (e) => {
     e.preventDefault();
-    // if (!message || !file || !name) return;
+    if (!message || !image || !name) {
+      return;
+    }
     const formData = new FormData();
-    // formData.append("image", file, `file-${Date.now()}`);
     formData.append("name", name);
     formData.append("message", message);
-    formData.append("image", image, image.name);
-
-    console.log(image);
+    formData.append("files", image);
+    
     setLoading(true);
-    // http://httpbin.org/post
     try {
-      const response = await axios.post("http://httpbin.org/post", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          "Custom-Header": "value",
+      const response = await axios.post(
+        "https://noted-backend-production.up.railway.app/api/v1/user/contact",
+        image
+          ? formData
+          : {
+              message,
+              name,
+            },
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         },
-      });
+      );
 
       // Handle success
       console.log("Response from API:", response.data);
       setName("");
       setMessage("");
-      setImage(null);
       if (imageInputRef.current) {
         imageInputRef.current.value = "";
       }
@@ -44,17 +63,10 @@ const BugReport = () => {
           icon: "🚀",
         },
       );
-      console.log(formData)
       setLoading(false);
     } catch (error) {
       // Handle error
       console.error("Error sending data:", error);
-      setName("");
-      setMessage("");
-      setImage(null);
-      if (imageInputRef.current) {
-        imageInputRef.current.value = "";
-      }
       toast.error("Report not sent . Please try again.", { autoClose: 2000 });
       setLoading(false);
     }
@@ -62,6 +74,21 @@ const BugReport = () => {
 
   return (
     <>
+      <Head>
+        <title>
+          Noted | For Photographers, Content Creators, Musicians, Videographers
+          and Creatives
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="Connect and Collaborate with creators from everywhere across the globe. Discover how!"
+        />
+        <meta
+          name="keywords"
+          content="artists, photography, Photographers, Content Creators, Musicians, Videographers, Creatives"
+        />
+      </Head>
       <div className="mx-auto w-[90%] space-y-8 pt-[7rem] lg:w-[80%] bigScreen:w-[60%]">
         <div className="space-y-2">
           <h1 className="text-[1.5rem] font-bold leading-[1.3] text-brandPrimary600 md:text-[2rem]">
@@ -79,7 +106,10 @@ const BugReport = () => {
             </label>
             <input
               type="text"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => {
+                setName(e.target.value);
+                console.log(name);
+              }}
               value={name}
               id="name"
               className="rounded-md border border-brandPrimary600 p-2 text-black md:w-[60%]"
