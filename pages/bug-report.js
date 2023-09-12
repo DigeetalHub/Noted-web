@@ -1,55 +1,63 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const BugReport = () => {
-  const [file, setFile] = useState(null);
+  const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
-
-  const handleChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-    console.log(values);
-  };
+  const [name, setName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const imageInputRef = useRef(null);
 
   const handleUpload = async (e) => {
     e.preventDefault();
-    if (!message || !file) return;
+    // if (!message || !file || !name) return;
     const formData = new FormData();
-    formData.append("files", {
-      uri: file,
-      name: `file-${Date.now()}`,
-      type: "image",
-    });
+    // formData.append("image", file, `file-${Date.now()}`);
+    formData.append("name", name);
     formData.append("message", message);
+    formData.append("image", image, image.name);
 
-     try {
-      const response = await axios.post( "https://noted-backend-production.up.railway.app/api/v1/user/contact", formData, {
+    console.log(image);
+    setLoading(true);
+    // http://httpbin.org/post
+    try {
+      const response = await axios.post("http://httpbin.org/post", formData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
+          "Custom-Header": "value",
         },
       });
 
       // Handle success
-      console.log('Response from API:', response.data);
+      console.log("Response from API:", response.data);
+      setName("");
+      setMessage("");
+      setImage(null);
+      if (imageInputRef.current) {
+        imageInputRef.current.value = "";
+      }
+      toast.success(
+        "Report sent successfully. We'll work on a fix as soon as possible. 😃",
+        {
+          autoClose: 1500,
+          icon: "🚀",
+        },
+      );
+      console.log(formData)
+      setLoading(false);
     } catch (error) {
       // Handle error
-      console.error('Error sending data:', error);
+      console.error("Error sending data:", error);
+      setName("");
+      setMessage("");
+      setImage(null);
+      if (imageInputRef.current) {
+        imageInputRef.current.value = "";
+      }
+      toast.error("Report not sent . Please try again.", { autoClose: 2000 });
+      setLoading(false);
     }
-  
-    // axios
-    //   .post(
-    //     "https://noted-backend-production.up.railway.app/api/v1/user/contact{}",
-    //     fd,
-    //     {
-    //       headers: {
-    //         "Custom-Header": "value",
-    //       },
-    //     },
-    //   )
-    //   .then((res) => {
-    //     console.log(res.data);
-    //   })
-    //   .then((data) => console.log(data))
-    //   .catch((err) => console.log(err));
   };
 
   return (
@@ -64,14 +72,27 @@ const BugReport = () => {
             video if you can
           </p>
         </div>
-        <form action="" className="space-y-5">
+        <form action="" className="flex flex-col gap-4">
+          <div className="flex flex-col">
+            <label htmlFor="name" className="mb-1 text-sm font-medium">
+              Please provide your name
+            </label>
+            <input
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              id="name"
+              className="rounded-md border border-brandPrimary600 p-2 text-black md:w-[60%]"
+              name="name"
+            />
+          </div>
           <div className="flex flex-col">
             <label htmlFor="report" className="mb-1 text-sm font-medium">
               Please let us know the issue you encountered
             </label>
             <textarea
               name="report"
-              className="resize-none rounded-md border border-brandPrimary600 p-2 placeholder-black placeholder:text-ellipsis placeholder:text-sm placeholder:italic md:w-[60%]"
+              className="resize-none rounded-md border border-brandPrimary600 p-2 text-black placeholder-black placeholder:text-ellipsis placeholder:text-sm placeholder:italic md:w-[60%]"
               id="report"
               onChange={(e) => setMessage(e.target.value)}
               value={message}
@@ -88,10 +109,10 @@ const BugReport = () => {
               type="file"
               name="upload"
               id="upload"
+              ref={imageInputRef}
               accept="image/*"
               onChange={(e) => {
-                setFile(e.target.files[0]);
-                console.log(file);
+                setImage(e.target.files[0]);
               }}
               className="w-fit rounded-full pr-2 text-sm  file:mr-4 file:rounded-full file:border-0
        file:bg-brandPrimary100
@@ -102,12 +123,14 @@ const BugReport = () => {
           </div>
           <button
             onClick={handleUpload}
-            className="mt-[4rem] rounded-full px-6 py-2 text-sm font-medium text-brandPrimary500 ring-1 ring-brandPrimary500"
+            className="mt-[1.5rem] rounded-full px-6 py-2 font-medium text-brandPrimary500 ring-1 ring-brandPrimary500 disabled:cursor-not-allowed disabled:bg-neutrals200 disabled:text-white disabled:ring-0 md:w-[20%]"
             type="submit"
+            disabled={loading}
           >
             Submit
           </button>
         </form>
+        {/* {feedback ? <p className="mt-[2rem] text-center">{feedback}</p> : null} */}
       </div>
     </>
   );
