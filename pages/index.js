@@ -126,7 +126,7 @@ export default function Home() {
             <div className="lg:[47%] mx-auto flex flex-col justify-center gap-3 fold:w-full dualFold:w-[65%] dualFold:flex-row dualFold:gap-6 md:w-[65%] xl:w-[38%]">
               <Button
                 onClick={scrollToList}
-                label="Join the waiting list"
+                label="Signup for Beta Testing"
                 className="ease-in-out] mx-auto w-[92%] rounded border-[1px] border-brandPrimary500 bg-brandPrimary500 py-[8px] text-[0.65rem] font-semibold text-white transition duration-300 fold:w-[80%] fold:py-2 fold:text-[0.75rem] s22:py-3 s22:text-[1rem] dualFold:w-[100%] md:w-[100%] lg:w-[85%] lg:hover:bg-transparent lg:hover:text-brandPrimary400 xl:w-[%] bigScreen:w-[15] bigScreen:py-4 bigScreen:text-[1.5rem]"
               />
               <Button
