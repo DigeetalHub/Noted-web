@@ -64,8 +64,8 @@ const DownloadNow = () => {
 					Get started to enjoy an amazing experience
 				</h2>
 				<p className="font-semibold lg:w-[70%] mx-auto">
-					Join our waiting list for the upcoming app. Experience a personalized platform connecting you with like-minded
-					individuals. Be the first to know when it&apos;s available &#8211; sign up now!
+					Signup for beta testing of the app. Experience a personalized platform connecting you with like-minded
+					individuals. Be the first to test out the current features and also earn free passes to premium features.
 				</p>
 
 				<div className="mt-3 text-brandPrimary500">{message}</div>
