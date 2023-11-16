@@ -32,12 +32,13 @@ const DownloadNow = () => {
 			setLoading(true);
 		}
 		axios
-			.post("/api/waitingList", { name:name.trim(), email })
+			.post("https://noted-backend-production.up.railway.app/api/v1/user/sendBeta", { name:name.trim(), email })
 			.then((res) => {
 				setName("");
 				setEmail("");
 				setMessage("");
-				toast.success("Your submission has been NOTED! We will be in touch soon 😃", {
+				console.log(res.data)
+				toast.success("Your submission has been NOTED! Check your email😃", {
 					autoClose: 5000,
 					icon: "🚀",
 				});
