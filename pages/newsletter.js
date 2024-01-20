@@ -53,14 +53,16 @@ const Newsletter = () => {
           "Content-Type": "application/json",
         },
       });
+      const res = await response.json();
+
       if (response?.ok) {
-        toast.success("Subscribed successfully. You'll hear from us soon. 😃", {
+        toast.success(res.message, {
           autoClose: 2500,
           icon: "🚀",
         });
         reset();
       } else {
-        toast.error("Email already subscribed", {
+        toast.error(res.message, {
           autoClose: 2500,
         });
       }

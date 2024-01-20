@@ -13,13 +13,14 @@ export default async function handler(req, res) {
         if (user) {
           return res.status(400).json({
             success: false,
-            message: "You have already added this email",
+            message: "Email already subscribed",
           });
         }
         await Users.create({ name, email });
-        return res
-          .status(201)
-          .json({ success: true, message: "User added successfully" });
+        return res.status(201).json({
+          success: true,
+          message: "Subscribed successfully. You'll hear from us soon. 😃",
+        });
       } catch (error) {
         console.log(error.message);
         return res.status(400).json({ success: false, message: error.message });
