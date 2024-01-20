@@ -23,7 +23,7 @@ const Header = ({ className }) => {
 	const router = useRouter();
 
 	React.useEffect(() => {
-		if (router.pathname === "/contact" || router.pathname === "/contact") {
+		if (router.pathname === "/contact" || router.pathname === "/newsletter") {
 			setIsWhite(true);
 		} else {
 			setIsWhite(whiteNav);
