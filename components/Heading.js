@@ -9,7 +9,17 @@ const Heading = ({
 }) => {
   return (
     <h1 className={classes}>
-      <span className="text-brandPrimary500">{firstColoredContent}</span>{firstContent}<span className="text-brandPrimary500 text-center md:hidden block mx-auto">{coloredContent}</span>{" "}
+      {firstColoredContent && (
+        <span className="mr-3 inline-block min-w-[35%] text-right text-brandPrimary500">
+          {firstColoredContent}
+        </span>
+      )}
+      {firstContent}
+      {coloredContent && (
+        <span className="mx-auto block text-center text-brandPrimary500 md:hidden">
+          {coloredContent}
+        </span>
+      )}
       {endContent}
     </h1>
   );

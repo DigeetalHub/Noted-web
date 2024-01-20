@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-#__next {
-  @apply gap-[3.5rem] flex h-[100dvh] max-h-screen flex-col justify-between;
+html,
+body {
+  scroll-behavior: smooth;
+  height: 100%;
 }
 
-html {
-  scroll-behavior: smooth;
+#__next {
+  @apply flex min-h-full flex-col justify-between;
 }
 
 .ReactCollapse--collapse {
